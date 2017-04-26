@@ -1,0 +1,868 @@
+Revision: 1.168 - mar feb 14 11:03:10 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   183/3520     5.20 %
+LUTs:         976/3520    27.73 %
+Cells:        994/3520    28.24 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.91 MHz (38.60 ns) [CLK]
+********************************************************************************
+
+Agregado del puerto A para manejar el LED
+
+Revision: 1.168 - miÃ© feb 15 12:28:46 ART 2017
+Revision: 1.168 - miÃ© feb 15 12:51:32 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   216/3520     6.14 %
+LUTs:        1066/3520    30.28 %
+Cells:       1083/3520    30.77 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.04 MHz (39.94 ns) [CLK]
+********************************************************************************
+
+
+Revision: 1.168 - miÃ© feb 15 13:36:04 ART 2017
+Revision: 1.168 - miÃ© feb 15 13:43:15 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   216/3520     6.14 %
+LUTs:        1059/3520    30.09 %
+Cells:       1078/3520    30.63 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.53 MHz (37.69 ns) [CLK]
+********************************************************************************
+
+
+Revision: 1.168 - miÃ© feb 15 13:55:24 ART 2017
+Revision: 1.168 - miÃ© feb 15 14:05:39 ART 2017
+Revision: 1.168 - miÃ© feb 15 14:24:02 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   216/3520     6.14 %
+LUTs:        1066/3520    30.28 %
+Cells:       1083/3520    30.77 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.04 MHz (39.94 ns) [CLK]
+********************************************************************************
+
+Esto es al agregar SPM, pero sin habilitarlo ;-P
+
+Revision: 1.169 - vie feb 24 09:21:04 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   216/3520     6.14 %
+LUTs:        1059/3520    30.09 %
+Cells:       1078/3520    30.63 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.53 MHz (37.69 ns) [CLK]
+********************************************************************************
+
+Con SPM, pero la ROM es R.O.
+
+Revision: 1.169 - vie feb 24 10:36:26 ART 2017
+Revision: 1.169 - vie feb 24 12:38:11 ART 2017
+Revision: 1.169 - vie feb 24 12:46:30 ART 2017
+Revision: 1.169 - vie feb 24 12:56:47 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   218/3520     6.19 %
+LUTs:        1062/3520    30.17 %
+Cells:       1081/3520    30.71 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   24.60 MHz (40.65 ns) [CLK]
+********************************************************************************
+
+Esto es con SPM y la ROM convertida a RAM.
+
+Revision: 1.169 - vie feb 24 13:21:42 ART 2017
+Revision: 1.170 - jue mar  2 11:07:24 ART 2017
+Revision: 1.170 - jue mar  2 12:32:30 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   234/3520     6.65 %
+LUTs:        1081/3520    30.71 %
+Cells:       1098/3520    31.19 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   24.28 MHz (41.19 ns) [CLK]
+********************************************************************************
+
+Esto es si fijo los valores iniciales para pc_l_r/pc_h_r
+
+Revision: 1.170 - jue mar  2 12:39:57 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   234/3520     6.65 %
+LUTs:        1097/3520    31.16 %
+Cells:       1117/3520    31.73 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.48 MHz (36.39 ns) [CLK]
+********************************************************************************
+
+Esto es revirtiendo el valor para t=0 y agregando un generador de reset.
+
+Revision: 1.170 - jue mar  2 12:51:16 ART 2017
+Revision: 1.170 - jue mar  2 13:10:34 ART 2017
+Revision: 1.170 - jue mar  2 13:37:24 ART 2017
+Revision: 1.170 - vie mar  3 10:54:23 ART 2017
+Revision: 1.170 - vie mar  3 13:05:48 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   234/3520     6.65 %
+LUTs:        1072/3520    30.45 %
+Cells:       1090/3520    30.97 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   24.39 MHz (41.00 ns) [CLK]
+********************************************************************************
+
+Esto es la implementación del timer de micro y milisegundos.
+Consume muchos FFs, lo cual no es molesto.
+Pero también consume demasiadas LUTs (219).
+Habría que compararlo con una implementación del TMR0.
+
+Revision: 1.171 - lun mar  6 13:55:17 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   361/3520    10.26 %
+LUTs:        1291/3520    36.68 %
+Cells:       1311/3520    37.24 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.51 MHz (39.20 ns) [CLK]
+********************************************************************************
+
+Esto es una implementación en la que el registro de lectura de los timers
+se unificó.
+El consumo de LUTs bajó a 168, que sigue siendo alto.
+
+Revision: 1.171 - lun mar  6 14:10:39 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   337/3520     9.57 %
+LUTs:        1240/3520    35.23 %
+Cells:       1258/3520    35.74 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.01 MHz (37.02 ns) [CLK]
+********************************************************************************
+
+Esto es lo que agregó el sistema de bloqueo en el timer y no cumple la
+frecuencia!!!!
+Modifico el project para que especifique 24 MHz.
+
+Revision: 1.172 - mar mar  7 09:47:20 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   368/3520    10.45 %
+LUTs:        1335/3520    37.93 %
+Cells:       1356/3520    38.52 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   22.13 MHz (45.19 ns) [CLK]
+********************************************************************************
+
+Ahora si cumple:
+Pero no funcionó.
+
+Revision: 1.172 - mar mar  7 09:51:19 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1316/3520    37.39 %
+Cells:       1323/3520    37.59 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.83 MHz (34.69 ns) [CLK]
+********************************************************************************
+
+Corregidas condiciones de salida del blocker
+Ahora si funciona
+
+Revision: 1.172 - mar mar  7 10:25:15 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1329/3520    37.76 %
+Cells:       1336/3520    37.95 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   30.11 MHz (33.21 ns) [CLK]
+********************************************************************************
+
+Esto es con pre_bk_r contando downto 0
+
+Revision: 1.173 - miÃ© mar  8 08:47:45 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1317/3520    37.41 %
+Cells:       1322/3520    37.56 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   29.23 MHz (34.21 ns) [CLK]
+********************************************************************************
+
+Esto es con pre_cnt_r contando downto 0. Ugh!
+
+Revision: 1.173 - miÃ© mar  8 08:50:22 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1336/3520    37.95 %
+Cells:       1342/3520    38.12 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.97 MHz (34.52 ns) [CLK]
+********************************************************************************
+
+Revierto y pruebo con cnt_us2_r
+
+Revision: 1.173 - miÃ© mar  8 08:53:52 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1341/3520    38.10 %
+Cells:       1347/3520    38.27 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.93 MHz (35.80 ns) [CLK]
+********************************************************************************
+
+Ugh! revierto
+
+Revision: 1.173 - miÃ© mar  8 08:56:34 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1317/3520    37.41 %
+Cells:       1322/3520    37.56 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   29.23 MHz (34.21 ns) [CLK]
+********************************************************************************
+
+Modificado para que el blocker sea el registro 7 y no cualquiera. (Verificado)
+
+Revision: 1.173 - miÃ© mar  8 09:53:46 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   367/3520    10.43 %
+LUTs:        1309/3520    37.19 %
+Cells:       1315/3520    37.36 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   29.44 MHz (33.97 ns) [CLK]
+********************************************************************************
+
+Esto es luego de implementar los PWM y conectar 3.
+
+Revision: 1.174 - miÃ© mar  8 10:27:28 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   391/3520    11.11 %
+LUTs:        1377/3520    39.12 %
+Cells:       1383/3520    39.29 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   30.53 MHz (32.75 ns) [CLK]
+********************************************************************************
+
+Esto es luego de implementar y conectar 15 pines de IO (cubriendo Arduino UNO)
+
+Revision: 1.175 - miÃ© mar  8 13:10:37 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   409/3520    11.62 %
+LUTs:        1447/3520    41.11 %
+Cells:       1453/3520    41.28 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.37 MHz (35.25 ns) [CLK]
+********************************************************************************
+
+Esto es con los 6 PWMs implementados y los multiplexores de PWM/Pin
+
+Revision: 1.176 - miÃ© mar 22 10:00:16 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   443/3520    12.59 %
+LUTs:        1515/3520    43.04 %
+Cells:       1522/3520    43.24 %
+--------------------------------------------------------------------------------
+BRAMs:          9/20      45.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   29.34 MHz (34.08 ns) [CLK]
+********************************************************************************
+
+Cambiando a ATtiny45 (4 kiB + 256 B)
+NO funcionó porque el 45 es un AVR 2.5, no 2
+
+Revision: 1.177 - jue mar 23 10:21:45 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   444/3520    12.61 %
+LUTs:        1519/3520    43.15 %
+Cells:       1526/3520    43.35 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.41 MHz (36.48 ns) [CLK]
+********************************************************************************
+
+Agregada la instrucción MOVW.
+
+Revision: 1.177 - jue mar 23 13:11:07 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   445/3520    12.64 %
+LUTs:        1554/3520    44.15 %
+Cells:       1560/3520    44.32 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.11 MHz (35.57 ns) [CLK]
+********************************************************************************
+
+Corregida la instrucción MOVW, agregada LPM Rd,Z/Z+
+53 LUTs entre las dos instrucciones
+
+Revision: 1.177 - mar mar 28 12:30:05 ART 2017
+Revision: 1.177 - mar mar 28 13:26:20 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   445/3520    12.64 %
+LUTs:        1572/3520    44.66 %
+Cells:       1578/3520    44.83 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.78 MHz (34.75 ns) [CLK]
+********************************************************************************
+
+Agregadas entradas analógicas.
+
+Revision: 1.178 - miÃ© mar 29 10:52:27 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   474/3520    13.47 %
+LUTs:        1611/3520    45.77 %
+Cells:       1617/3520    45.94 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.78 MHz (34.75 ns) [CLK]
+********************************************************************************
+
+Esto fue un intento por aprovechar el timer de 1 MHz de tmcounter.vhdl para que
+genere 2 MHz y 1 MHz y exportar la salida de 2 MHz a ad_conv.vhdl. De esta
+manera desarparece el divisor de frecuencia de ad_conv.vhdl.
+Lógicamente nos ahorramos 5 FFs, sin embargo algo emputece al sintetizador que
+usa 19 LUTs extra. Es por esto que descarto esta opción.
+Al parecer no tiene sentido ahorrar divisores de frecuencia.
+Para hacer el unroll voy a tratar de revertir sólo parte y ver que pasa.
+
+Revision: 1.179 - jue mar 30 09:04:28 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   469/3520    13.32 %
+LUTs:        1630/3520    46.31 %
+Cells:       1635/3520    46.45 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.71 MHz (34.83 ns) [CLK]
+********************************************************************************
+
+Hice que ad_conv pueda opcionalmente tomar el clock externo y obtuve esto.
+Por lo que veo le sigue molestando que el divisor se haga en 2 etapas.
+Paso a revertir la generación de 2 MHz en tmcounter.vhdl
+
+Revision: 1.179 - jue mar 30 09:17:21 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   469/3520    13.32 %
+LUTs:        1618/3520    45.97 %
+Cells:       1622/3520    46.08 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.62 MHz (34.94 ns) [CLK]
+********************************************************************************
+
+Finalmente revirtiendo tmcounter.vhdl.
+
+Revision: 1.179 - jue mar 30 09:24:32 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   474/3520    13.47 %
+LUTs:        1611/3520    45.77 %
+Cells:       1617/3520    45.94 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.78 MHz (34.75 ns) [CLK]
+********************************************************************************
+
+Reordenando un poco el código de interrupciones, no hubieron cambios reales.
+
+Revision: 1.180 - jue mar 30 13:17:42 ART 2017
+Revision: 1.181 - jue mar 30 14:22:56 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   474/3520    13.47 %
+LUTs:        1624/3520    46.14 %
+Cells:       1631/3520    46.34 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.78 MHz (36.00 ns) [CLK]
+********************************************************************************
+
+Agregados los campsense con toggle y conectados 2 de ellos
+
+Revision: 1.182 - vie mar 31 09:37:58 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   503/3520    14.29 %
+LUTs:        1657/3520    47.07 %
+Cells:       1663/3520    47.24 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.92 MHz (34.58 ns) [CLK]
+********************************************************************************
+
+Conecté 2 CapSense a los 2 pines de interrupción y habilité los registros de
+control de interrupciones. El resultado es bastante pesado (96 LUTs)
+
+Revision: 1.182 - vie mar 31 09:52:01 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   518/3520    14.72 %
+LUTs:        1753/3520    49.80 %
+Cells:       1757/3520    49.91 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.83 MHz (35.93 ns) [CLK]
+********************************************************************************
+
+Esto fue al conectar INT0/1 a PD2/3 en lugar de los CapSense ... (misterio).
+
+Revision: 1.183 - vie mar 31 12:43:44 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   519/3520    14.74 %
+LUTs:        1772/3520    50.34 %
+Cells:       1777/3520    50.48 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.83 MHz (34.69 ns) [CLK]
+********************************************************************************
+
+Agregado el Timer de 16 bits, evidentemente algo hice mal:
+
+Revision: 1.184 - vie mar 31 13:31:15 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   519/3520    14.74 %
+LUTs:        1768/3520    50.23 %
+Cells:       1773/3520    50.37 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.92 MHz (38.58 ns) [CLK]
+********************************************************************************
+
+Habían errores.
+Ahora si creció, aunque demasiado:
+
+Revision: 1.185 - mar abr  4 11:03:20 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1818/3520    51.65 %
+Cells:       1832/3520    52.05 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.84 MHz (34.67 ns) [CLK]
+********************************************************************************
+
+Simplemente agregado que cuando se escribe en el divisor del TM16 su contador
+se resetee. Así el primer semiciclo es correcto y no aleatorio.
+Esto ya está un tanto descontrolado, eso no puede insumir 12 LUTs!!!
+
+Revision: 1.186 - mar abr  4 12:22:59 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1830/3520    51.99 %
+Cells:       1845/3520    52.41 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.01 MHz (37.02 ns) [CLK]
+********************************************************************************
+
+Esto fue al cambiar una variable por signal en RxUnit.vhdl (Miniuart)
+Verificado en hard.
+
+Revision: 1.186 - mar abr  4 13:56:07 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1799/3520    51.11 %
+Cells:       1815/3520    51.56 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.86 MHz (35.89 ns) [CLK]
+********************************************************************************
+
+Agregado el flag de WIP.
+
+Revision: 1.186 - mar abr  4 14:09:47 ART 2017
+Revision: 1.186 - miÃ© abr  5 09:27:49 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1846/3520    52.44 %
+Cells:       1862/3520    52.90 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.29 MHz (36.64 ns) [CLK]
+********************************************************************************
+
+Conectadas las líneas de interrupción de la MiniUART.
+
+Revision: 1.186 - miÃ© abr  5 09:37:01 ART 2017
+Revision: 1.186 - miÃ© abr  5 10:28:09 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1892/3520    53.75 %
+Cells:       1907/3520    54.18 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.24 MHz (36.71 ns) [CLK]
+********************************************************************************
+
+Conectado el CapSense 4 a reset
+
+Revision: 1.187 - miÃ© abr  5 12:37:30 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   557/3520    15.82 %
+LUTs:        1896/3520    53.86 %
+Cells:       1911/3520    54.29 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.41 MHz (36.48 ns) [CLK]
+********************************************************************************
+
+Desconectado el CapSense 3 que no se usa.
+Agregada la lógica de AutoReset usando DTR.
+
+Revision: 1.188 - miÃ© abr  5 13:36:03 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   555/3520    15.77 %
+LUTs:        1877/3520    53.32 %
+Cells:       1891/3520    53.72 %
+--------------------------------------------------------------------------------
+BRAMs:         13/20      65.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.39 MHz (37.89 ns) [CLK]
+********************************************************************************
+
+Esto es lo que pasa si le fuerzo a que la memoria sea de 8 kiB (4 kiw)
+
+Revision: 1.189 - miÃ© abr  5 13:57:22 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   686/3520    19.49 %
+LUTs:        2107/3520    59.86 %
+Cells:       2122/3520    60.28 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.06 MHz (39.90 ns) [CLK]
+********************************************************************************
+
+Esto es con la RAM de 512 bytes
+
+Revision: 1.189 - vie abr  7 10:06:39 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   687/3520    19.52 %
+LUTs:        2165/3520    61.51 %
+Cells:       2182/3520    61.99 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.10 MHz (39.84 ns) [CLK]
+********************************************************************************
+
+Agregado el SPI y conectado a la memoria Flash
+
+Revision: 1.189 - mar abr 11 13:37:12 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2249/3520    63.89 %
+Cells:       2265/3520    64.35 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.99 MHz (38.48 ns) [CLK]
+********************************************************************************
+
+Agregado la multiplexación de pines SPI.
+
+Revision: 1.190 - miÃ© abr 12 10:29:25 ART 2017
+Revision: 1.190 - lun abr 17 14:08:30 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   720/3520    20.45 %
+LUTs:        2239/3520    63.61 %
+Cells:       2258/3520    64.15 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.51 MHz (37.72 ns) [CLK]
+********************************************************************************
+
+Correcciones en el SPI
+
+Revision: 1.190 - miÃ© abr 19 09:57:06 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2250/3520    63.92 %
+Cells:       2265/3520    64.35 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   24.84 MHz (40.26 ns) [CLK]
+********************************************************************************
+
+Corrección en el SPI modo1
+
+Revision: 1.191 - jue abr 20 13:25:28 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2246/3520    63.81 %
+Cells:       2263/3520    64.29 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.26 MHz (38.08 ns) [CLK]
+********************************************************************************
+
+Reordenado el código de SPI.
+
+Revision: 1.191 - jue abr 20 13:40:31 ART 2017
+Revision: 1.191 - vie abr 21 10:34:31 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2237/3520    63.55 %
+Cells:       2253/3520    64.01 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.97 MHz (38.51 ns) [CLK]
+********************************************************************************
+
+Primer intento de lograr que el SPI funcione a 48 MHz.
+[Verificado en nueva estructura]
+
+Revision: 1.191 - vie abr 21 10:50:39 ART 2017
+Revision: 1.192 - vie abr 21 12:38:51 ART 2017
+Revision: 1.192 - vie abr 21 12:47:28 ART 2017
+Revision: 1.192 - vie abr 21 13:29:27 ART 2017
+Revision: 1.192 - vie abr 21 13:34:42 ART 2017
+Revision: 1.192 - vie abr 21 13:43:46 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2286/3520    64.94 %
+Cells:       2303/3520    65.43 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   86.07 MHz (11.62 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.23 MHz (43.05 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Desabilitando gran parte de las cosas.
+Con esto el demo de touch paint funciona.
+
+Revision: 1.193 - vie abr 21 14:01:03 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   594/3520    16.88 %
+LUTs:        1974/3520    56.08 %
+Cells:       1983/3520    56.34 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   95.50 MHz (10.47 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.06 MHz (39.90 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Acá también relajé el core SPI (sin PLL).
+
+Revision: 1.193 - vie abr 21 14:26:26 ART 2017
+Revision: Unknown - lun abr 24 17:02:30 ART 2017
+Revision: 1.33 - lun abr 24 17:33:48 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   585/3520    16.62 %
+LUTs:        1946/3520    55.28 %
+Cells:       1954/3520    55.51 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.15 MHz (39.76 ns) [CLK]
+********************************************************************************
+
+

@@ -1,0 +1,6 @@
+AVR básico (ATtinyX5) en la Kéfir I tratando de comportarse como un Arduino.
+Reloj: 24 MHz
+Luego debería responder al protocolo del STK500
+
+Hay un proyecto separado en cvs://fpgacores/lattuino/
+

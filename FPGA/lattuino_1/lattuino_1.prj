@@ -1,0 +1,90 @@
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/io_reg_file.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/reg_file.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/decoder.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/alu.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/cpu.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/core.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/portx.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/wb_ctrl.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/irq.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/spi.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/memory/dm_s.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/micros/attX5.vhdl
+add_file -vhdl -lib spi ../../../../SPI/Work/spi_pkg.vhdl
+add_file -vhdl -lib spi ../../../../SPI/MCP300x/mcp300x.vhdl
+add_file -vhdl -lib spi ../../../../SPI/Work/spi_pkg.vhdl
+add_file -vhdl -lib spi ../../../../SPI/spi_master.vhdl
+add_file -vhdl -lib capsense ../../../../CapSense/capsense_pkg.vhdl
+add_file -vhdl -lib capsense ../../../../CapSense/capsense.vhdl
+add_file -vhdl -lib capsense ../../../../CapSense/capsense_sys.vhdl
+add_file -vhdl -lib miniuart ../../../../miniuart/Work/miniuart_pkg.vhdl
+add_file -vhdl -lib miniuart ../../../../miniuart/Txunit.vhdl
+add_file -vhdl -lib miniuart ../../../../miniuart/Rxunit.vhdl
+add_file -vhdl -lib miniuart ../../../../miniuart/utils.vhdl
+add_file -vhdl -lib miniuart ../../../../miniuart/miniuart.vhdl
+add_file -vhdl -lib lattice ../../../../lattice/sb_ice40_components_syn.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/devices/ad_conv.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/devices/tm16b.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/devices/tmcounter.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/Work/pm_pkg.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_8.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_4.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_2.vhdl
+add_file -vhdl -lib work ../wb_dev_intercon_package.vhdl
+add_file -vhdl -lib work ../wb_dev_intercon.vhdl
+add_file -vhdl -lib work ../cpuconfig.vhdl
+add_file -vhdl -lib work ../lattuino_1.vhdl
+
+impl -add Target_Implmnt -type fpga
+
+# Implementation attributes
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+
+# Device options
+set_option -technology SBTiCE40
+set_option -part iCE40HX4K
+set_option -package TQ144
+set_option -speed_grade 
+set_option -part_companion ""
+
+# Compilation/mapping options
+
+# Mapper options
+set_option -frequency 24
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Silicon Blue iCE40
+set_option -maxfan 10000
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -retiming 0
+set_option -update_models_cp 0
+set_option -fixgatedclocks 2
+set_option -fixgeneratedclocks 0
+
+# NFilter
+set_option -popfeed 0
+set_option -constprop 0
+set_option -createhierarchy 0
+
+# Sequential optimization options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+# Automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+# Set result format/file last
+project -result_format "edif"
+project -result_file ./Target_Implmnt/Target.edf
+impl -active Target_Implmnt
+project -run synthesis -clean

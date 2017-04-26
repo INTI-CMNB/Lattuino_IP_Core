@@ -1,0 +1,15 @@
+# Generar el INTERCON de WISHBONE para los periféricos.
+wb_dev_intercon.vhdl wb_dev_intercon_package.vhdl wb_dev_intercon.inc wb_dev_intercon.h: \
+	wb_devices.defines
+	wishbone.pl --nogui --gen-header $<
+
+wb_clean:
+	rm -rf wb_dev_intercon*
+
+# Asegurarse que la ROM esté actualizada.
+.PHONY : updaterom
+
+../../../lattuino/Work/lattuino_1_bl_8.vhdl ../../../lattuino/Work/pm_pkg.vhdl: updaterom
+
+updaterom:
+	$(MAKE) -C ../../bootloader/ needed

@@ -1,0 +1,109 @@
+filename=wb_dev_intercon
+intercon=WBDevIntercon
+syscon=syscon
+target=xilinx
+hdl=vhdl
+ext=.vhdl
+signal_groups=0
+use_cyc_sel=0
+tga_bits=0
+tgc_bits=0
+tgd_bits=0
+rename_tga=bte
+rename_tgc=cti
+rename_tgd=tgd
+classic=000
+endofburst=111
+dat_size=8
+adr_size=8
+mux_type=andor
+interconnect=sharedbus
+
+master cpu
+  type=rw
+  lock_o=0
+  tga_o=0
+  tgc_o=0
+  tgd_o=0
+  err_i=0
+  rty_i=0
+  cyc_i=0
+  priority=1
+end master cpu
+
+slave rs2
+  type=rw
+  adr_i_hi=0
+  adr_i_lo=0
+  tga_i=0
+  tgc_i=0
+  tgd_i=0
+  lock_i=0
+  cyc_i=0
+  err_o=0
+  rty_o=0
+  baseadr=0x00000000
+  size=0x40
+  baseadr1=0x00000000
+  size1=0xffffffff
+  baseadr2=0x00000000
+  size2=0xffffffff
+end slave rs2
+
+slave ad
+  type=rw
+  adr_i_hi=0
+  adr_i_lo=0
+  tga_i=0
+  tgc_i=0
+  tgd_i=0
+  lock_i=0
+  cyc_i=0
+  err_o=0
+  rty_o=0
+  baseadr=0x00000040
+  size=0x40
+  baseadr1=0x00000000
+  size1=0xffffffff
+  baseadr2=0x00000000
+  size2=0xffffffff
+end slave ad
+
+slave tmr
+  type=rw
+  adr_i_hi=2
+  adr_i_lo=0
+  tga_i=0
+  tgc_i=0
+  tgd_i=0
+  lock_i=0
+  cyc_i=0
+  err_o=0
+  rty_o=0
+  baseadr=0x00000080
+  size=0x40
+  baseadr1=0x00000000
+  size1=0xffffffff
+  baseadr2=0x00000000
+  size2=0xffffffff
+end slave tmr
+
+slave t16
+  type=w
+  adr_i_hi=0
+  adr_i_lo=0
+  tga_i=0
+  tgc_i=0
+  tgd_i=0
+  lock_i=0
+  cyc_i=0
+  err_o=0
+  rty_o=0
+  baseadr=0x000000C0
+  size=0x40
+  baseadr1=0x00000000
+  size1=0xffffffff
+  baseadr2=0x00000000
+  size2=0xffffffff
+end slave t16
+
