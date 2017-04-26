@@ -340,7 +340,7 @@ begin
 
    pm_8k:
    if ROM_ADDR_W=12 generate
-      PM_Inst8 : xlattuino_1_blPM_8
+      PM_Inst8 : lattuino_1_blPM_8
          generic map(
             WORD_SIZE => 16, ADDR_W => ROM_ADDR_W)
          port map(
