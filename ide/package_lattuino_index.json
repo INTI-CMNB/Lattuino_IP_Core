@@ -1,0 +1,30 @@
+{
+  "packages": [
+    {
+      "name": "Lattuino",
+      "maintainer": "FPGA Libre",
+      "websiteURL": "http://fpgalibre.sf.net/",
+      "email": "set@ieee.org",
+      "help": {
+        "online": ""
+      },
+      "platforms": [
+        {
+          "name": "Lattuino 1",
+          "architecture": "avr",
+          "version": "1.0.0",
+          "category": "Arduino",
+          "url": "http://fpgalibre.sf.net/Lattuino/lattuino_1-1.0.0.tar.bz2",
+          "archiveFileName": "lattuino_1-1.0.0.tar.bz2",
+          "checksum": "SHA-256:58ffb4f4f6b483f57ff827b2e8c7791743b05f1d9d9f5ea71595fa3aa57130e8",
+          "size": "54110",
+          "boards": [
+            {"name": "Kefir I"}
+          ]
+        }
+      ],
+      "tools": [
+      ]
+    }
+  ]
+}

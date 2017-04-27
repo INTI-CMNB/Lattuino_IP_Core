@@ -1,0 +1,2 @@
+SPI y SoftwareSerial son las originales de Arduino, pero al parecer es necesario incluirlas y no
+se puede acceder a las que tiene la IDE.
