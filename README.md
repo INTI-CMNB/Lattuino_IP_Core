@@ -1,4 +1,4 @@
-# Lattuino_IP_Core
+# Lattuino
 An Arduino UNO compatible implementation for the iCE40 FPGAs
 
 Currently oriented to the Kefir I board (iCE40HX4K + Arduino/ChipKit connectors and MCP3008 A/D)
@@ -23,6 +23,15 @@ For Debian:
 root@debian# curl -sSL http://fpgalibre.sf.net/debian/go | sh
 root@debian# apt-get install lattuino-tools
 ```
+
+## How to run the synthesis
+
+This core depends on various cores from the [FPGA Libre](http://fpgalibre.sf.net) project.
+In order to install the dependencies you'll need to clone the
+[FPGA Cores](https://github.com/FPGALibre/fpgacores) repo.
+
+Once installed you'll find a script called __synth_lattuino_1.sh__. Modify the *XIL_TOOLS_ICE_DIR*
+variable to point to your iCECube2 installation. Then run the script.
 
 ## How to add Lattuino support to the Arduino IDE
 
