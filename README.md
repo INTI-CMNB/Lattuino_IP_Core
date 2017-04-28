@@ -3,11 +3,35 @@ An Arduino UNO compatible implementation for the iCE40 FPGAs
 
 Currently oriented to the Kefir I board (iCE40HX4K + Arduino/ChipKit connectors and MCP3008 A/D)
 
+## What's needed to synthesize the IP core
+
+You need to install the Lattice [iCECube2](http://www.latticesemi.com/iCEcube2) tool.
+
+You should also install some of the [FPGA Libre](http://fpgalibre.sf.net) tools.
+The __lattuino-tools__ package will pull all the needed dependencies.
+
+For Ubuntu:
+
+```
+usuario@ubuntu$ curl -sSL http://fpgalibre.sf.net/debian/go | sudo sh
+usuario@ubuntu$ sudo apt-get install lattuino-tools
+```
+
+For Debian:
+
+```
+root@debian# curl -sSL http://fpgalibre.sf.net/debian/go | sh
+root@debian# apt-get install lattuino-tools
+```
+
 ## How to add Lattuino support to the Arduino IDE
 
-1. Go to File/Preferences menu
+You'll need a modern version of Arduino's IDE, I used 1.8.1
+
+1. Go to __File/Preferences__ menu
 2. Add the following URL http://fpgalibre.sf.net/Lattuino/package_lattuino_index.json as source of additional boards
 3. Now enter to the __Tool/Board__ menu and choose the __Boards manager__ option.
 4. Scroll down to bottom and look for the __Lattuino 1 by FPGA Libre__ entry.
 5. Click on __More info__ and press the __Install__ button.
 6. Once installed you'll get a new section under __Tool/Board__ named Lattuino.
+
