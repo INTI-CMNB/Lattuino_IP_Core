@@ -55,3 +55,13 @@ __cygwish80__). Then run:
 make -C tools/tkconfig/ xconfig
 ```
 
+Note that this will most probably try to rebuild some tools.
+If you don't have the GCC compiler installed you can just run:
+
+```
+touch tools/tkconfig/tkparse.o tools/tkconfig/tkcond.o tools/tkconfig/tkgen.o tools/tkconfig/tkparse
+touch tools/tkconfig/lattuino.tk 
+touch tools/tkconfig/lconfig.tk 
+make -C tools/tkconfig/ xconfig
+```
+
