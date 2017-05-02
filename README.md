@@ -44,3 +44,14 @@ You'll need a modern version of Arduino's IDE, I used 1.8.1
 5. Click on __More info__ and press the __Install__ button.
 6. Once installed you'll get a new section under __Tool/Board__ named Lattuino.
 
+## How to configure the core
+
+You can manually edit __FPGA/lattuino_1/cpuconfig.vhdl__ or you can use the configuration tool.
+
+To run the configuration tool you need TCL/Tk installed (UNIX __wish__ command or Cygwin's
+__cygwish80__). Then run:
+
+```
+make -C tools/tkconfig/ xconfig
+```
+
