@@ -1,0 +1,5 @@
+Meta-package to pull all the Lattuino dependencies.
+
+Just run:
+equivs-build ns-control
+
