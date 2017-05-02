@@ -1,0 +1,47 @@
+#
+# Lattuino configuration written in linux configuration language
+#
+# Written by Salvador E. Tropea
+#
+# Comments and bug reports to set@ieee.org
+#
+#
+
+mainmenu_name "Lattuino IP Core Configuration"
+
+mainmenu_option next_comment
+  comment 'Basic Setup'
+  choice 'Memory size' \
+    "2_kiB+128_B     CONF_MEM_2K \
+     4_kiB+256_B     CONF_MEM_4K \
+     8_kiB+512_B     CONF_MEM_8K" 8_kiB+512_B
+  choice 'UART baudrate' \
+    "115200          CONF_BR_115200 \
+     57600           CONF_BR_57600  \
+     28800           CONF_BR_28800  \
+     19200           CONF_BR_19200  \
+     14400           CONF_BR_14400  \
+     9600            CONF_BR_9600" 115200
+  bool 'CapSense 1 is Reset' CONFIG_C1_RESET
+endmenu
+
+mainmenu_option next_comment
+  comment 'Peripherals'
+  bool 'SPI'  CONFIG_SPI
+  if [ "$CONFIG_SPI" = "y" ]; then
+     bool 'Use a PLL to achieve 2x SPI clock' CONFIG_SPI_PLL
+  fi
+  bool 'PWM channel 0' CONFIG_PWM0
+  bool 'PWM channel 1' CONFIG_PWM1
+  bool 'PWM channel 2' CONFIG_PWM2
+  bool 'PWM channel 3' CONFIG_PWM3
+  bool 'PWM channel 4' CONFIG_PWM4
+  bool 'PWM channel 5' CONFIG_PWM5
+  bool 'Interrupt pin 0 (INT0)' CONFIG_INT0
+  bool 'Interrupt pin 1 (INT1)' CONFIG_INT1
+  bool 'Delay & timing timer'   CONFIG_TMR
+  bool 'Tone generation timer'  CONFIG_TM16
+  bool 'A/D converter'          CONFIG_AD
+endmenu
+
+

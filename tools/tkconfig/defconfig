@@ -1,0 +1,34 @@
+#
+# Automatically generated make config: don't edit
+#
+
+#
+# Basic Setup 
+#
+# CONF_MEM_2K is not set
+# CONF_MEM_4K is not set
+CONF_MEM_8K=y
+CONF_BR_115200=y
+# CONF_BR_57600 is not set
+# CONF_BR_28800 is not set
+# CONF_BR_19200 is not set
+# CONF_BR_14400 is not set
+# CONF_BR_9600 is not set
+CONFIG_C1_RESET=y
+
+#
+# Peripherals 
+#
+CONFIG_SPI=y
+CONFIG_SPI_PLL=y
+CONFIG_PWM0=y
+CONFIG_PWM1=y
+CONFIG_PWM2=y
+CONFIG_PWM3=y
+CONFIG_PWM4=y
+CONFIG_PWM5=y
+CONFIG_INT0=y
+CONFIG_INT1=y
+CONFIG_TMR=y
+CONFIG_TM16=y
+CONFIG_AD=y

@@ -1,0 +1,394 @@
+set menus_per_column 2
+set total_menus 2
+
+proc toplevel_menu {num} {
+	return $num
+}
+
+mainmenu_name "Lattuino IP Core Configuration"
+menu_option menu1 1 "Basic Setup"
+proc menu1 {w title} {
+	set oldFocus [focus]
+	catch {destroy $w; unregister_active 1}
+	toplevel $w -class Dialog
+	wm withdraw $w
+	global active_menus
+	set active_menus [lsort -integer [linsert $active_menus end 1]]
+	message $w.m -width 400 -aspect 300 -text \
+		"Basic Setup"  -relief raised
+	pack $w.m -pady 10 -side top -padx 10
+	wm title $w "Basic Setup" 
+
+	bind $w <Escape> "catch {focus $oldFocus}; destroy $w; unregister_active 1; break"
+	set nextscript "catch {focus $oldFocus}; destroy $w; unregister_active 1; menu2 .menu2 \"$title\""
+	frame $w.f
+	button $w.f.back -text "Main Menu" \
+		-width 15 -command "catch {focus $oldFocus}; destroy $w; unregister_active 1"
+	button $w.f.next -text "Next" -underline 0\
+		-width 15 -command $nextscript
+	bind all <Alt-n> $nextscript
+	button $w.f.prev -text "Prev" -underline 0\
+		-width 15 -command "catch {focus $oldFocus}; destroy $w; unregister_active 1; menu0 .menu0 \"$title\""
+	$w.f.prev configure -state disabled
+	pack $w.f.back $w.f.next $w.f.prev -side left -expand on
+	pack $w.f -pady 10 -side bottom -anchor w -fill x
+	frame $w.topline -relief ridge -borderwidth 2 -height 2
+	pack $w.topline -side top -fill x
+
+	frame $w.botline -relief ridge -borderwidth 2 -height 2
+	pack $w.botline -side bottom -fill x
+
+	frame $w.config
+	pack $w.config -fill y -expand on
+
+	scrollbar $w.config.vscroll -command "$w.config.canvas yview"
+	pack $w.config.vscroll -side right -fill y
+
+	canvas $w.config.canvas -height 1\
+		-relief flat -borderwidth 0 -yscrollcommand "$w.config.vscroll set" \
+		-width [expr [winfo screenwidth .] * 1 / 2] 
+	frame $w.config.f
+	bind $w <Key-Down> "$w.config.canvas yview scroll  1 unit;break;"
+	bind $w <Key-Up> "$w.config.canvas yview scroll  -1 unit;break;"
+	bind $w <Key-Next> "$w.config.canvas yview scroll  1 page;break;"
+	bind $w <Key-Prior> "$w.config.canvas yview scroll  -1 page;break;"
+	bind $w <Key-Home> "$w.config.canvas yview moveto 0;break;"
+	bind $w <Key-End> "$w.config.canvas yview moveto 1 ;break;"
+	pack $w.config.canvas -side right -fill y
+
+
+	global tmpvar_0
+	minimenu $w.config.f 1 0 "Memory size" tmpvar_0 CONF_MEM_2K
+	menu $w.config.f.x0.x.menu -tearoffcommand "menutitle \"Memory size\""
+	$w.config.f.x0.x.menu add radiobutton -label "2_kiB+128_B" -variable tmpvar_0 -value "2_kiB+128_B" -command "update_active"
+	$w.config.f.x0.x.menu add radiobutton -label "4_kiB+256_B" -variable tmpvar_0 -value "4_kiB+256_B" -command "update_active"
+	$w.config.f.x0.x.menu add radiobutton -label "8_kiB+512_B" -variable tmpvar_0 -value "8_kiB+512_B" -command "update_active"
+	menusplit $w $w.config.f.x0.x.menu 3
+	global tmpvar_1
+	minimenu $w.config.f 1 1 "UART baudrate" tmpvar_1 CONF_BR_115200
+	menu $w.config.f.x1.x.menu -tearoffcommand "menutitle \"UART baudrate\""
+	$w.config.f.x1.x.menu add radiobutton -label "115200" -variable tmpvar_1 -value "115200" -command "update_active"
+	$w.config.f.x1.x.menu add radiobutton -label "57600" -variable tmpvar_1 -value "57600" -command "update_active"
+	$w.config.f.x1.x.menu add radiobutton -label "28800" -variable tmpvar_1 -value "28800" -command "update_active"
+	$w.config.f.x1.x.menu add radiobutton -label "19200" -variable tmpvar_1 -value "19200" -command "update_active"
+	$w.config.f.x1.x.menu add radiobutton -label "14400" -variable tmpvar_1 -value "14400" -command "update_active"
+	$w.config.f.x1.x.menu add radiobutton -label "9600" -variable tmpvar_1 -value "9600" -command "update_active"
+	menusplit $w $w.config.f.x1.x.menu 6
+	bool $w.config.f 1 2 "CapSense 1 is Reset" CONFIG_C1_RESET
+
+
+
+	focus $w
+	update_active
+	global winx; global winy
+	set winx [expr [winfo x .]+30]; set winy [expr [winfo y .]+30]
+	if {[winfo exists $w]} then {wm geometry $w +$winx+$winy}
+	update idletasks
+	if {[winfo exists $w]} then  {$w.config.canvas create window 0 0 -anchor nw -window $w.config.f
+
+	$w.config.canvas configure \
+		-width [expr [winfo reqwidth $w.config.f] + 1]\
+		-scrollregion "-1 -1 [expr [winfo reqwidth $w.config.f] + 1] \
+			 [expr [winfo reqheight $w.config.f] + 1]"
+
+	set winy [expr [winfo reqh $w] - [winfo reqh $w.config.canvas]]
+	set scry [expr [winfo screenh $w] / 2]
+	set maxy [expr [winfo screenh $w] * 3 / 4]
+	set canvtotal [expr [winfo reqh $w.config.f] + 2]
+	if [expr $winy + $canvtotal < $maxy] {
+		$w.config.canvas configure -height $canvtotal
+	} else {
+		$w.config.canvas configure -height [expr $scry - $winy]
+		}
+	}
+	update idletasks
+	if {[winfo exists $w]} then {
+	wm maxsize $w [winfo width $w] [winfo screenheight $w]
+	wm minsize $w [winfo width $w] 100
+
+	wm deiconify $w
+}
+}
+
+proc update_menu1 {} {
+}
+
+
+proc update_define_menu1 {} {
+	update_define_mainmenu
+	global CONFIG_MODULES
+	global tmpvar_0
+	global CONF_MEM_2K
+	if {$tmpvar_0 == "2_kiB+128_B"} then {set CONF_MEM_2K 1} else {set CONF_MEM_2K 0}
+	global CONF_MEM_4K
+	if {$tmpvar_0 == "4_kiB+256_B"} then {set CONF_MEM_4K 1} else {set CONF_MEM_4K 0}
+	global CONF_MEM_8K
+	if {$tmpvar_0 == "8_kiB+512_B"} then {set CONF_MEM_8K 1} else {set CONF_MEM_8K 0}
+	global tmpvar_1
+	global CONF_BR_115200
+	if {$tmpvar_1 == "115200"} then {set CONF_BR_115200 1} else {set CONF_BR_115200 0}
+	global CONF_BR_57600
+	if {$tmpvar_1 == "57600"} then {set CONF_BR_57600 1} else {set CONF_BR_57600 0}
+	global CONF_BR_28800
+	if {$tmpvar_1 == "28800"} then {set CONF_BR_28800 1} else {set CONF_BR_28800 0}
+	global CONF_BR_19200
+	if {$tmpvar_1 == "19200"} then {set CONF_BR_19200 1} else {set CONF_BR_19200 0}
+	global CONF_BR_14400
+	if {$tmpvar_1 == "14400"} then {set CONF_BR_14400 1} else {set CONF_BR_14400 0}
+	global CONF_BR_9600
+	if {$tmpvar_1 == "9600"} then {set CONF_BR_9600 1} else {set CONF_BR_9600 0}
+}
+
+
+menu_option menu2 2 "Peripherals"
+proc menu2 {w title} {
+	set oldFocus [focus]
+	catch {destroy $w; unregister_active 2}
+	toplevel $w -class Dialog
+	wm withdraw $w
+	global active_menus
+	set active_menus [lsort -integer [linsert $active_menus end 2]]
+	message $w.m -width 400 -aspect 300 -text \
+		"Peripherals"  -relief raised
+	pack $w.m -pady 10 -side top -padx 10
+	wm title $w "Peripherals" 
+
+	bind $w <Escape> "catch {focus $oldFocus}; destroy $w; unregister_active 2; break"
+	set nextscript "catch {focus $oldFocus}; menu3 .menu3 \"$title\""
+	frame $w.f
+	button $w.f.back -text "Main Menu" \
+		-width 15 -command "catch {focus $oldFocus}; destroy $w; unregister_active 2"
+	button $w.f.next -text "Next" -underline 0\
+		-width 15 -command $nextscript
+	$w.f.next configure -state disabled
+	bind all <Alt-n> "puts \"no more menus\" "
+	button $w.f.prev -text "Prev" -underline 0\
+		-width 15 -command "catch {focus $oldFocus}; destroy $w; unregister_active 2; menu1 .menu1 \"$title\""
+	bind $w <Alt-p> "catch {focus $oldFocus}; destroy $w; unregister_active 2; menu1 .menu1 \"$title\";break"
+	pack $w.f.back $w.f.next $w.f.prev -side left -expand on
+	pack $w.f -pady 10 -side bottom -anchor w -fill x
+	frame $w.topline -relief ridge -borderwidth 2 -height 2
+	pack $w.topline -side top -fill x
+
+	frame $w.botline -relief ridge -borderwidth 2 -height 2
+	pack $w.botline -side bottom -fill x
+
+	frame $w.config
+	pack $w.config -fill y -expand on
+
+	scrollbar $w.config.vscroll -command "$w.config.canvas yview"
+	pack $w.config.vscroll -side right -fill y
+
+	canvas $w.config.canvas -height 1\
+		-relief flat -borderwidth 0 -yscrollcommand "$w.config.vscroll set" \
+		-width [expr [winfo screenwidth .] * 1 / 2] 
+	frame $w.config.f
+	bind $w <Key-Down> "$w.config.canvas yview scroll  1 unit;break;"
+	bind $w <Key-Up> "$w.config.canvas yview scroll  -1 unit;break;"
+	bind $w <Key-Next> "$w.config.canvas yview scroll  1 page;break;"
+	bind $w <Key-Prior> "$w.config.canvas yview scroll  -1 page;break;"
+	bind $w <Key-Home> "$w.config.canvas yview moveto 0;break;"
+	bind $w <Key-End> "$w.config.canvas yview moveto 1 ;break;"
+	pack $w.config.canvas -side right -fill y
+
+
+	bool $w.config.f 2 0 "SPI" CONFIG_SPI
+	bool $w.config.f 2 1 "Use a PLL to achieve 2x SPI clock" CONFIG_SPI_PLL
+	bool $w.config.f 2 2 "PWM channel 0" CONFIG_PWM0
+	bool $w.config.f 2 3 "PWM channel 1" CONFIG_PWM1
+	bool $w.config.f 2 4 "PWM channel 2" CONFIG_PWM2
+	bool $w.config.f 2 5 "PWM channel 3" CONFIG_PWM3
+	bool $w.config.f 2 6 "PWM channel 4" CONFIG_PWM4
+	bool $w.config.f 2 7 "PWM channel 5" CONFIG_PWM5
+	bool $w.config.f 2 8 "Interrupt pin 0 (INT0)" CONFIG_INT0
+	bool $w.config.f 2 9 "Interrupt pin 1 (INT1)" CONFIG_INT1
+	bool $w.config.f 2 10 "Delay & timing timer" CONFIG_TMR
+	bool $w.config.f 2 11 "Tone generation timer" CONFIG_TM16
+	bool $w.config.f 2 12 "A/D converter" CONFIG_AD
+
+
+
+	focus $w
+	update_active
+	global winx; global winy
+	set winx [expr [winfo x .]+30]; set winy [expr [winfo y .]+30]
+	if {[winfo exists $w]} then {wm geometry $w +$winx+$winy}
+	update idletasks
+	if {[winfo exists $w]} then  {$w.config.canvas create window 0 0 -anchor nw -window $w.config.f
+
+	$w.config.canvas configure \
+		-width [expr [winfo reqwidth $w.config.f] + 1]\
+		-scrollregion "-1 -1 [expr [winfo reqwidth $w.config.f] + 1] \
+			 [expr [winfo reqheight $w.config.f] + 1]"
+
+	set winy [expr [winfo reqh $w] - [winfo reqh $w.config.canvas]]
+	set scry [expr [winfo screenh $w] / 2]
+	set maxy [expr [winfo screenh $w] * 3 / 4]
+	set canvtotal [expr [winfo reqh $w.config.f] + 2]
+	if [expr $winy + $canvtotal < $maxy] {
+		$w.config.canvas configure -height $canvtotal
+	} else {
+		$w.config.canvas configure -height [expr $scry - $winy]
+		}
+	}
+	update idletasks
+	if {[winfo exists $w]} then {
+	wm maxsize $w [winfo width $w] [winfo screenheight $w]
+	wm minsize $w [winfo width $w] 100
+
+	wm deiconify $w
+}
+}
+
+proc update_menu2 {} {
+	global CONFIG_SPI
+	global CONFIG_SPI_PLL
+	if {($CONFIG_SPI == 1)} then {
+	configure_entry .menu2.config.f.x1 normal {n l y}} else {configure_entry .menu2.config.f.x1 disabled {y n l}}
+}
+
+
+proc update_define_menu2 {} {
+	update_define_mainmenu
+	global CONFIG_MODULES
+	global CONFIG_SPI
+	global CONFIG_SPI_PLL
+	if {($CONFIG_SPI == 1)} then {
+	set CONFIG_SPI_PLL [expr $CONFIG_SPI_PLL&15]} else {set CONFIG_SPI_PLL [expr $CONFIG_SPI_PLL|16]}
+}
+
+
+proc update_mainmenu {}  {
+}
+
+
+set tmpvar_0 "(not set)"
+set CONF_MEM_2K 0
+set CONF_MEM_4K 0
+set CONF_MEM_8K 0
+set tmpvar_1 "(not set)"
+set CONF_BR_115200 0
+set CONF_BR_57600 0
+set CONF_BR_28800 0
+set CONF_BR_19200 0
+set CONF_BR_14400 0
+set CONF_BR_9600 0
+set CONFIG_C1_RESET 0
+set CONFIG_SPI 0
+set CONFIG_SPI_PLL 0
+set CONFIG_PWM0 0
+set CONFIG_PWM1 0
+set CONFIG_PWM2 0
+set CONFIG_PWM3 0
+set CONFIG_PWM4 0
+set CONFIG_PWM5 0
+set CONFIG_INT0 0
+set CONFIG_INT1 0
+set CONFIG_TMR 0
+set CONFIG_TM16 0
+set CONFIG_AD 0
+set CONFIG_MODULES 4
+proc writeconfig {file1 file2} {
+	set cfg [open $file1 w]
+	set autocfg [open $file2 w]
+	set notmod 1
+	set notset 0
+	puts $cfg "#"
+	puts $cfg "# Automatically generated make config: don't edit"
+	puts $cfg "#"
+	puts $autocfg "/*"
+	puts $autocfg " * Automatically generated C config: don't edit"
+	puts $autocfg " */"
+	puts $autocfg "#define AUTOCONF_INCLUDED"
+	write_comment $cfg $autocfg "Basic Setup"
+	global tmpvar_0
+	
+	if { $tmpvar_0 == "2_kiB+128_B" } then { write_tristate $cfg $autocfg CONF_MEM_2K 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_MEM_2K 0 [list $notmod] 2 }
+	if { $tmpvar_0 == "4_kiB+256_B" } then { write_tristate $cfg $autocfg CONF_MEM_4K 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_MEM_4K 0 [list $notmod] 2 }
+	if { $tmpvar_0 == "8_kiB+512_B" } then { write_tristate $cfg $autocfg CONF_MEM_8K 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_MEM_8K 0 [list $notmod] 2 }
+	global tmpvar_1
+	
+	if { $tmpvar_1 == "115200" } then { write_tristate $cfg $autocfg CONF_BR_115200 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_115200 0 [list $notmod] 2 }
+	if { $tmpvar_1 == "57600" } then { write_tristate $cfg $autocfg CONF_BR_57600 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_57600 0 [list $notmod] 2 }
+	if { $tmpvar_1 == "28800" } then { write_tristate $cfg $autocfg CONF_BR_28800 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_28800 0 [list $notmod] 2 }
+	if { $tmpvar_1 == "19200" } then { write_tristate $cfg $autocfg CONF_BR_19200 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_19200 0 [list $notmod] 2 }
+	if { $tmpvar_1 == "14400" } then { write_tristate $cfg $autocfg CONF_BR_14400 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_14400 0 [list $notmod] 2 }
+	if { $tmpvar_1 == "9600" } then { write_tristate $cfg $autocfg CONF_BR_9600 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONF_BR_9600 0 [list $notmod] 2 }
+	global CONFIG_C1_RESET
+	write_tristate $cfg $autocfg CONFIG_C1_RESET $CONFIG_C1_RESET [list $notmod] 2
+	write_comment $cfg $autocfg "Peripherals"
+	global CONFIG_SPI
+	write_tristate $cfg $autocfg CONFIG_SPI $CONFIG_SPI [list $notmod] 2
+	global CONFIG_SPI_PLL
+	if {($CONFIG_SPI == 1)} then {write_tristate $cfg $autocfg CONFIG_SPI_PLL $CONFIG_SPI_PLL [list $notmod] 2 }
+	global CONFIG_PWM0
+	write_tristate $cfg $autocfg CONFIG_PWM0 $CONFIG_PWM0 [list $notmod] 2
+	global CONFIG_PWM1
+	write_tristate $cfg $autocfg CONFIG_PWM1 $CONFIG_PWM1 [list $notmod] 2
+	global CONFIG_PWM2
+	write_tristate $cfg $autocfg CONFIG_PWM2 $CONFIG_PWM2 [list $notmod] 2
+	global CONFIG_PWM3
+	write_tristate $cfg $autocfg CONFIG_PWM3 $CONFIG_PWM3 [list $notmod] 2
+	global CONFIG_PWM4
+	write_tristate $cfg $autocfg CONFIG_PWM4 $CONFIG_PWM4 [list $notmod] 2
+	global CONFIG_PWM5
+	write_tristate $cfg $autocfg CONFIG_PWM5 $CONFIG_PWM5 [list $notmod] 2
+	global CONFIG_INT0
+	write_tristate $cfg $autocfg CONFIG_INT0 $CONFIG_INT0 [list $notmod] 2
+	global CONFIG_INT1
+	write_tristate $cfg $autocfg CONFIG_INT1 $CONFIG_INT1 [list $notmod] 2
+	global CONFIG_TMR
+	write_tristate $cfg $autocfg CONFIG_TMR $CONFIG_TMR [list $notmod] 2
+	global CONFIG_TM16
+	write_tristate $cfg $autocfg CONFIG_TM16 $CONFIG_TM16 [list $notmod] 2
+	global CONFIG_AD
+	write_tristate $cfg $autocfg CONFIG_AD $CONFIG_AD [list $notmod] 2
+	close $cfg
+	close $autocfg
+}
+
+
+proc clear_choices { } {
+	global CONF_MEM_2K; set CONF_MEM_2K 0
+	global CONF_MEM_4K; set CONF_MEM_4K 0
+	global CONF_MEM_8K; set CONF_MEM_8K 0
+	global CONF_BR_115200; set CONF_BR_115200 0
+	global CONF_BR_57600; set CONF_BR_57600 0
+	global CONF_BR_28800; set CONF_BR_28800 0
+	global CONF_BR_19200; set CONF_BR_19200 0
+	global CONF_BR_14400; set CONF_BR_14400 0
+	global CONF_BR_9600; set CONF_BR_9600 0
+}
+
+
+proc update_choices { } {
+	global tmpvar_0
+	set tmpvar_0 "8_kiB+512_B"
+	global CONF_MEM_2K
+	if { $CONF_MEM_2K == 1 } then { set tmpvar_0 "2_kiB+128_B" }
+	global CONF_MEM_4K
+	if { $CONF_MEM_4K == 1 } then { set tmpvar_0 "4_kiB+256_B" }
+	global CONF_MEM_8K
+	if { $CONF_MEM_8K == 1 } then { set tmpvar_0 "8_kiB+512_B" }
+	global tmpvar_1
+	set tmpvar_1 "115200"
+	global CONF_BR_115200
+	if { $CONF_BR_115200 == 1 } then { set tmpvar_1 "115200" }
+	global CONF_BR_57600
+	if { $CONF_BR_57600 == 1 } then { set tmpvar_1 "57600" }
+	global CONF_BR_28800
+	if { $CONF_BR_28800 == 1 } then { set tmpvar_1 "28800" }
+	global CONF_BR_19200
+	if { $CONF_BR_19200 == 1 } then { set tmpvar_1 "19200" }
+	global CONF_BR_14400
+	if { $CONF_BR_14400 == 1 } then { set tmpvar_1 "14400" }
+	global CONF_BR_9600
+	if { $CONF_BR_9600 == 1 } then { set tmpvar_1 "9600" }
+}
+
+
+proc update_define_mainmenu {} {
+	global CONFIG_MODULES
+}
+
+

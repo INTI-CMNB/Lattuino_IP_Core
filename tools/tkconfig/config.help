@@ -1,0 +1,89 @@
+
+Memory size configuration
+CONF_MEM_2K
+  Selects the memory size.
+
+  - 2 kiB + 128 B: 2 k flash and 128 bytes of RAM (like ATtiny25)
+
+  - 4 kiB + 256 B: 4 k flash and 256 bytes of RAM (like ATtiny45) [CONF_MEM_4K]
+
+  - 8 kiB + 512 B: 8 k flash and 512 bytes of RAM (like ATtiny85) [CONF_MEM_8K]
+
+  Note that 8 kiB will consume all embedded memory and also some
+  logic and flip-flops.
+
+UART Baudrate
+CONF_BR_115200
+  Selects the UART baudrate.
+
+  The default 115200 works really fast, but you'll lose data from time to time.
+
+  Arduino boards seems to use 9600, really slow.
+
+Reset button
+CONFIG_C1_RESET
+  This option uses CapSense button 1 as reset.
+
+  This button is configured as toggle. The status is reflected using LED4.
+
+  The board will be kept reset while the LED4 is on. Touch the button again to release the reset.
+
+SPI support
+CONFIG_SPI
+  Enables the SPI peripheral.
+
+SPI PLL
+CONFIG_SPI_PLL
+  The SPI peripheral needs 2 system clocks to generate 1 SPI clock. This limits the SPI clock to half of the system frequency.
+
+  Enabling this option you'll use a PLL to generate a clock that's twice the system clock.
+  In this way you can achieve an SPI clock that's as fast as the system clock.
+
+PWM Channel 0
+CONFIG_PWM0
+  Enables the PWM channel 0 (IO3)
+
+PWM Channel 1
+CONFIG_PWM1
+  Enables the PWM channel 1 (IO5)
+
+PWM Channel 2
+CONFIG_PWM2
+  Enables the PWM channel 2 (IO6)
+
+PWM Channel 3
+CONFIG_PWM3
+  Enables the PWM channel 3 (IO9)
+
+PWM Channel 4
+CONFIG_PWM4
+  Enables the PWM channel 4 (IO10)
+
+PWM Channel 5
+CONFIG_PWM5
+  Enables the PWM channel 5 (IO11)
+
+Interrupt pin 0
+CONFIG_INT0
+  Enables the interrupt on IO2 (AVR INT0)
+
+Interrupt pin 1
+CONFIG_INT1
+  Enables the interrupt on IO3 (AVR INT1)
+
+Delay timer
+CONFIG_TMR
+  Enables the timer used to measure time.
+
+  IMPORTANT! if you disable it the delay() function won't work.
+
+  Don't disable it unless you are completly sure.
+
+Tone timer
+CONFIG_TM16
+  Enables the timer used to generate tones (Tone API).
+
+A/D converter
+CONFIG_AD
+  Enables the A/D converter (analog inputs).
+
