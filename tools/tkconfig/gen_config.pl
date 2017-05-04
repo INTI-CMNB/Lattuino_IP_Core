@@ -110,7 +110,7 @@ print "   -- PWMs support
 for ($i=0; $i<=5; $i++)
    {
     $aux=$ops{"CONFIG_PWM$i"} ? 'true' : 'false';
-print "   constant ENA_PWM0   : boolean:=$aux;
+print "   constant ENA_PWM$i   : boolean:=$aux;
 ";
    }
 $aux=$ops{CONFIG_INT0} ? 'true' : 'false';
