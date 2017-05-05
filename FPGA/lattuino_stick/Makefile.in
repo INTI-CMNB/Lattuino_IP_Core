@@ -1,0 +1,7 @@
+# Asegurarse que la ROM esté actualizada.
+.PHONY : updaterom
+
+../../../lattuino/Work/lattuino_1_bl_2s.vhdl ../../../lattuino/Work/pm_pkg.vhdl: updaterom
+
+updaterom:
+	$(MAKE) -C ../../bootloader/ needed

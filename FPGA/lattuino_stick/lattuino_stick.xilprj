@@ -1,0 +1,15 @@
+Board=icestick
+Project=lattuino_stick
+Top=Lattuino_Stick
+Goal=Area_Strong
+Frequency=24
+Include=AVR/AVR_iCE40,attX5
+Include=SPI,mcp300x
+Include=SPI,spi_master
+Include=CapSense,capsense
+Include=miniuart
+Include=lattice,primitives
+Include=lattuino,devices
+Source=cpuconfig.vhdl
+Source=lattuino_stick.vhdl
+

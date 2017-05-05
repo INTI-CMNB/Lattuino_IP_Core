@@ -2,6 +2,8 @@
 ----                                                                      ----
 ----  AVR program memories package                                        ----
 ----                                                                      ----
+----  This file is part FPGA Libre project http://fpgalibre.sf.net/       ----
+----                                                                      ----
 ----  Description:                                                        ----
 ----  This is a package with the PMs used for the AVR core.               ----
 ----                                                                      ----
@@ -79,5 +81,18 @@ package PrgMems is
          we_i    : in  std_logic;
          data_i  : in  std_logic_vector(WORD_SIZE-1 downto 0));
    end component lattuino_1_blPM_2;
+
+   component lattuino_1_blPM_2S is
+      generic(
+         WORD_SIZE  : integer:=16;  -- Word Size
+         FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+         ADDR_W     : integer:=13); -- Address Width
+      port(
+         clk_i   : in  std_logic;
+         addr_i  : in  std_logic_vector(ADDR_W-1 downto 0);
+         data_o  : out std_logic_vector(WORD_SIZE-1 downto 0);
+         we_i    : in  std_logic;
+         data_i  : in  std_logic_vector(WORD_SIZE-1 downto 0));
+   end component lattuino_1_blPM_2S;
 end package PrgMems;
 

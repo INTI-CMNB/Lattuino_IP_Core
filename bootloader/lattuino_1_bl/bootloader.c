@@ -90,6 +90,12 @@
 /*#define SIG1 0x1E
 #define SIG2 0x93
 #define SIG3 0x07*/
+/* ATtiny22 */
+#ifdef __attiny22__
+ #define SIG1 0x1E
+ #define SIG2 0x91
+ #define SIG3 0x06
+#endif
 /* ATtiny25 */
 #ifdef __attiny25__
  #define SIG1 0x1E

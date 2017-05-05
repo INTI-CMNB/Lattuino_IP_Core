@@ -6,6 +6,7 @@ PRJ=lattuino_1_bl
 START_B_2=0x570
 START_W_2=0x2B8
 AVRCPU_2=attiny25
+AVRCPU_2S=attiny22
 # 4 kib 0x1000 b 0x800 w
 START_B_4=0xD70
 START_W_4=0x6B8
@@ -15,7 +16,8 @@ START_B_8=0x1D70
 START_W_8=0xEB8
 AVRCPU_8=attiny85
 
-all: $(OBJDIR) $(OBJDIR)/$(PRJ)_8.vhdl $(OBJDIR)/$(PRJ)_4.vhdl $(OBJDIR)/$(PRJ)_2.vhdl
+all: $(OBJDIR) $(OBJDIR)/$(PRJ)_8.vhdl $(OBJDIR)/$(PRJ)_4.vhdl $(OBJDIR)/$(PRJ)_2.vhdl \
+	$(OBJDIR)/$(PRJ)_2s.vhdl
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
@@ -35,6 +37,9 @@ $(OBJDIR)/$(PRJ)_4.elf: bootloader.c Makefile
 
 $(OBJDIR)/$(PRJ)_2.elf: bootloader.c Makefile
 	avr-gcc -g -Os -mmcu=$(AVRCPU_2) -D__$(AVRCPU_2)__ -Wl,-Map,$(OBJDIR)/$(PRJ)_2.map,--section-start=.text=$(START_B_2) $< -o $@
+
+$(OBJDIR)/$(PRJ)_2s.elf: bootloader.c Makefile
+	avr-gcc -g -Os -mmcu=$(AVRCPU_2S) -D__$(AVRCPU_2S)__ -Wl,-Map,$(OBJDIR)/$(PRJ)_2s.map,--section-start=.text=$(START_B_2) $< -o $@
 # Nota: -g agrega info de debug, que sirve para que el dump sea más claro
 
 $(OBJDIR)/$(PRJ)_8.dat: $(OBJDIR)/$(PRJ)_8.bin
@@ -44,6 +49,9 @@ $(OBJDIR)/$(PRJ)_4.dat: $(OBJDIR)/$(PRJ)_4.bin
 	bin2hex --vhdl -o $(START_W_4) -b 2 $< $@
 
 $(OBJDIR)/$(PRJ)_2.dat: $(OBJDIR)/$(PRJ)_2.bin
+	bin2hex --vhdl -o $(START_W_2) -b 2 $< $@
+
+$(OBJDIR)/$(PRJ)_2s.dat: $(OBJDIR)/$(PRJ)_2s.bin
 	bin2hex --vhdl -o $(START_W_2) -b 2 $< $@
 
 $(OBJDIR)/$(PRJ)_8.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_8.dat
@@ -61,6 +69,12 @@ $(OBJDIR)/$(PRJ)_4.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_4.dat
 $(OBJDIR)/$(PRJ)_2.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_2.dat
 	printf $(PRJ)PM_2 > entity.txt
 	ln -s $(OBJDIR)/$(PRJ)_2.dat rom.dat
+	vhdlspp.pl $< $@
+	rm entity.txt rom.dat
+
+$(OBJDIR)/$(PRJ)_2s.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_2s.dat
+	printf $(PRJ)PM_2S > entity.txt
+	ln -s $(OBJDIR)/$(PRJ)_2s.dat rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 

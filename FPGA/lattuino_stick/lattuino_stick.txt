@@ -1,0 +1,34 @@
+Revision: 1.41 - vie may  5 10:40:28 ART 2017
+Revision: 1.41 - vie may  5 11:14:46 ART 2017
+Revision: 1.44 - vie may  5 12:58:53 ART 2017
+Entity: Lattuino_Stick | Part: iCE40HX1K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   263/1280    20.55 %
+LUTs:        1243/1280    97.11 %
+Cells:       1250/1280    97.66 %
+--------------------------------------------------------------------------------
+BRAMs:          9/16      56.25 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.19 MHz (35.47 ns) [CLK]
+********************************************************************************
+
+Conectadas ARDU0 a 3 a los LEDs2 a 5
+
+Revision: 1.44 - vie may  5 13:03:04 ART 2017
+Entity: Lattuino_Stick | Part: iCE40HX1K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2016.02.27810
+xil_project.pl version: 0.5.9
+
+Flip Flops:   267/1280    20.86 %
+LUTs:        1247/1280    97.42 %
+Cells:       1254/1280    97.97 %
+--------------------------------------------------------------------------------
+BRAMs:          9/16      56.25 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.30 MHz (36.63 ns) [CLK]
+********************************************************************************
+
+
+

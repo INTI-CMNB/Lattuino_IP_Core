@@ -1,0 +1,59 @@
+# From lattuino_stick.in.pcf
+###################################
+# Kéfir I HX4K Pin-pout
+# Family & Device:    iCE40HX1K
+# Package:            TQ144
+###################################
+
+# LED outputs
+set_io LED1 99
+set_io LED2 98
+set_io LED3 97
+set_io LED4 96
+set_io LED5 95
+
+# Clock input
+set_io CLK 21
+
+set_io ARDU00 112
+set_io ARDU01 113
+set_io ARDU02 114
+set_io ARDU03 115
+set_io ARDU04 116
+set_io ARDU05 117
+set_io ARDU06 118
+set_io ARDU07 119
+set_io ARDU08 62
+set_io ARDU09 61
+set_io ARDU10 60
+set_io ARDU11 56
+set_io ARDU12 48
+set_io ARDU13 47
+# set_io ARDU26 139
+# set_io ARDU27 142
+# set_io ARDU28 144
+# set_io ARDU29 2
+# set_io ARDU30 3
+# set_io ARDU31 7
+# set_io ARDU32 9
+# set_io ARDU33 11
+# set_io ARDU34 20
+# set_io ARDU35 22
+# set_io ARDU36 24
+# set_io ARDU37 26
+# set_io ARDU38 29
+# set_io ARDU39 32
+# set_io ARDU40 33
+# set_io ARDU41 34
+
+# Arduino Power (P2)
+# Active low RESET
+#set_io RESET_P2 73 -pullup yes
+
+# FTDI channel B
+set_io FTDI_TXD 9
+set_io FTDI_RXD 8
+set_io FTDI_DTR 3
+
+
+

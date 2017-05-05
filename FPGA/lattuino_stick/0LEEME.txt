@@ -1,0 +1,6 @@
+AVR básico (ATtiny22) en la iCEstick tratando de comportarse como un Arduino.
+Reloj: 12 MHz
+Luego debería responder al protocolo del STK500
+
+Es muy limitado por que la FPGA es 1k
+
