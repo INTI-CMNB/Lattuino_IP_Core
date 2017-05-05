@@ -2,30 +2,78 @@ menu.cpu=Processor
 
 ##############################################################
 
-latt1.name=Lattuino Kefir I
+latt1_8k.name=Lattuino Kefir I (8k)
 
-latt1.vid.0=0x0403
-latt1.pid.0=0x6010
+latt1_8k.vid.0=0x0403
+latt1_8k.pid.0=0x6010
 
-latt1.upload.tool=avrdude
-latt1.upload.protocol=arduino
-# ATtiny25:
-#latt1.upload.maximum_size=1392
-#latt1.upload.maximum_data_size=128
-# ATtiny45:
-#latt1.upload.maximum_size=3440
-#latt1.upload.maximum_data_size=256
-# ATtiny85:
-latt1.upload.maximum_size=7536
-latt1.upload.maximum_data_size=512
-latt1.upload.speed=115200
+latt1_8k.upload.tool=avrdude
+latt1_8k.upload.protocol=arduino
+latt1_8k.upload.maximum_size=7536
+latt1_8k.upload.maximum_data_size=512
+latt1_8k.upload.speed=115200
 
-#latt1.build.mcu=attiny25
-#latt1.build.mcu=attiny45
-latt1.build.mcu=attiny85
-latt1.build.f_cpu=24000000L
-latt1.build.board=AVR_UNO
-latt1.build.core=lattuino
-latt1.build.variant=lattuino
+latt1_8k.build.mcu=attiny85
+latt1_8k.build.f_cpu=24000000L
+latt1_8k.build.board=AVR_UNO
+latt1_8k.build.core=lattuino
+latt1_8k.build.variant=lattuino
+
+##############################################################
+
+latt1_4k.name=Lattuino Kefir I (4k)
+
+latt1_4k.vid.0=0x0403
+latt1_4k.pid.0=0x6010
+
+latt1_4k.upload.tool=avrdude
+latt1_4k.upload.protocol=arduino
+latt1_4k.upload.maximum_size=3440
+latt1_4k.upload.maximum_data_size=256
+latt1_4k.upload.speed=115200
+
+latt1_4k.build.mcu=attiny45
+latt1_4k.build.f_cpu=24000000L
+latt1_4k.build.board=AVR_UNO
+latt1_4k.build.core=lattuino
+latt1_4k.build.variant=lattuino
+
+##############################################################
+
+latt1_2k.name=Lattuino Kefir I (2k)
+
+latt1_2k.vid.0=0x0403
+latt1_2k.pid.0=0x6010
+
+latt1_2k.upload.tool=avrdude
+latt1_2k.upload.protocol=arduino
+latt1_2k.upload.maximum_size=1392
+latt1_2k.upload.maximum_data_size=128
+latt1_2k.upload.speed=115200
+
+latt1_2k.build.mcu=attiny25
+latt1_2k.build.f_cpu=24000000L
+latt1_2k.build.board=AVR_UNO
+latt1_2k.build.core=lattuino
+latt1_2k.build.variant=lattuino
+
+##############################################################
+
+latts.name=Lattuino Stick (2k)
+
+latts.vid.0=0x0403
+latts.pid.0=0x6010
+
+latts.upload.tool=avrdude
+latts.upload.protocol=arduino
+latts.upload.maximum_size=1392
+latts.upload.maximum_data_size=128
+latts.upload.speed=115200
+
+latts.build.mcu=attiny22
+latts.build.f_cpu=12000000L
+latts.build.board=AVR_UNO
+latts.build.core=lattuino
+latts.build.variant=lattuino
 
 
