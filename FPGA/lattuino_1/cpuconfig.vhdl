@@ -2,6 +2,8 @@
 ----                                                                      ----
 ----  Lattuino CPU configuration                                          ----
 ----                                                                      ----
+----  This file is part FPGA Libre project http://fpgalibre.sf.net/       ----
+----                                                                      ----
 ----  Description:                                                        ----
 ----  Configuration parameters for the Lattuino CPU.                      ----
 ----                                                                      ----

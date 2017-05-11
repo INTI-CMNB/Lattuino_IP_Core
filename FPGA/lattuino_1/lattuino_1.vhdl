@@ -2,6 +2,8 @@
 ----                                                                      ----
 ----  AVR ATtX5 CPU for Lattuino                                          ----
 ----                                                                      ----
+----  This file is part FPGA Libre project http://fpgalibre.sf.net/       ----
+----                                                                      ----
 ----  Description:                                                        ----
 ----  This module implements the CPU for Lattuino (iCE40HX4K Lattice FPGA ----
 ----  available in the Kéfir I board).                                    ----
