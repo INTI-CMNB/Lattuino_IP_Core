@@ -852,6 +852,8 @@ Acá también relajé el core SPI (sin PLL).
 Revision: 1.193 - vie abr 21 14:26:26 ART 2017
 Revision: Unknown - lun abr 24 17:02:30 ART 2017
 Revision: 1.33 - lun abr 24 17:33:48 ART 2017
+Revision: 1.34 - miÃ© abr 26 11:19:28 ART 2017
+Revision: 1.48 - jue may 11 12:34:41 ART 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2016.02.27810
 xil_project.pl version: 0.5.9
@@ -863,6 +865,23 @@ Cells:       1954/3520    55.51 %
 BRAMs:         20/20      100.00 %
 --------------------------------------------------------------------------------
 Max. Clock:   25.15 MHz (39.76 ns) [CLK]
+********************************************************************************
+
+
+Revision: 1.48 - jue may 11 12:42:09 ART 2017
+Revision: 1.48 - jue may 11 13:54:34 ART 2017
+Revision: 1.48 - jue may 11 14:07:39 ART 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.10
+
+Flip Flops:   585/3520    16.62 %
+LUTs:        1923/3520    54.63 %
+Cells:       1931/3520    54.86 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.35 MHz (39.45 ns) [CLK]
 ********************************************************************************
 
 
