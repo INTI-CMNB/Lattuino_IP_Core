@@ -54,7 +54,7 @@ set_option -part_companion ""
 # Compilation/mapping options
 
 # Mapper options
-set_option -frequency 24
+set_option -frequency 12
 set_option -write_verilog 0
 set_option -write_vhdl 0
 
