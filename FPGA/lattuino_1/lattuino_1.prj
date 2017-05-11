@@ -34,6 +34,7 @@ add_file -vhdl -lib lattuino ../../../../lattuino/Work/pm_pkg.vhdl
 add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_8.vhdl
 add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_4.vhdl
 add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_2.vhdl
+add_file -vhdl -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_2s.vhdl
 add_file -vhdl -lib work ../wb_dev_intercon_package.vhdl
 add_file -vhdl -lib work ../wb_dev_intercon.vhdl
 add_file -vhdl -lib work ../cpuconfig.vhdl
