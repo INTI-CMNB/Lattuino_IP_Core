@@ -1,1 +1,13 @@
+Work
 gen
+lattuino_stick.prj
+lattuino_stick.xcf
+lattuino_stick.xst
+Makefile
+lattuino_stick.pcf
+command_wrapper.sh
+wb_dev_intercon.h
+wb_dev_intercon.inc
+wb_dev_intercon.vhdl
+wb_dev_intercon_package.vhdl
+
