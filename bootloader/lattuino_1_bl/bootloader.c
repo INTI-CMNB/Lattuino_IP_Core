@@ -90,11 +90,23 @@
 /*#define SIG1 0x1E
 #define SIG2 0x93
 #define SIG3 0x07*/
+/* AT90S2343 */
+#ifdef __at90s2343__
+ #define SIG1 0x1E
+ #define SIG2 0x91
+ #define SIG3 0x03
+#endif
 /* ATtiny22 */
 #ifdef __attiny22__
  #define SIG1 0x1E
  #define SIG2 0x91
  #define SIG3 0x06
+#endif
+/* ATtiny26 */
+#ifdef __attiny26__
+ #define SIG1 0x1E
+ #define SIG2 0x91
+ #define SIG3 0x09
 #endif
 /* ATtiny25 */
 #ifdef __attiny25__

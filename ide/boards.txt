@@ -70,7 +70,7 @@ latts.upload.maximum_size=1392
 latts.upload.maximum_data_size=128
 latts.upload.speed=115200
 
-latts.build.mcu=attiny22
+latts.build.mcu=attiny26
 latts.build.f_cpu=12000000L
 latts.build.board=AVR_UNO
 latts.build.core=lattuino

@@ -6,7 +6,8 @@ PRJ=lattuino_1_bl
 START_B_2=0x570
 START_W_2=0x2B8
 AVRCPU_2=attiny25
-AVRCPU_2S=attiny22
+#AVRCPU_2S=attiny22
+AVRCPU_2S=attiny26
 # 4 kib 0x1000 b 0x800 w
 START_B_4=0xD70
 START_W_4=0x6B8
