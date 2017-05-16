@@ -1,6 +1,7 @@
-AVR básico (ATtiny22) en la iCEstick tratando de comportarse como un Arduino.
+AVR básico (ATtiny26) en la iCEstick tratando de comportarse como un Arduino.
+También funciona en la IceZum Alhambra.
 Reloj: 12 MHz
-Luego debería responder al protocolo del STK500
 
-Es muy limitado por que la FPGA es 1k
+Es muy limitado por que la FPGA es 1k.
+Funcionan los I/Os y el Serial.
 
