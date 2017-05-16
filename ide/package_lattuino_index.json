@@ -63,6 +63,20 @@
             {"name": "Kefir I"},
             {"name": "iCE Stick"}
           ]
+        },
+        {
+          "name": "Lattuino 1",
+          "architecture": "avr",
+          "version": "1.0.4",
+          "category": "Arduino",
+          "url": "http://fpgalibre.sf.net/Lattuino/lattuino_1-1.0.4.tar.bz2",
+          "archiveFileName": "lattuino_1-1.0.4.tar.bz2",
+          "checksum": "SHA-256:931478e01be9be1cd568ad17266cb325527f137c6a4b3829c5dbf31a995f247b",
+          "size": "56055",
+          "boards": [
+            {"name": "Kefir I"},
+            {"name": "iCE Stick"}
+          ]
         }
       ],
       "tools": [

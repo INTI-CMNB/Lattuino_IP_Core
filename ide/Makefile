@@ -1,6 +1,6 @@
 #!/usr/bin/make
 PKG=lattuino_1
-VERSION=1.0.3
+VERSION=1.0.4
 
 all: $(PKG)-$(VERSION).tar.bz2
 
