@@ -59,6 +59,25 @@ latt1_2k.build.variant=lattuino
 
 ##############################################################
 
+latts.name=Lattuino IceZUM Alhambra (2k)
+
+lattza.vid.0=0x0403
+lattza.pid.0=0x6010
+
+lattza.upload.tool=avrdude
+lattza.upload.protocol=arduino
+lattza.upload.maximum_size=1392
+lattza.upload.maximum_data_size=128
+lattza.upload.speed=115200
+
+lattza.build.mcu=attiny26
+lattza.build.f_cpu=12000000L
+lattza.build.board=AVR_UNO
+lattza.build.core=lattuino
+lattza.build.variant=lattuino
+
+##############################################################
+
 latts.name=Lattuino Stick (2k)
 
 latts.vid.0=0x0403
