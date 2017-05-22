@@ -44,7 +44,7 @@ than version 2017.01.
 
 ## How to add Lattuino support to the Arduino IDE
 
-You'll need a modern version of Arduino's IDE, I used 1.8.1 (works on 1.8.2)
+You'll need a modern version of Arduino's IDE, I used 1.8.1 (works on 1.8.2 and also on 1.6.13, not in 1.6.9)
 
 1. Go to __File/Preferences__ menu
 2. Add the following URL http://fpgalibre.sf.net/Lattuino/package_lattuino_index.json as source of additional boards
