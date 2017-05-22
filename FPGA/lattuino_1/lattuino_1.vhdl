@@ -117,6 +117,31 @@ architecture FPGA of Lattuino_1 is
    constant CNT_PRESC  : natural:=F_CLK/1e6; -- Counter prescaler (1 µs)
    constant DEBUG_SPI  : boolean:=false;
 
+   component AD_Conv is
+      generic(
+         DIVIDER      : positive:=12;
+         INTERNAL_CLK : std_logic:='1';
+         ENABLE       : std_logic:='1');
+      port(
+         -- WISHBONE signals
+         wb_clk_i : in  std_logic;  -- Clock
+         wb_rst_i : in  std_logic;  -- Reset input
+         wb_adr_i : in  std_logic_vector(0 downto 0); -- Adress bus
+         wb_dat_o : out std_logic_vector(7 downto 0); -- DataOut Bus
+         wb_dat_i : in  std_logic_vector(7 downto 0); -- DataIn Bus
+         wb_we_i  : in  std_logic;  -- Write Enable
+         wb_stb_i : in  std_logic;  -- Strobe
+         wb_ack_o : out std_logic;  -- Acknowledge
+         -- SPI rate (2x)
+         -- Note: with 2 MHz spi_ena_i we get 1 MHz SPI clock => 55,6 ks/s
+         spi_ena_i: in  std_logic;  -- 2xSPI clock
+         -- A/D interface
+         ad_ncs_o : out std_logic;  -- SPI /CS
+         ad_clk_o : out std_logic;  -- SPI clock
+         ad_din_o : out std_logic;  -- SPI A/D Din (MOSI)
+         ad_dout_i: in  std_logic); -- SPI A/D Dout (MISO)
+   end component AD_Conv;
+
    signal pc           : unsigned(15 downto 0); -- PROM address
    signal pcsv         : std_logic_vector(ROM_ADDR_W-1 downto 0); -- PROM address
    signal inst         : std_logic_vector(15 downto 0); -- PROM data
@@ -442,11 +467,11 @@ begin
    ------------------
    -- WISHBONE A/D --
    ------------------
-   the_ad : entity lattuino.AD_Conv
+   the_ad : AD_Conv
      generic map(ENABLE => ENABLE_AD)
      port map(
         ad_ncs_o => AD_CS,   ad_clk_o => AD_Clk,  ad_din_o => AD_Din,
-        ad_dout_i => AD_Dout,
+        ad_dout_i => AD_Dout, spi_ena_i => '0',
         -- Wishbone signals
         wb_clk_i => clk_sys,  wb_rst_i => rst,     wb_adr_i => ad_adri,
         wb_dat_o => ad_dato, wb_stb_i => ad_stbi, wb_ack_o => ad_acko,

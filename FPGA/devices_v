@@ -1,0 +1,10 @@
+# xil_tools group 1
+lattuino
+devices/ad_conv.v
+devices/tm16b.vhdl
+devices/tmcounter.vhdl
+Work/pm_pkg.vhdl
+Work/lattuino_1_bl_8.vhdl
+Work/lattuino_1_bl_4.vhdl
+Work/lattuino_1_bl_2.vhdl
+Work/lattuino_1_bl_2s.vhdl

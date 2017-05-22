@@ -871,9 +871,10 @@ Max. Clock:   25.15 MHz (39.76 ns) [CLK]
 Revision: 1.48 - jue may 11 12:42:09 ART 2017
 Revision: 1.48 - jue may 11 13:54:34 ART 2017
 Revision: 1.48 - jue may 11 14:07:39 ART 2017
+Revision: 1.54 - jue may 18 11:09:55 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
-xil_project.pl version: 0.5.10
+xil_project.pl version: 0.5.11
 
 Flip Flops:   585/3520    16.62 %
 LUTs:        1923/3520    54.63 %
@@ -883,5 +884,43 @@ BRAMs:         20/20      100.00 %
 --------------------------------------------------------------------------------
 Max. Clock:   25.35 MHz (39.45 ns) [CLK]
 ********************************************************************************
+
+Esto es el core con todo habilitado.
+Estos dos resultados salieron de reemplazar ad_conv.vhdl por el verilog.
+
+Revision: 1.54 - jue may 18 11:24:42 -03 2017
+Revision: 1.54 - jue may 18 13:37:23 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.11
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2204/3520    62.61 %
+Cells:       2221/3520    63.10 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   92.66 MHz (10.79 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.64 MHz (39.00 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Esto fue al cambiar el MCP300x de VHDL a Verilog. Es loco porque individualmente
+casi no había diferencia.
+
+Revision: 1.54 - lun may 22 13:43:21 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.11
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2240/3520    63.64 %
+Cells:       2258/3520    64.15 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   96.93 MHz (10.32 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.09 MHz (43.31 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 

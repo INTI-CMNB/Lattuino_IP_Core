@@ -74,8 +74,8 @@ use SPI.Devices.all;
 entity AD_Conv is
    generic(
       DIVIDER      : positive:=12;
-      INTERNAL_CLK : boolean:=true;
-      ENABLE       : boolean:=true);
+      INTERNAL_CLK : std_logic:='1';  -- not boolean for Verilog compat
+      ENABLE       : std_logic:='1'); -- not boolean for Verilog compat
    port(
       -- WISHBONE signals
       wb_clk_i : in  std_logic;  -- Clock
@@ -88,7 +88,7 @@ entity AD_Conv is
       wb_ack_o : out std_logic;  -- Acknowledge
       -- SPI rate (2x)
       -- Note: with 2 MHz spi_ena_i we get 1 MHz SPI clock => 55,6 ks/s
-      spi_ena_i: in  std_logic:='0';  -- 2xSPI clock
+      spi_ena_i: in  std_logic;  -- 2xSPI clock
       -- A/D interface
       ad_ncs_o : out std_logic;  -- SPI /CS
       ad_clk_o : out std_logic;  -- SPI clock
@@ -111,7 +111,7 @@ architecture RTL of AD_Conv is
 begin
    wb_dat <= cur_val(7 downto 0) when wb_adr_i(0)='0' else
              busy&"00000"&cur_val(9 downto 8);
-   wb_dat_o <= wb_dat when ENABLE else (others => '0');
+   wb_dat_o <= wb_dat when ENABLE='1' else (others => '0');
 
    wb_ack_o <= wb_stb_i;
 
@@ -149,7 +149,7 @@ begin
    -- SPI clock enable --
    ----------------------
    internal_divider:
-   if INTERNAL_CLK generate
+   if INTERNAL_CLK='1' generate
       do_spi_div:
       process (wb_clk_i)
       begin
@@ -164,7 +164,7 @@ begin
    end generate internal_divider;
 
    external_divider:
-   if not(INTERNAL_CLK) generate
+   if INTERNAL_CLK/='1' generate
       spi_ena <= spi_ena_i;
    end generate external_divider;
 
@@ -182,8 +182,8 @@ begin
          ad_ncs_o => ad_ncs, ad_clk_o => ad_clk, ad_din_o => ad_din,
          ad_dout_i => ad_dout_i);
 
-   ad_ncs_o <= ad_ncs when ENABLE else '0';
-   ad_clk_o <= ad_clk when ENABLE else '0';
-   ad_din_o <= ad_din when ENABLE else '0';
+   ad_ncs_o <= ad_ncs when ENABLE='1' else '0';
+   ad_clk_o <= ad_clk when ENABLE='1' else '0';
+   ad_din_o <= ad_din when ENABLE='1' else '0';
 end architecture RTL; -- Entity: AD_Conv
 

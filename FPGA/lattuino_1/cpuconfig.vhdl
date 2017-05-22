@@ -76,5 +76,5 @@ package CPUConfig is
    -- 16 bits timer (for Tone generation)
    constant ENA_TMR16    : boolean:=true;
    -- A/D converter support
-   constant ENABLE_AD    : boolean:=true;
+   constant ENABLE_AD    : std_logic:='1';
 end package CPUConfig;

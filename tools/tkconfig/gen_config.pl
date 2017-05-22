@@ -127,9 +127,9 @@ $aux=$ops{CONFIG_TM16} ? 'true' : 'false';
 print "   -- 16 bits timer (for Tone generation)
    constant ENA_TMR16    : boolean:=$aux;
 ";
-$aux=$ops{CONFIG_AD} ? 'true' : 'false';
+$aux=$ops{CONFIG_AD} ? '1' : '0';
 print "   -- A/D converter support
-   constant ENABLE_AD    : boolean:=$aux;
+   constant ENABLE_AD    : std_logic:='$aux';
 ";
 print "end package CPUConfig;\n"
 
