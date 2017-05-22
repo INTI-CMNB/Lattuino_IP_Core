@@ -47,7 +47,7 @@ package CPUConfig is
    -- SPI support
    constant ENABLE_SPI : boolean:=true;
    -- Use a PLL to achieve SCK<=F_CLK and not half
-   constant ENA_2xSCK  : boolean:=false;
+   constant ENA_2xSCK  : boolean:=true;
    -- Clock Frequency
    -- IMPORTANT! any change here needs a review of the PLL FILTER_RANGE
    constant F_CLK      : natural:=24e6;
@@ -60,21 +60,21 @@ package CPUConfig is
    -- ROM address width
    constant ROM_ADDR_W : positive:=12;  -- tn25: 10 45: 11 85: 12 (2/4/8 kib)
    -- CapSense button 1 is used as RESET
-   constant ENABLE_B1_RESET : boolean:=false;
+   constant ENABLE_B1_RESET : boolean:=true;
    -- PWMs support
-   constant ENA_PWM0   : boolean:=false;
-   constant ENA_PWM1   : boolean:=false;
-   constant ENA_PWM2   : boolean:=false;
-   constant ENA_PWM3   : boolean:=false;
-   constant ENA_PWM4   : boolean:=false;
-   constant ENA_PWM5   : boolean:=false;
+   constant ENA_PWM0   : boolean:=true;
+   constant ENA_PWM1   : boolean:=true;
+   constant ENA_PWM2   : boolean:=true;
+   constant ENA_PWM3   : boolean:=true;
+   constant ENA_PWM4   : boolean:=true;
+   constant ENA_PWM5   : boolean:=true;
    -- Interrupt pins support
-   constant ENA_INT0   : boolean:=false;
-   constant ENA_INT1   : boolean:=false;
+   constant ENA_INT0   : boolean:=true;
+   constant ENA_INT1   : boolean:=true;
    -- Micro and miliseconds timer
    constant ENA_TIME_CNT : boolean:=true;
    -- 16 bits timer (for Tone generation)
-   constant ENA_TMR16    : boolean:=false;
+   constant ENA_TMR16    : boolean:=true;
    -- A/D converter support
-   constant ENABLE_AD    : boolean:=false;
+   constant ENABLE_AD    : boolean:=true;
 end package CPUConfig;
