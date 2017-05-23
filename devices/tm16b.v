@@ -83,7 +83,7 @@ module TM16bits
     input        wb_stb_i,  // Strobe
     output       wb_ack_o,  // Acknowledge
     // Interface
-    output reg      irq_req_o,
+    output reg   irq_req_o,
     input        irq_ack_i
    );
 
