@@ -31,7 +31,7 @@
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          avr                                                ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ---- Target FPGA:      iCE40HX4K-TQ144                                    ----
@@ -74,7 +74,7 @@ use IEEE.numeric_std.all;
 entity TM16bits is
    generic(
       CNT_PRESC : natural:=24;
-      ENA_TMR   : boolean:=true);
+      ENA_TMR   : std_logic:='1');
    port(
       -- WISHBONE signals
       wb_clk_i  : in  std_logic;  -- Clock
@@ -139,7 +139,7 @@ begin
       if rising_edge(wb_clk_i) then
          if wb_rst_i='1' then
             irq_req_o <= '0';
-         elsif tc='1' and ENA_TMR then
+         elsif tc='1' and ENA_TMR='1' then
             irq_req_o <= '1';
          elsif irq_ack_i='1' then
             irq_req_o <= '0';

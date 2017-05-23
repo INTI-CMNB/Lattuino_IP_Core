@@ -37,7 +37,7 @@ print
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          avr                                                ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ----                   SPI.Devices                                        ----
@@ -119,13 +119,17 @@ print "   -- Interrupt pins support
    constant ENA_INT0   : boolean:=$aux;
    constant ENA_INT1   : boolean:=$aux2;
 ";
+# $aux=$ops{CONFIG_TMR} ? '1' : '0';
+# print "   -- Micro and miliseconds timer
+#    constant ENA_TIME_CNT : std_logic:='$aux';
+# ";
 $aux=$ops{CONFIG_TMR} ? 'true' : 'false';
 print "   -- Micro and miliseconds timer
    constant ENA_TIME_CNT : boolean:=$aux;
 ";
-$aux=$ops{CONFIG_TM16} ? 'true' : 'false';
+$aux=$ops{CONFIG_TM16} ? '1' : '0';
 print "   -- 16 bits timer (for Tone generation)
-   constant ENA_TMR16    : boolean:=$aux;
+   constant ENA_TMR16    : std_logic:='$aux';
 ";
 $aux=$ops{CONFIG_AD} ? '1' : '0';
 print "   -- A/D converter support

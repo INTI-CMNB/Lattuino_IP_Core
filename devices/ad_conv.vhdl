@@ -27,7 +27,7 @@
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          avr                                                ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ----                   SPI.Devices                                        ----

@@ -908,6 +908,7 @@ Esto fue al cambiar el MCP300x de VHDL a Verilog. Es loco porque individualmente
 casi no había diferencia.
 
 Revision: 1.54 - lun may 22 13:43:21 -03 2017
+Revision: 1.54 - lun may 22 14:05:12 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
 xil_project.pl version: 0.5.11
@@ -920,6 +921,23 @@ BRAMs:         20/20      100.00 %
 --------------------------------------------------------------------------------
 Max. Clock:   96.93 MHz (10.32 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.09 MHz (43.31 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+TMR16 en Verilog Ok!
+
+Revision: 1.55 - mar may 23 09:33:57 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.11
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2237/3520    63.55 %
+Cells:       2247/3520    63.84 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   101.30 MHz ( 9.87 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.39 MHz (39.39 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
 

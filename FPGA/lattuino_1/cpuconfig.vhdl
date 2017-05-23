@@ -27,7 +27,7 @@
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          avr                                                ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ----                   SPI.Devices                                        ----
@@ -74,7 +74,7 @@ package CPUConfig is
    -- Micro and miliseconds timer
    constant ENA_TIME_CNT : boolean:=true;
    -- 16 bits timer (for Tone generation)
-   constant ENA_TMR16    : boolean:=true;
+   constant ENA_TMR16    : std_logic:='1';
    -- A/D converter support
    constant ENABLE_AD    : std_logic:='1';
 end package CPUConfig;

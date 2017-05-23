@@ -142,6 +142,25 @@ architecture FPGA of Lattuino_1 is
          ad_dout_i: in  std_logic); -- SPI A/D Dout (MISO)
    end component AD_Conv;
 
+   component TM16bits is
+      generic(
+         CNT_PRESC : natural:=24;
+         ENA_TMR   : std_logic:='1');
+      port(
+         -- WISHBONE signals
+         wb_clk_i  : in  std_logic;  -- Clock
+         wb_rst_i  : in  std_logic;  -- Reset input
+         wb_adr_i  : in  std_logic_vector(0 downto 0); -- Adress bus
+         wb_dat_o  : out std_logic_vector(7 downto 0); -- DataOut Bus
+         wb_dat_i  : in  std_logic_vector(7 downto 0); -- DataIn Bus
+         wb_we_i   : in  std_logic;  -- Write Enable
+         wb_stb_i  : in  std_logic;  -- Strobe
+         wb_ack_o  : out std_logic;  -- Acknowledge
+         -- Interface
+         irq_req_o : out std_logic;
+         irq_ack_i : in  std_logic);
+   end component TM16bits;
+
    signal pc           : unsigned(15 downto 0); -- PROM address
    signal pcsv         : std_logic_vector(ROM_ADDR_W-1 downto 0); -- PROM address
    signal inst         : std_logic_vector(15 downto 0); -- PROM data
@@ -455,7 +474,7 @@ begin
    ------------------------------
    -- WISHBONE 16 bits counter --
    ------------------------------
-   the_tm16bits : entity lattuino.TM16bits
+   the_tm16bits : TM16bits
      generic map(CNT_PRESC => CNT_PRESC, ENA_TMR => ENA_TMR16)
      port map(
         irq_req_o => t16_irq, irq_ack_i => t16_ack,
