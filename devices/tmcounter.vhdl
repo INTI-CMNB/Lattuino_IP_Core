@@ -41,7 +41,7 @@
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          avr                                                ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ---- Target FPGA:      iCE40HX4K-TQ144                                    ----
@@ -84,7 +84,7 @@ use IEEE.numeric_std.all;
 entity TMCounter is
    generic(
       CNT_PRESC : natural:=24;
-      ENA_TMR   : boolean:=true);
+      ENA_TMR   : std_logic:='1');
    port(
       -- WISHBONE signals
       wb_clk_i : in  std_logic;  -- Clock
@@ -104,6 +104,7 @@ architecture RTL of TMCounter is
    signal cnt_us_r  : unsigned(31 downto 0):=(others => '0');
    -- Microseconds counter for the ms counter
    signal cnt_us2_r : unsigned(9 downto 0):=(others => '0');
+   signal tc_cnt_us2: std_logic;
    -- Milliseconds counter
    signal cnt_ms_r  : unsigned(31 downto 0):=(others => '0');
    -- Latched value
@@ -170,13 +171,14 @@ begin
    process (wb_clk_i)
    begin
       if rising_edge(wb_clk_i) then
-         if wb_rst_i='1' or cnt_us2_r=999 then
+         if wb_rst_i='1' or tc_cnt_us2='1' then
             cnt_us2_r <= (others => '0');
          elsif ena_cnt='1' then
             cnt_us2_r <= cnt_us2_r+1;
          end if;
       end if;
    end process do_cnt_us2;
+   tc_cnt_us2 <= '1' when ena_cnt='1' and cnt_us2_r=999 else '0';
 
    -- Milliseconds counter, 32 bits
    do_cnt_ms:
@@ -185,7 +187,7 @@ begin
       if rising_edge(wb_clk_i) then
          if wb_rst_i='1' then
             cnt_ms_r <= (others => '0');
-         elsif ena_cnt='1' and cnt_us2_r=999 then
+         elsif tc_cnt_us2='1' then
             cnt_ms_r <= cnt_ms_r+1;
          end if;
       end if;
@@ -221,9 +223,9 @@ begin
         std_logic_vector(latched_r(23 downto 16)) when "110",
         std_logic_vector(latched_r(31 downto 24)) when "111",
         (others => '0')                       when others;
-   wb_dat_o <= wb_dat when ENA_TMR else (others => '0');
+   wb_dat_o <= wb_dat when ENA_TMR='1' else (others => '0');
 
-   blk_we <= '1' when (wb_stb_i and wb_we_i)='1' and wb_adr_i="111" and ENA_TMR else '0';
+   blk_we <= '1' when (wb_stb_i and wb_we_i)='1' and wb_adr_i="111" and ENA_TMR='1' else '0';
 
    -- ACK all reads and writes when the counter is 0
    wb_ack_o <= '1' when wb_stb_i='1' and (blk_we='0' or (state=delay and cnt_blk_r=0)) else '0';

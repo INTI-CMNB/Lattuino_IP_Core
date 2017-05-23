@@ -161,6 +161,24 @@ architecture FPGA of Lattuino_1 is
          irq_ack_i : in  std_logic);
    end component TM16bits;
 
+   component TMCounter is
+      generic(
+         CNT_PRESC : natural:=24;
+         ENA_TMR   : std_logic:='1');
+      port(
+         -- WISHBONE signals
+         wb_clk_i : in  std_logic;  -- Clock
+         wb_rst_i : in  std_logic;  -- Reset input
+         wb_adr_i : in  std_logic_vector(2 downto 0); -- Adress bus
+         wb_dat_o : out std_logic_vector(7 downto 0); -- DataOut Bus
+         wb_dat_i : in  std_logic_vector(7 downto 0); -- DataIn Bus
+         wb_we_i  : in  std_logic;  -- Write Enable
+         wb_stb_i : in  std_logic;  -- Strobe
+         wb_ack_o : out std_logic;  -- Acknowledge
+         pwm_o    : out std_logic_vector(5 downto 0);  -- 6 PWMs
+         pwm_e_o  : out std_logic_vector(5 downto 0)); -- Pin enable for the PWMs
+   end component TMCounter;
+
    signal pc           : unsigned(15 downto 0); -- PROM address
    signal pcsv         : std_logic_vector(ROM_ADDR_W-1 downto 0); -- PROM address
    signal inst         : std_logic_vector(15 downto 0); -- PROM data
@@ -269,7 +287,8 @@ begin
 
    -- Built-in LEDs
    LED1 <= portb_out(6); -- pin IO14
-   LED2 <= '0'; -- pwm(0);
+   --LED2 <= '0'; -- pwm(0);
+   LED2 <= pwm(0);
    LED3 <= '0'; -- btns(2);
    LED4 <= rst_btn;
 
@@ -461,7 +480,7 @@ begin
    ----------------------------
    -- WISHBONE time counters --
    ----------------------------
-   the_counter : entity lattuino.TMCounter
+   the_counter : TMCounter
      generic map(
         CNT_PRESC => CNT_PRESC, ENA_TMR => ENA_TIME_CNT)
      port map(

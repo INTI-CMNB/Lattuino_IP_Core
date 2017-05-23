@@ -940,5 +940,39 @@ Max. Clock:   101.30 MHz ( 9.87 ns) [PLLOUTGLOBALA]
 Max. Clock:   25.39 MHz (39.39 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+TMCounter en Verilog
+
+Revision: 1.56 - mar may 23 11:03:45 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.11
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2274/3520    64.60 %
+Cells:       2295/3520    65.20 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   88.51 MHz (11.30 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.42 MHz (40.95 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Conecté el PWM0 al LED2 ...?!!
+
+Revision: 1.56 - mar may 23 12:38:33 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.11
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2260/3520    64.20 %
+Cells:       2269/3520    64.46 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   98.51 MHz (10.15 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.32 MHz (42.88 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 

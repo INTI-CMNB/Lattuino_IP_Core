@@ -2,7 +2,7 @@
 lattuino
 devices/ad_conv.v
 devices/tm16b.v
-devices/tmcounter.vhdl
+devices/tmcounter.v
 Work/pm_pkg.vhdl
 Work/lattuino_1_bl_8.vhdl
 Work/lattuino_1_bl_4.vhdl

@@ -72,7 +72,7 @@ package CPUConfig is
    constant ENA_INT0   : boolean:=true;
    constant ENA_INT1   : boolean:=true;
    -- Micro and miliseconds timer
-   constant ENA_TIME_CNT : boolean:=true;
+   constant ENA_TIME_CNT : std_logic:='1';
    -- 16 bits timer (for Tone generation)
    constant ENA_TMR16    : std_logic:='1';
    -- A/D converter support
