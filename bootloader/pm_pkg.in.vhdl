@@ -1,11 +1,12 @@
 ------------------------------------------------------------------------------
 ----                                                                      ----
-----  AVR program memories package                                        ----
+----  Lattuino program memories and peripherals package                   ----
 ----                                                                      ----
 ----  This file is part FPGA Libre project http://fpgalibre.sf.net/       ----
 ----                                                                      ----
 ----  Description:                                                        ----
-----  This is a package with the PMs used for the AVR core.               ----
+----  This is a package with the PMs used for Lattuino.                   ----
+----  It also includes the Lattuino peripherals.                          ----
 ----                                                                      ----
 ----  To Do:                                                              ----
 ----  -                                                                   ----
@@ -27,7 +28,7 @@
 ---- Note:             None                                               ----
 ---- Limitations:      None known                                         ----
 ---- Errors:           None known                                         ----
----- Library:          work                                               ----
+---- Library:          lattuino                                           ----
 ---- Dependencies:     IEEE.std_logic_1164                                ----
 ----                   IEEE.numeric_std                                   ----
 ---- Target FPGA:      iCE40HX4K-TQ144                                    ----
@@ -50,5 +51,11 @@ package PrgMems is
    @component:../Work/lattuino_1_bl_2.vhdl@
 
    @component:../Work/lattuino_1_bl_2s.vhdl@
+
+   @component:../devices/tmcounter.vhdl@
+
+   @component:../devices/tm16b.vhdl@
+
+   @component:../devices/ad_conv.vhdl@
 end package PrgMems;
 

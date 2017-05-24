@@ -117,68 +117,6 @@ architecture FPGA of Lattuino_1 is
    constant CNT_PRESC  : natural:=F_CLK/1e6; -- Counter prescaler (1 µs)
    constant DEBUG_SPI  : boolean:=false;
 
-   component AD_Conv is
-      generic(
-         DIVIDER      : positive:=12;
-         INTERNAL_CLK : std_logic:='1';
-         ENABLE       : std_logic:='1');
-      port(
-         -- WISHBONE signals
-         wb_clk_i : in  std_logic;  -- Clock
-         wb_rst_i : in  std_logic;  -- Reset input
-         wb_adr_i : in  std_logic_vector(0 downto 0); -- Adress bus
-         wb_dat_o : out std_logic_vector(7 downto 0); -- DataOut Bus
-         wb_dat_i : in  std_logic_vector(7 downto 0); -- DataIn Bus
-         wb_we_i  : in  std_logic;  -- Write Enable
-         wb_stb_i : in  std_logic;  -- Strobe
-         wb_ack_o : out std_logic;  -- Acknowledge
-         -- SPI rate (2x)
-         -- Note: with 2 MHz spi_ena_i we get 1 MHz SPI clock => 55,6 ks/s
-         spi_ena_i: in  std_logic;  -- 2xSPI clock
-         -- A/D interface
-         ad_ncs_o : out std_logic;  -- SPI /CS
-         ad_clk_o : out std_logic;  -- SPI clock
-         ad_din_o : out std_logic;  -- SPI A/D Din (MOSI)
-         ad_dout_i: in  std_logic); -- SPI A/D Dout (MISO)
-   end component AD_Conv;
-
-   component TM16bits is
-      generic(
-         CNT_PRESC : natural:=24;
-         ENA_TMR   : std_logic:='1');
-      port(
-         -- WISHBONE signals
-         wb_clk_i  : in  std_logic;  -- Clock
-         wb_rst_i  : in  std_logic;  -- Reset input
-         wb_adr_i  : in  std_logic_vector(0 downto 0); -- Adress bus
-         wb_dat_o  : out std_logic_vector(7 downto 0); -- DataOut Bus
-         wb_dat_i  : in  std_logic_vector(7 downto 0); -- DataIn Bus
-         wb_we_i   : in  std_logic;  -- Write Enable
-         wb_stb_i  : in  std_logic;  -- Strobe
-         wb_ack_o  : out std_logic;  -- Acknowledge
-         -- Interface
-         irq_req_o : out std_logic;
-         irq_ack_i : in  std_logic);
-   end component TM16bits;
-
-   component TMCounter is
-      generic(
-         CNT_PRESC : natural:=24;
-         ENA_TMR   : std_logic:='1');
-      port(
-         -- WISHBONE signals
-         wb_clk_i : in  std_logic;  -- Clock
-         wb_rst_i : in  std_logic;  -- Reset input
-         wb_adr_i : in  std_logic_vector(2 downto 0); -- Adress bus
-         wb_dat_o : out std_logic_vector(7 downto 0); -- DataOut Bus
-         wb_dat_i : in  std_logic_vector(7 downto 0); -- DataIn Bus
-         wb_we_i  : in  std_logic;  -- Write Enable
-         wb_stb_i : in  std_logic;  -- Strobe
-         wb_ack_o : out std_logic;  -- Acknowledge
-         pwm_o    : out std_logic_vector(5 downto 0);  -- 6 PWMs
-         pwm_e_o  : out std_logic_vector(5 downto 0)); -- Pin enable for the PWMs
-   end component TMCounter;
-
    signal pc           : unsigned(15 downto 0); -- PROM address
    signal pcsv         : std_logic_vector(ROM_ADDR_W-1 downto 0); -- PROM address
    signal inst         : std_logic_vector(15 downto 0); -- PROM data
