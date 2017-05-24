@@ -960,6 +960,10 @@ Max. Clock:   24.42 MHz (40.95 ns) [PLLOUTGLOBALB]
 Conect� el PWM0 al LED2 ...?!!
 
 Revision: 1.56 - mar may 23 12:38:33 -03 2017
+Revision: 1.57 - mar may 23 14:07:12 -03 2017
+Revision: 1.57 - mié may 24 08:57:30 -03 2017
+Revision: 1.57 - mié may 24 09:04:11 -03 2017
+Revision: 1.57 - mié may 24 09:17:39 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
 xil_project.pl version: 0.5.11
@@ -973,6 +977,5 @@ BRAMs:         20/20      100.00 %
 Max. Clock:   98.51 MHz (10.15 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.32 MHz (42.88 ns) [PLLOUTGLOBALB]
 ********************************************************************************
-
 
 

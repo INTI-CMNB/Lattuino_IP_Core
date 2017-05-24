@@ -49,7 +49,7 @@ use IEEE.numeric_std.all;
 entity lattuino_1_blPM_2S is
    generic(
       WORD_SIZE  : integer:=16;  -- Word Size
-      FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+      FALL_EDGE  : std_logic:='0'; -- Ram clock falling edge
       ADDR_W     : integer:=13); -- Address Width
    port(
       clk_i   : in  std_logic;
@@ -395,7 +395,7 @@ others => x"0000"
 begin
 
    use_rising_edge:
-   if not FALL_EDGE generate
+   if FALL_EDGE='0' generate
       do_rom:
       process (clk_i)
       begin
@@ -409,7 +409,7 @@ begin
   end generate use_rising_edge;
 
   use_falling_edge:
-  if FALL_EDGE generate
+  if FALL_EDGE='1' generate
       do_rom:
       process (clk_i)
       begin

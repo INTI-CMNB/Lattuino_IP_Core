@@ -5,7 +5,7 @@ GHDLFLAGS=--work=$(LIB) --workdir=$(OBJDIR)
 .PHONY: lattuino_1_bl
 
 # Library Modules
-LIB_MODS_1=lattuino_1_bl_2 lattuino_1_bl_4 lattuino_1_bl_8
+LIB_MODS_1=lattuino_1_bl_2 lattuino_1_bl_4 lattuino_1_bl_8 lattuino_1_bl_2s
 LIB_MODS=$(addsuffix .o,$(addprefix $(OBJDIR)/,$(LIB_MODS_1)))
 LIB_SRCS=$(addsuffix .vhdl,$(addprefix $(OBJDIR)/,$(LIB_MODS_1)))
 

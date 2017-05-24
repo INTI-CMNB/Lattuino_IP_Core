@@ -46,7 +46,7 @@ package PrgMems is
    component lattuino_1_blPM_8 is
       generic(
          WORD_SIZE  : integer:=16;  -- Word Size
-         FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+         FALL_EDGE  : std_logic:='0'; -- Ram clock falling edge
          ADDR_W     : integer:=13); -- Address Width
       port(
          clk_i   : in  std_logic;
@@ -59,7 +59,7 @@ package PrgMems is
    component lattuino_1_blPM_4 is
       generic(
          WORD_SIZE  : integer:=16;  -- Word Size
-         FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+         FALL_EDGE  : std_logic:='0'; -- Ram clock falling edge
          ADDR_W     : integer:=13); -- Address Width
       port(
          clk_i   : in  std_logic;
@@ -72,7 +72,7 @@ package PrgMems is
    component lattuino_1_blPM_2 is
       generic(
          WORD_SIZE  : integer:=16;  -- Word Size
-         FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+         FALL_EDGE  : std_logic:='0'; -- Ram clock falling edge
          ADDR_W     : integer:=13); -- Address Width
       port(
          clk_i   : in  std_logic;
@@ -85,7 +85,7 @@ package PrgMems is
    component lattuino_1_blPM_2S is
       generic(
          WORD_SIZE  : integer:=16;  -- Word Size
-         FALL_EDGE  : boolean:=false;-- Ram clock falling edge
+         FALL_EDGE  : std_logic:='0'; -- Ram clock falling edge
          ADDR_W     : integer:=13); -- Address Width
       port(
          clk_i   : in  std_logic;

@@ -4,7 +4,7 @@ devices/ad_conv.v
 devices/tm16b.v
 devices/tmcounter.v
 Work/pm_pkg.vhdl
-Work/lattuino_1_bl_8.vhdl
-Work/lattuino_1_bl_4.vhdl
-Work/lattuino_1_bl_2.vhdl
-Work/lattuino_1_bl_2s.vhdl
+Work/lattuino_1_bl_8.v
+Work/lattuino_1_bl_4.v
+Work/lattuino_1_bl_2.v
+Work/lattuino_1_bl_2s.v

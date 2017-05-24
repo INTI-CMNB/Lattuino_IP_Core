@@ -20,7 +20,7 @@ CONSTRAINTS=lattuino_1.pcf
 XIL_TOOLS_ICE_DIR?=/home/opt/iCEcube2.2017.01
 SET_ICE_BASE=$(XIL_TOOLS_ICE_DIR)
 
-XIL_FILTER=/home/salvador/FPGA/tools/xil_tools/xil_filter.pl LATTICE
+XIL_FILTER=xil_filter.pl LATTICE
 ifeq (, $(shell which $(XIL_FILTER)))
 XIL_FILTER=cat
 endif
@@ -137,13 +137,13 @@ DEPE=\
 	../../../miniuart/miniuart.vhdl \
 	../../../lattice/sb_ice40_components_syn.vhdl \
 	../../../lattuino/devices/ad_conv.v \
-	../../../lattuino/devices/tm16b.vhdl \
-	../../../lattuino/devices/tmcounter.vhdl \
+	../../../lattuino/devices/tm16b.v \
+	../../../lattuino/devices/tmcounter.v \
 	../../../lattuino/Work/pm_pkg.vhdl \
-	../../../lattuino/Work/lattuino_1_bl_8.vhdl \
-	../../../lattuino/Work/lattuino_1_bl_4.vhdl \
-	../../../lattuino/Work/lattuino_1_bl_2.vhdl \
-	../../../lattuino/Work/lattuino_1_bl_2s.vhdl \
+	../../../lattuino/Work/lattuino_1_bl_8.v \
+	../../../lattuino/Work/lattuino_1_bl_4.v \
+	../../../lattuino/Work/lattuino_1_bl_2.v \
+	../../../lattuino/Work/lattuino_1_bl_2s.v \
 	wb_dev_intercon_package.vhdl \
 	wb_dev_intercon.vhdl \
 	cpuconfig.vhdl \
@@ -168,7 +168,7 @@ Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
 	../../../lattice/FPGA/primitives\
 	../../../lattuino/FPGA/devices_v
 	@echo ==** Starting xil_project.pl
-	/home/salvador/FPGA/tools/xil_tools/xil_project.pl 
+	/usr/bin/xil_project.pl 
 	@echo ==** Ending xil_project.pl
 
 #######################
@@ -302,7 +302,7 @@ $(TARGET_DIR)/$(BITMAP_BIN): $(TARGET_DIR)/$(SDF_OUTPUT)
 		--init_ram on --init_ram_bank 1111 --frequency low --warm_boot on
 	@echo "==** Ending bitmap"
 
-XIL_RESUMEN=/home/salvador/FPGA/tools/xil_tools/xil_resumen.pl $(PRJ) $(GENDIR)
+XIL_RESUMEN=xil_resumen.pl $(PRJ) $(GENDIR)
 ifeq (, $(shell which $(XIL_RESUMEN)))
 XIL_RESUMEN=touch $(PRJ).txt
 endif
