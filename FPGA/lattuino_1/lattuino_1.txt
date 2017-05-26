@@ -980,4 +980,23 @@ Max. Clock:   98.51 MHz (10.15 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.32 MHz (42.88 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Primer intento de reemplazar el spi_master.vhdl
+Algo no cierra. Pero funciona.
+
+Revision: 1.59 - vie may 26 08:41:09 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   729/3520    20.71 %
+LUTs:        2316/3520    65.80 %
+Cells:       2324/3520    66.02 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   89.41 MHz (11.18 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.74 MHz (40.42 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+
 
