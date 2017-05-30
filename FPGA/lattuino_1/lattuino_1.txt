@@ -998,5 +998,23 @@ Max. Clock:   89.41 MHz (11.18 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.74 MHz (40.42 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Primer intento de reemplazar la INTERCON de Wishbone por Verilog
+La UART y timer (WB) funcionan.
+
+Revision: 1.60 - mar may 30 10:28:33 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2257/3520    64.12 %
+Cells:       2266/3520    64.38 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   94.75 MHz (10.55 ns) [PLLOUTGLOBALA]
+Max. Clock:   26.17 MHz (38.21 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 

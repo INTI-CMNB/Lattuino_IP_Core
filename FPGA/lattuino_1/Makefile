@@ -126,7 +126,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
 	../../../SPI/MCP300x/mcp300x.v \
 	../../../SPI/Work/spi_pkg.vhdl \
-	../../../SPI/spi_master.vhdl \
+	../../../SPI/spi_master.v \
 	../../../CapSense/capsense_pkg.vhdl \
 	../../../CapSense/capsense.vhdl \
 	../../../CapSense/capsense_sys.vhdl \
@@ -145,7 +145,7 @@ DEPE=\
 	../../../lattuino/Work/lattuino_1_bl_2.v \
 	../../../lattuino/Work/lattuino_1_bl_2s.v \
 	wb_dev_intercon_package.vhdl \
-	wb_dev_intercon.vhdl \
+	wb_dev_intercon.v \
 	cpuconfig.vhdl \
 	lattuino_1.vhdl \
 	 lattuino_1.pcf lattuino_1.prj Makefile
@@ -162,7 +162,7 @@ $(TARGET_DIR)/lattuino_1.prj:
 Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
 	../../../AVR/AVR_iCE40/FPGA/attX5\
 	../../../SPI/FPGA/mcp300x_v\
-	../../../SPI/FPGA/spi_master\
+	../../../SPI/FPGA/spi_master_v\
 	../../../CapSense/FPGA/capsense\
 	../../../miniuart/FPGA/miniuart\
 	../../../lattice/FPGA/primitives\
@@ -331,7 +331,10 @@ clean:
 # Generar el INTERCON de WISHBONE para los periféricos.
 wb_dev_intercon.vhdl wb_dev_intercon_package.vhdl wb_dev_intercon.inc wb_dev_intercon.h: \
 	wb_devices.defines
-	wishbone.pl --nogui --gen-header $<
+	wishbone.pl --nogui --gen-header --hdl=vhdl --ext=.vhdl $<
+
+wb_dev_intercon.v: wb_devices.defines
+	wishbone.pl --nogui --hdl=verilog --ext=.v $<
 
 wb_clean:
 	rm -rf wb_dev_intercon*

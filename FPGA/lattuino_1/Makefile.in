@@ -1,7 +1,10 @@
 # Generar el INTERCON de WISHBONE para los periféricos.
 wb_dev_intercon.vhdl wb_dev_intercon_package.vhdl wb_dev_intercon.inc wb_dev_intercon.h: \
 	wb_devices.defines
-	wishbone.pl --nogui --gen-header $<
+	wishbone.pl --nogui --gen-header --hdl=vhdl --ext=.vhdl $<
+
+wb_dev_intercon.v: wb_devices.defines
+	wishbone.pl --nogui --hdl=verilog --ext=.v $<
 
 wb_clean:
 	rm -rf wb_dev_intercon*
