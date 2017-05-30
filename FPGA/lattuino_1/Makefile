@@ -131,10 +131,10 @@ DEPE=\
 	../../../CapSense/capsense.vhdl \
 	../../../CapSense/capsense_sys.vhdl \
 	../../../miniuart/Work/miniuart_pkg.vhdl \
-	../../../miniuart/Txunit.vhdl \
-	../../../miniuart/Rxunit.vhdl \
-	../../../miniuart/utils.vhdl \
-	../../../miniuart/miniuart.vhdl \
+	../../../miniuart/Txunit.v \
+	../../../miniuart/Rxunit.v \
+	../../../miniuart/utils.v \
+	../../../miniuart/miniuart.v \
 	../../../lattice/sb_ice40_components_syn.vhdl \
 	../../../lattuino/devices/ad_conv.v \
 	../../../lattuino/devices/tm16b.v \
@@ -164,7 +164,7 @@ Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
 	../../../SPI/FPGA/mcp300x_v\
 	../../../SPI/FPGA/spi_master_v\
 	../../../CapSense/FPGA/capsense\
-	../../../miniuart/FPGA/miniuart\
+	../../../miniuart/FPGA/miniuart_v\
 	../../../lattice/FPGA/primitives\
 	../../../lattuino/FPGA/devices_v
 	@echo ==** Starting xil_project.pl

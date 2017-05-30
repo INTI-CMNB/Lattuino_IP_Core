@@ -21,10 +21,10 @@ add_file -vhdl -lib capsense ../../../../CapSense/capsense_pkg.vhdl
 add_file -vhdl -lib capsense ../../../../CapSense/capsense.vhdl
 add_file -vhdl -lib capsense ../../../../CapSense/capsense_sys.vhdl
 add_file -vhdl -lib miniuart ../../../../miniuart/Work/miniuart_pkg.vhdl
-add_file -vhdl -lib miniuart ../../../../miniuart/Txunit.vhdl
-add_file -vhdl -lib miniuart ../../../../miniuart/Rxunit.vhdl
-add_file -vhdl -lib miniuart ../../../../miniuart/utils.vhdl
-add_file -vhdl -lib miniuart ../../../../miniuart/miniuart.vhdl
+add_file -verilog -lib miniuart ../../../../miniuart/Txunit.v
+add_file -verilog -lib miniuart ../../../../miniuart/Rxunit.v
+add_file -verilog -lib miniuart ../../../../miniuart/utils.v
+add_file -verilog -lib miniuart ../../../../miniuart/miniuart.v
 add_file -vhdl -lib lattice ../../../../lattice/sb_ice40_components_syn.vhdl
 add_file -verilog -lib lattuino ../../../../lattuino/devices/ad_conv.v
 add_file -verilog -lib lattuino ../../../../lattuino/devices/tm16b.v

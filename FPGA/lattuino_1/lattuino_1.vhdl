@@ -404,11 +404,11 @@ begin
    the_uart : UART_C
      generic map(
         BRDIVISOR => BRDIVISOR,
-        WIP_ENABLE => true,
-        AUX_ENABLE => false)
+        WIP_ENABLE => '1',
+        AUX_ENABLE => '0')
      port map(
         -- Wishbone signals
-        wb_clk_i => clk_sys,      wb_rst_i => rst,  wb_adr_i => rs2_adri,
+        wb_clk_i => clk_sys,  wb_rst_i => rst,      wb_adr_i => rs2_adri,
         wb_dat_i => rs2_dati, wb_dat_o => rs2_dato, wb_we_i  => rs2_wei,
         wb_stb_i => rs2_stbi, wb_ack_o => rs2_acko,
         -- Process signals
