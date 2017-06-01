@@ -119,7 +119,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/devices/portx.vhdl \
 	../../../AVR/AVR_iCE40/devices/wb_ctrl.vhdl \
 	../../../AVR/AVR_iCE40/devices/irq.vhdl \
-	../../../AVR/AVR_iCE40/devices/spi.vhdl \
+	../../../AVR/AVR_iCE40/devices/spi.v \
 	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
 	../../../AVR/AVR_iCE40/memory/dm_s.vhdl \
 	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
@@ -160,7 +160,7 @@ $(TARGET_DIR)/lattuino_1.prj:
 # Regenerate the files if the project changed #
 ###############################################
 Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
-	../../../AVR/AVR_iCE40/FPGA/attX5\
+	../../../AVR/AVR_iCE40/FPGA/attX5_v\
 	../../../SPI/FPGA/mcp300x_v\
 	../../../SPI/FPGA/spi_master_v\
 	../../../CapSense/FPGA/capsense_v\

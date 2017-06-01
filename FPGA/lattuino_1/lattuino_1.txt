@@ -1053,8 +1053,10 @@ Max. Clock:   25.33 MHz (39.48 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
 Reemplazados los CapSense por Verilog
+Resintetizado cambiando los generics para que sean compatibles con Verilog.
 
 Revision: 1.62 - miÃ© may 31 14:21:31 -03 2017
+Revision: 1.63 - jue jun  1 12:37:32 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
 xil_project.pl version: 0.5.12
@@ -1069,5 +1071,23 @@ Max. Clock:   102.81 MHz ( 9.73 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.83 MHz (40.27 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Reemplazado el SPI_Dev por Verilog.
+Otra vez enloqueció!!!
+
+Revision: 1.63 - jue jun  1 13:03:29 -03 2017
+Revision: 1.63 - jue jun  1 13:22:59 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   732/3520    20.80 %
+LUTs:        2312/3520    65.68 %
+Cells:       2320/3520    65.91 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   84.71 MHz (11.80 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.76 MHz (38.82 ns) [PLLOUTGLOBALB]
+********************************************************************************
 
 
