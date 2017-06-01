@@ -117,7 +117,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/core/core.vhdl \
 	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
 	../../../AVR/AVR_iCE40/devices/portx.vhdl \
-	../../../AVR/AVR_iCE40/devices/wb_ctrl.vhdl \
+	../../../AVR/AVR_iCE40/devices/wb_ctrl.v \
 	../../../AVR/AVR_iCE40/devices/irq.vhdl \
 	../../../AVR/AVR_iCE40/devices/spi.v \
 	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \

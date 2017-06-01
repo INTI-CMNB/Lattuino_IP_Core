@@ -7,7 +7,7 @@ add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/cpu.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/core.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/portx.vhdl
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/wb_ctrl.vhdl
+add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/wb_ctrl.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/devices/irq.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/spi.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl

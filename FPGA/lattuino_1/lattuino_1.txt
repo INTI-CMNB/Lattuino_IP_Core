@@ -1090,4 +1090,22 @@ Max. Clock:   84.71 MHz (11.80 ns) [PLLOUTGLOBALA]
 Max. Clock:   25.76 MHz (38.82 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Reemplazada la WBControl
+
+Revision: 1.63 - jue jun  1 13:48:10 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2293/3520    65.14 %
+Cells:       2301/3520    65.37 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   94.66 MHz (10.56 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.01 MHz (41.65 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+
 
