@@ -128,8 +128,8 @@ DEPE=\
 	../../../SPI/Work/spi_pkg.vhdl \
 	../../../SPI/spi_master.v \
 	../../../CapSense/capsense_pkg.vhdl \
-	../../../CapSense/capsense.vhdl \
-	../../../CapSense/capsense_sys.vhdl \
+	../../../CapSense/capsense.v \
+	../../../CapSense/capsense_sys.v \
 	../../../miniuart/Work/miniuart_pkg.vhdl \
 	../../../miniuart/Txunit.v \
 	../../../miniuart/Rxunit.v \
@@ -163,7 +163,7 @@ Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
 	../../../AVR/AVR_iCE40/FPGA/attX5\
 	../../../SPI/FPGA/mcp300x_v\
 	../../../SPI/FPGA/spi_master_v\
-	../../../CapSense/FPGA/capsense\
+	../../../CapSense/FPGA/capsense_v\
 	../../../miniuart/FPGA/miniuart_v\
 	../../../lattice/FPGA/primitives\
 	../../../lattuino/FPGA/devices_v

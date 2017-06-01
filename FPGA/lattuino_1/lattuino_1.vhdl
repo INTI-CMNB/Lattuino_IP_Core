@@ -130,6 +130,7 @@ architecture FPGA of Lattuino_1 is
    signal portd_in     : std_logic_vector(7 downto 0);
    signal portd_out    : std_logic_vector(7 downto 0);
    signal btns         : std_logic_vector(3 downto 0); -- Capsense buttons
+   signal discharge    : std_logic;
    signal rst_btn      : std_logic;
    signal pin_irq      : std_logic_vector(1 downto 0); -- Pin interrupts INT0/1
    signal dev_irq      : std_logic_vector(2 downto 0); -- Device interrupts
@@ -456,16 +457,21 @@ begin
    ----------------------
    -- Botones CapSense --
    ----------------------
-   CS : entity CapSense.CapSense_Sys
-       generic map (N => 4, FREQUENCY => CNT_PRESC, DIRECT => false)
+   CS : CapSense_Sys
+       generic map (N => 4, FREQUENCY => CNT_PRESC, DIRECT => '0')
        port map(
           clk_i => clk_sys,
           rst_i => '0',
-          capsense_io(0) => BTN1,
-          capsense_io(1) => BTN2,
-          capsense_io(2) => BTN3,
-          capsense_io(3) => BTN4,
+          capsense_i(0) => BTN1,
+          capsense_i(1) => BTN2,
+          capsense_i(2) => BTN3,
+          capsense_i(3) => BTN4,
+          capsense_o => discharge,
           buttons_o => btns, debug_o => open);
+   BTN1 <= '0' when discharge='1' else 'Z';
+   BTN2 <= '0' when discharge='1' else 'Z';
+   BTN3 <= '0' when discharge='1' else 'Z';
+   BTN4 <= '0' when discharge='1' else 'Z';
 
    do_2xSPI:
    if ENA_2xSCK generate

@@ -18,8 +18,8 @@ add_file -verilog -lib spi ../../../../SPI/MCP300x/mcp300x.v
 add_file -vhdl -lib spi ../../../../SPI/Work/spi_pkg.vhdl
 add_file -verilog -lib spi ../../../../SPI/spi_master.v
 add_file -vhdl -lib capsense ../../../../CapSense/capsense_pkg.vhdl
-add_file -vhdl -lib capsense ../../../../CapSense/capsense.vhdl
-add_file -vhdl -lib capsense ../../../../CapSense/capsense_sys.vhdl
+add_file -verilog -lib capsense ../../../../CapSense/capsense.v
+add_file -verilog -lib capsense ../../../../CapSense/capsense_sys.v
 add_file -vhdl -lib miniuart ../../../../miniuart/Work/miniuart_pkg.vhdl
 add_file -verilog -lib miniuart ../../../../miniuart/Txunit.v
 add_file -verilog -lib miniuart ../../../../miniuart/Rxunit.v
