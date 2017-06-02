@@ -123,7 +123,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
 	../../../AVR/AVR_iCE40/memory/dm_s.v \
 	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
-	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
+	../../../AVR/AVR_iCE40/micros/attX5.v \
 	../../../SPI/MCP300x/mcp300x.v \
 	../../../SPI/Work/spi_pkg.vhdl \
 	../../../SPI/spi_master.v \

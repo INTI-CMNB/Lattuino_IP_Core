@@ -55,9 +55,9 @@ use IEEE.std_logic_1164.all;
 
 package CPUConfig is
 ";
-$aux=$ops{CONFIG_SPI} ? 'true' : 'false';
+$aux=$ops{CONFIG_SPI} ? '1' : '0';
 print "   -- SPI support
-   constant ENABLE_SPI : boolean:=$aux;
+   constant ENABLE_SPI :  std_logic:='$aux';
 ";
 $aux=$ops{CONFIG_SPI_PLL} ? 'true' : 'false';
 print "   -- Use a PLL to achieve SCK<=F_CLK and not half

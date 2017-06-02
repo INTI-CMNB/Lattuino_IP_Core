@@ -50,6 +50,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 library avr;
 use avr.Micros.all;
+use avr.Types.all;
 library miniuart;
 use miniuart.UART.all;
 library CapSense;
@@ -307,16 +308,15 @@ begin
       SDO  <= '0';
    end generate do_arduino_spi;
 
-   micro : entity avr.ATtX5
+   micro : ATtX5
       generic map(
-         ENA_TC0 => false,   ENA_WB    => true,
-         ENA_SPM   => true,  ENA_PORTB => true,  ENA_PORTC => false,
-         ENA_PORTD => true,  PORTB_SIZE => 7,    PORTC_SIZE => 6,
-         PORTD_SIZE => 8,    RESET_JUMP => RESET_JUMP, ENA_IRQ_CTRL => '1',
-         RAM_ADDR_W => RAM_ADDR_W, ENA_SPI => ENABLE_SPI)
+         ENA_WB    => '1',   ENA_SPM   => '1',   ENA_PORTB => '1',
+         ENA_PORTC => '0',   ENA_PORTD => '1',   PORTB_SIZE => 7,
+         PORTC_SIZE => 6,    PORTD_SIZE => 8,    RESET_JUMP => RESET_JUMP,
+         ENA_IRQ_CTRL => '1', RAM_ADDR_W => RAM_ADDR_W, ENA_SPI => ENABLE_SPI)
       port map(
          rst_i => rst, clk_i => clk_sys, clk2x_i => clk_spi,
-         pc_o => pc, inst_i => inst,
+         pc_o => pc, inst_i => inst, ena_i => '1', portc_i => open,
          portb_i => portb_in, pgm_we_o => we, inst_o => inst_w,
          portd_i => portd_in, pin_irq_i => pin_irq, dev_irq_i => dev_irq,
          dev_ack_o => dev_ack, portb_o => portb_out, portd_o => portd_out,
@@ -325,7 +325,10 @@ begin
          spi_ena_o => spi_ena, sclk_o => spi_sck, miso_i => miso, mosi_o => mosi,
          -- WISHBONE
          wb_adr_o => cpu_adro, wb_dat_o => cpu_dato, wb_dat_i => cpu_dati,
-         wb_stb_o => cpu_stbo, wb_we_o  => cpu_weo,  wb_ack_i => cpu_acki);
+         wb_stb_o => cpu_stbo, wb_we_o  => cpu_weo,  wb_ack_i => cpu_acki,
+         -- Debug
+         dbg_stop_i => '0', dbg_rf_fake_i => '0', dbg_rr_data_i => (others => '0'),
+         dbg_rd_data_i => (others => '0'));
    cpu_cyco <= '0';
 
    pcsv <= std_logic_vector(pc(ROM_ADDR_W-1 downto 0));

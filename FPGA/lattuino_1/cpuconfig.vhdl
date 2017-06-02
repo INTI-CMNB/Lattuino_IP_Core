@@ -45,7 +45,7 @@ use IEEE.std_logic_1164.all;
 
 package CPUConfig is
    -- SPI support
-   constant ENABLE_SPI : boolean:=true;
+   constant ENABLE_SPI : std_logic:='1';
    -- Use a PLL to achieve SCK<=F_CLK and not half
    constant ENA_2xSCK  : boolean:=true;
    -- Clock Frequency

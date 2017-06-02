@@ -1179,4 +1179,75 @@ Max. Clock:   102.59 MHz ( 9.75 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.80 MHz (40.32 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Simple cambio en los generics?!
+
+Revision: 1.66 - vie jun  2 10:30:41 -03 2017
+Revision: 1.66 - vie jun  2 10:43:27 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2323/3520    65.99 %
+Cells:       2331/3520    66.22 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   95.59 MHz (10.46 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.17 MHz (39.73 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Eliminados miembros no usados de las estructuras de debug
+
+Revision: 1.66 - vie jun  2 10:59:22 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2291/3520    65.09 %
+Cells:       2299/3520    65.31 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   86.38 MHz (11.58 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.48 MHz (42.59 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Convertidos los records dbg_* en señales sueltas.
+
+Revision: 1.66 - vie jun  2 12:25:41 -03 2017
+Revision: 1.66 - vie jun  2 13:00:22 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2293/3520    65.14 %
+Cells:       2300/3520    65.34 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   79.95 MHz (12.51 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.96 MHz (41.74 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Reemplazado ATtX5 por Verilog
+
+Revision: 1.66 - vie jun  2 13:56:55 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2305/3520    65.48 %
+Cells:       2313/3520    65.71 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   81.91 MHz (12.21 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.76 MHz (42.09 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+
 
