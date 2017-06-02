@@ -116,6 +116,7 @@ architecture FPGA of Lattuino_1 is
    constant BRDIVISOR  : natural:=natural(real(F_CLK)/real(BAUD_RATE)/4.0+0.5);
    constant CNT_PRESC  : natural:=F_CLK/1e6; -- Counter prescaler (1 µs)
    constant DEBUG_SPI  : boolean:=false;
+   constant DEBUG_INT  : boolean:=false;
 
    signal pc           : unsigned(15 downto 0); -- PROM address
    signal pcsv         : std_logic_vector(ROM_ADDR_W-1 downto 0); -- PROM address
@@ -271,12 +272,19 @@ begin
    --ARDU12   <= ISP_MISO;
    --ISP_MOSI <= mosi;
 
-   -- INT0/1 pins (PD2 and PD3)
-   pin_irq(0) <= ARDU02 when ENA_INT0 else '0';
-   pin_irq(1) <= ARDU03 when ENA_INT1 else '0';
-   -- Debug connection to CapSense
-   --pin_irq(0) <= btns(1);
-   --pin_irq(1) <= btns(2);
+   do_int_pins:
+   if not(DEBUG_INT) generate
+      -- INT0/1 pins (PD2 and PD3)
+      pin_irq(0) <= ARDU02 when ENA_INT0 else '0';
+      pin_irq(1) <= ARDU03 when ENA_INT1 else '0';
+   end generate do_int_pins;
+
+   do_int_btns:
+   if DEBUG_INT generate
+      -- Debug connection to CapSense
+      pin_irq(0) <= btns(1);
+      pin_irq(1) <= btns(2);
+   end generate do_int_btns;
 
    -- Device interrupts
    dev_irq(0) <= intrx;   -- UART Rx
@@ -304,7 +312,7 @@ begin
          ENA_TC0 => false,   ENA_WB    => true,
          ENA_SPM   => true,  ENA_PORTB => true,  ENA_PORTC => false,
          ENA_PORTD => true,  PORTB_SIZE => 7,    PORTC_SIZE => 6,
-         PORTD_SIZE => 8,    RESET_JUMP => RESET_JUMP, ENA_IRQ_CTRL => true,
+         PORTD_SIZE => 8,    RESET_JUMP => RESET_JUMP, ENA_IRQ_CTRL => '1',
          RAM_ADDR_W => RAM_ADDR_W, ENA_SPI => ENABLE_SPI)
       port map(
          rst_i => rst, clk_i => clk_sys, clk2x_i => clk_spi,

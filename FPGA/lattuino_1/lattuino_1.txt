@@ -1125,5 +1125,58 @@ Max. Clock:   105.27 MHz ( 9.50 ns) [PLLOUTGLOBALA]
 Max. Clock:   25.29 MHz (39.54 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Sólo cambié el generic de IRQCtrl ...
+
+Revision: 1.64 - jue jun  1 15:27:21 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   721/3520    20.48 %
+LUTs:        2300/3520    65.34 %
+Cells:       2308/3520    65.57 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   88.11 MHz (11.35 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.61 MHz (42.35 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Esto es con el Verilog de IRQCtrl. Funciona.
+
+Revision: 1.64 - vie jun  2 09:32:44 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   723/3520    20.54 %
+LUTs:        2227/3520    63.27 %
+Cells:       2235/3520    63.49 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   84.93 MHz (11.77 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.78 MHz (38.79 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Eliminando el uso de CapSense para debug de las interrupciones.
+Verificado que funciona con RS-232. (Character Analisys)
+Reemplazada la memoria RAM por Verilog, dio lo mismo.
+
+Revision: 1.65 - vie jun  2 09:51:38 -03 2017
+Revision: 1.65 - vie jun  2 10:03:23 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2243/3520    63.72 %
+Cells:       2252/3520    63.98 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   102.59 MHz ( 9.75 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.80 MHz (40.32 ns) [PLLOUTGLOBALB]
+********************************************************************************
 
 

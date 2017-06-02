@@ -118,10 +118,10 @@ DEPE=\
 	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
 	../../../AVR/AVR_iCE40/devices/portx.v \
 	../../../AVR/AVR_iCE40/devices/wb_ctrl.v \
-	../../../AVR/AVR_iCE40/devices/irq.vhdl \
+	../../../AVR/AVR_iCE40/devices/irq.v \
 	../../../AVR/AVR_iCE40/devices/spi.v \
 	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
-	../../../AVR/AVR_iCE40/memory/dm_s.vhdl \
+	../../../AVR/AVR_iCE40/memory/dm_s.v \
 	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
 	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
 	../../../SPI/MCP300x/mcp300x.v \
