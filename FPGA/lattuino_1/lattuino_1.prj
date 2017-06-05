@@ -1,10 +1,10 @@
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/io_reg_file.vhdl
+add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/io_reg_file.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/reg_file.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/decoder.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/alu.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/cpu.vhdl
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/core.vhdl
+add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/core.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/portx.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/wb_ctrl.v
@@ -13,7 +13,7 @@ add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/spi.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/memory/dm_s.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl
-add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/micros/attX5.v
+add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/micros/attX5.vhdl
 add_file -verilog -lib spi ../../../../SPI/MCP300x/mcp300x.v
 add_file -vhdl -lib spi ../../../../SPI/Work/spi_pkg.vhdl
 add_file -verilog -lib spi ../../../../SPI/spi_master.v

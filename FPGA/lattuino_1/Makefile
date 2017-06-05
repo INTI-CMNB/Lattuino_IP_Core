@@ -109,12 +109,12 @@ TARGET_DIRS=$(TARGET_DIR) $(TARGET_DIR)/$(IMPLE) $(TARGET_DIR)/$(SBT_OUT_D) \
 
 DEPE=\
 	../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl \
-	../../../AVR/AVR_iCE40/core/io_reg_file.vhdl \
+	../../../AVR/AVR_iCE40/core/io_reg_file.v \
 	../../../AVR/AVR_iCE40/core/reg_file.vhdl \
 	../../../AVR/AVR_iCE40/core/decoder.vhdl \
 	../../../AVR/AVR_iCE40/core/alu.vhdl \
 	../../../AVR/AVR_iCE40/core/cpu.vhdl \
-	../../../AVR/AVR_iCE40/core/core.vhdl \
+	../../../AVR/AVR_iCE40/core/core.v \
 	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
 	../../../AVR/AVR_iCE40/devices/portx.v \
 	../../../AVR/AVR_iCE40/devices/wb_ctrl.v \
@@ -123,7 +123,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
 	../../../AVR/AVR_iCE40/memory/dm_s.v \
 	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
-	../../../AVR/AVR_iCE40/micros/attX5.v \
+	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
 	../../../SPI/MCP300x/mcp300x.v \
 	../../../SPI/Work/spi_pkg.vhdl \
 	../../../SPI/spi_master.v \

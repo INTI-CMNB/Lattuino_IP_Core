@@ -1249,5 +1249,57 @@ Max. Clock:   81.91 MHz (12.21 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.76 MHz (42.09 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+ATtX5 vuelta a VHDL, otros generics retocados
+Estoy teniendo un problema que el tipo decide poner AVCore como top-level :-(
+
+Revision: 1.67 - lun jun  5 10:46:14 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2328/3520    66.14 %
+Cells:       2335/3520    66.34 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   90.75 MHz (11.02 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.08 MHz (41.53 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+AVRCore en Verilog, pero ATtX5 en VHDL.
+
+Revision: 1.67 - lun jun  5 11:08:03 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2288/3520    65.00 %
+Cells:       2298/3520    65.28 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   94.20 MHz (10.62 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.10 MHz (41.49 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+IORegFile en Verilog
+
+Revision: 1.68 - lun jun  5 13:33:13 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2308/3520    65.57 %
+Cells:       2317/3520    65.82 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   97.72 MHz (10.23 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.17 MHz (41.37 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 
