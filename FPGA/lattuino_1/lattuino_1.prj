@@ -1,6 +1,6 @@
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/io_reg_file.v
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/reg_file.vhdl
+add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/reg_file.v
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/decoder.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/alu.vhdl
 add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/core/cpu.vhdl

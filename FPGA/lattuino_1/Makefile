@@ -110,7 +110,7 @@ TARGET_DIRS=$(TARGET_DIR) $(TARGET_DIR)/$(IMPLE) $(TARGET_DIR)/$(SBT_OUT_D) \
 DEPE=\
 	../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl \
 	../../../AVR/AVR_iCE40/core/io_reg_file.v \
-	../../../AVR/AVR_iCE40/core/reg_file.vhdl \
+	../../../AVR/AVR_iCE40/core/reg_file.v \
 	../../../AVR/AVR_iCE40/core/decoder.vhdl \
 	../../../AVR/AVR_iCE40/core/alu.vhdl \
 	../../../AVR/AVR_iCE40/core/cpu.vhdl \

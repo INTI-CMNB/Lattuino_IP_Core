@@ -1301,5 +1301,22 @@ Max. Clock:   97.72 MHz (10.23 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.17 MHz (41.37 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+RegisterFile llevado a Verilog.
+
+Revision: 1.69 - lun jun  5 14:04:21 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2266/3520    64.38 %
+Cells:       2274/3520    64.60 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   94.29 MHz (10.61 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.34 MHz (39.46 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 
