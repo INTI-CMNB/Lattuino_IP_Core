@@ -17,7 +17,7 @@ TARGET_DIR=gen
 IMPLE=Target_Implmnt
 TOP_LEVEL=Lattuino_1
 CONSTRAINTS=lattuino_1.pcf
-XIL_TOOLS_ICE_DIR?=/home/opt/iCEcube2.2017.01
+XIL_TOOLS_ICE_DIR?=/opt/iCEcube2.2017.01
 SET_ICE_BASE=$(XIL_TOOLS_ICE_DIR)
 
 XIL_FILTER=xil_filter.pl LATTICE
@@ -112,7 +112,7 @@ DEPE=\
 	../../../AVR/AVR_iCE40/core/io_reg_file.v \
 	../../../AVR/AVR_iCE40/core/reg_file.v \
 	../../../AVR/AVR_iCE40/core/decoder.vhdl \
-	../../../AVR/AVR_iCE40/core/alu.vhdl \
+	../../../AVR/AVR_iCE40/core/alu.v \
 	../../../AVR/AVR_iCE40/core/cpu.vhdl \
 	../../../AVR/AVR_iCE40/core/core.v \
 	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
