@@ -1,0 +1,12 @@
+Work
+gen
+lattuino_1.prj
+lattuino_1.xcf
+lattuino_1.xst
+Makefile
+lattuino_1.pcf
+command_wrapper.sh
+wb_dev_intercon.h
+wb_dev_intercon.inc
+wb_dev_intercon.v
+

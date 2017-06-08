@@ -1,4 +1,4 @@
 Lattuino 1 implementado en la Kéfir I
-Versión VHDL
+Versión Verilog
 Reloj: 24 MHz
 

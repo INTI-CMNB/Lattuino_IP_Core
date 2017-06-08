@@ -108,39 +108,47 @@ TARGET_DIRS=$(TARGET_DIR) $(TARGET_DIR)/$(IMPLE) $(TARGET_DIR)/$(SBT_OUT_D) \
 	$(TARGET_DIR)/$(BITMAP_D) $(FILTER_FIFO)
 
 DEPE=\
-	../../../AVR/AVR_iCE40/core/io_reg_file.v \
-	../../../AVR/AVR_iCE40/core/reg_file.v \
-	../../../AVR/AVR_iCE40/core/alu.v \
-	../../../AVR/AVR_iCE40/core/cpu.v \
-	../../../AVR/AVR_iCE40/core/core.v \
-	../../../AVR/AVR_iCE40/devices/portx.v \
-	../../../AVR/AVR_iCE40/devices/wb_ctrl.v \
-	../../../AVR/AVR_iCE40/devices/irq.v \
-	../../../AVR/AVR_iCE40/devices/spi.v \
-	../../../AVR/AVR_iCE40/memory/dm_s.v \
-	../../../AVR/AVR_iCE40/micros/attX5.v \
-	../../../SPI/MCP300x/mcp300x.v \
+	../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl \
+	../../../AVR/AVR_iCE40/core/io_reg_file.vhdl \
+	../../../AVR/AVR_iCE40/core/reg_file.vhdl \
+	../../../AVR/AVR_iCE40/core/decoder.vhdl \
+	../../../AVR/AVR_iCE40/core/alu.vhdl \
+	../../../AVR/AVR_iCE40/core/cpu.vhdl \
+	../../../AVR/AVR_iCE40/core/core.vhdl \
+	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
+	../../../AVR/AVR_iCE40/devices/portx.vhdl \
+	../../../AVR/AVR_iCE40/devices/wb_ctrl.vhdl \
+	../../../AVR/AVR_iCE40/devices/irq.vhdl \
+	../../../AVR/AVR_iCE40/devices/spi.vhdl \
+	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
+	../../../AVR/AVR_iCE40/memory/dm_s.vhdl \
+	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
+	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
 	../../../SPI/Work/spi_pkg.vhdl \
-	../../../SPI/spi_master.v \
+	../../../SPI/MCP300x/mcp300x.vhdl \
+	../../../SPI/Work/spi_pkg.vhdl \
+	../../../SPI/spi_master.vhdl \
 	../../../CapSense/capsense_pkg.vhdl \
-	../../../CapSense/capsense.v \
-	../../../CapSense/capsense_sys.v \
+	../../../CapSense/capsense.vhdl \
+	../../../CapSense/capsense_sys.vhdl \
 	../../../miniuart/Work/miniuart_pkg.vhdl \
-	../../../miniuart/Txunit.v \
-	../../../miniuart/Rxunit.v \
-	../../../miniuart/utils.v \
-	../../../miniuart/miniuart.v \
+	../../../miniuart/Txunit.vhdl \
+	../../../miniuart/Rxunit.vhdl \
+	../../../miniuart/utils.vhdl \
+	../../../miniuart/miniuart.vhdl \
 	../../../lattice/sb_ice40_components_syn.vhdl \
-	../../../lattuino/devices/ad_conv.v \
-	../../../lattuino/devices/tm16b.v \
-	../../../lattuino/devices/tmcounter.v \
+	../../../lattuino/devices/ad_conv.vhdl \
+	../../../lattuino/devices/tm16b.vhdl \
+	../../../lattuino/devices/tmcounter.vhdl \
 	../../../lattuino/Work/pm_pkg.vhdl \
-	../../../lattuino/Work/lattuino_1_bl_8.v \
-	../../../lattuino/Work/lattuino_1_bl_4.v \
-	../../../lattuino/Work/lattuino_1_bl_2.v \
-	../../../lattuino/Work/lattuino_1_bl_2s.v \
-	wb_dev_intercon.v \
-	lattuino_1.v \
+	../../../lattuino/Work/lattuino_1_bl_8.vhdl \
+	../../../lattuino/Work/lattuino_1_bl_4.vhdl \
+	../../../lattuino/Work/lattuino_1_bl_2.vhdl \
+	../../../lattuino/Work/lattuino_1_bl_2s.vhdl \
+	wb_dev_intercon_package.vhdl \
+	wb_dev_intercon.vhdl \
+	cpuconfig.vhdl \
+	lattuino_1.vhdl \
 	 lattuino_1.pcf lattuino_1.prj Makefile
 
 all: Makefile lattuino_1.pcf lattuino_1.prj $(TARGET_DIRS) $(TARGET_DIR)/lattuino_1.prj \
@@ -153,13 +161,13 @@ $(TARGET_DIR)/lattuino_1.prj:
 # Regenerate the files if the project changed #
 ###############################################
 Makefile lattuino_1.pcf lattuino_1.prj: lattuino_1.xilprj lattuino_1.in.pcf \
-	../../../AVR/AVR_iCE40/FPGA/attX5_v\
-	../../../SPI/FPGA/mcp300x_v\
-	../../../SPI/FPGA/spi_master_v\
-	../../../CapSense/FPGA/capsense_v\
-	../../../miniuart/FPGA/miniuart_v\
+	../../../AVR/AVR_iCE40/FPGA/attX5\
+	../../../SPI/FPGA/mcp300x\
+	../../../SPI/FPGA/spi_master\
+	../../../CapSense/FPGA/capsense\
+	../../../miniuart/FPGA/miniuart\
 	../../../lattice/FPGA/primitives\
-	../../../lattuino/FPGA/devices_v
+	../../../lattuino/FPGA/devices
 	@echo ==** Starting xil_project.pl
 	/usr/bin/xil_project.pl 
 	@echo ==** Ending xil_project.pl
@@ -325,9 +333,6 @@ clean:
 wb_dev_intercon.vhdl wb_dev_intercon_package.vhdl wb_dev_intercon.inc wb_dev_intercon.h: \
 	wb_devices.defines
 	wishbone.pl --nogui --gen-header --hdl=vhdl --ext=.vhdl $<
-
-wb_dev_intercon.v: wb_devices.defines
-	wishbone.pl --nogui --hdl=verilog --ext=.v $<
 
 wb_clean:
 	rm -rf wb_dev_intercon*

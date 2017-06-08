@@ -1449,4 +1449,30 @@ Max. Clock:   104.47 MHz ( 9.57 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.30 MHz (42.92 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Todo en VHDL nuevamente ... muy loco.
+Al principio de la migración estábamos en:
+Flip Flops:   718/3520    20.40 %
+LUTs:        2204/3520    62.61 %
+Cells:       2221/3520    63.10 %
+El Verilog quedó en:
+Flip Flops:   718/3520    20.40 %
+LUTs:        2283/3520    64.86 %
+Cells:       2291/3520    65.09 %
+
+Revision: 1.73 - jue jun  8 16:22:54 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   732/3520    20.80 %
+LUTs:        2297/3520    65.26 %
+Cells:       2315/3520    65.77 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   88.27 MHz (11.33 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.08 MHz (41.53 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+
 

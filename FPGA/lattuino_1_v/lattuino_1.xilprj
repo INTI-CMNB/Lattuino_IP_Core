@@ -1,0 +1,14 @@
+Board=kefir_i_hx4k
+Project=lattuino_1
+Top=Lattuino_1
+Goal=Area_Strong
+Frequency=24
+Include=AVR/AVR_iCE40,attX5_v
+Include=SPI,mcp300x_v
+Include=SPI,spi_master_v
+Include=CapSense,capsense_v
+Include=miniuart,miniuart_v
+Include=lattuino,devices_v
+Source=wb_dev_intercon.v
+Source=lattuino_1.v
+

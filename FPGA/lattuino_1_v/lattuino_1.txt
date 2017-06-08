@@ -1,0 +1,23 @@
+
+Reemplazado el top-level por Verilog.
+
+Revision: 1.72 - jue jun  8 14:59:48 -03 2017
+Revision: 1.72 - jue jun  8 15:06:29 -03 2017
+Revision: 1.73 - jue jun  8 15:48:46 -03 2017
+Revision: 1.73 - jue jun  8 15:58:21 -03 2017
+Revision: 1.73 - jue jun  8 16:18:03 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2283/3520    64.86 %
+Cells:       2291/3520    65.09 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   104.47 MHz ( 9.57 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.30 MHz (42.92 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+
