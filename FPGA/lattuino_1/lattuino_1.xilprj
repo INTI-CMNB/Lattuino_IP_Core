@@ -10,8 +10,6 @@ Include=CapSense,capsense_v
 Include=miniuart,miniuart_v
 Include=lattice,primitives
 Include=lattuino,devices_v
-Source=wb_dev_intercon_package.vhdl
 Source=wb_dev_intercon.v
-Source=cpuconfig.vhdl
-Source=lattuino_1.vhdl
+Source=lattuino_1.v
 

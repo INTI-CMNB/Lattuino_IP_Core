@@ -26,7 +26,7 @@ set_io SDI  68
 set_io SCK  70
 
 # ISP SPI
-set_io ISP_RESET 117
+# set_io ISP_RESET 117
 set_io ISP_SCK   118
 set_io ISP_MOSI  119
 set_io ISP_MISO  120

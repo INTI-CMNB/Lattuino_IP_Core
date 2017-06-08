@@ -1,18 +1,14 @@
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/io_reg_file.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/reg_file.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/alu.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/cpu.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/core/core.v
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/portx.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/wb_ctrl.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/irq.v
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/devices/spi.v
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl
 add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/memory/dm_s.v
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl
-add_file -vhdl -lib avr ../../../../AVR/AVR_iCE40/micros/attX5.vhdl
+add_file -verilog -lib avr ../../../../AVR/AVR_iCE40/micros/attX5.v
 add_file -verilog -lib spi ../../../../SPI/MCP300x/mcp300x.v
 add_file -vhdl -lib spi ../../../../SPI/Work/spi_pkg.vhdl
 add_file -verilog -lib spi ../../../../SPI/spi_master.v
@@ -33,10 +29,8 @@ add_file -verilog -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_8.v
 add_file -verilog -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_4.v
 add_file -verilog -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_2.v
 add_file -verilog -lib lattuino ../../../../lattuino/Work/lattuino_1_bl_2s.v
-add_file -vhdl -lib work ../wb_dev_intercon_package.vhdl
 add_file -verilog -lib work ../wb_dev_intercon.v
-add_file -vhdl -lib work ../cpuconfig.vhdl
-add_file -vhdl -lib work ../lattuino_1.vhdl
+add_file -verilog -lib work ../lattuino_1.v
 
 impl -add Target_Implmnt -type fpga
 

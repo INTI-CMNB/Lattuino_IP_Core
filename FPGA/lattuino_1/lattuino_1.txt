@@ -1412,5 +1412,41 @@ Max. Clock:   123.39 MHz ( 8.10 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.33 MHz (41.10 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Vuelto a colocar ATtX5 en Verilog (ahora son menos saltos VHDL <-> Verilog y
+el Synplify no se marea ;-)
+
+Revision: 1.72 - jue jun  8 14:13:06 -03 2017
+Revision: 1.72 - jue jun  8 14:37:51 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2273/3520    64.57 %
+Cells:       2282/3520    64.83 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   87.31 MHz (11.45 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.15 MHz (43.20 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Reemplazado el top-level por Verilog.
+
+Revision: 1.72 - jue jun  8 14:59:48 -03 2017
+Revision: 1.72 - jue jun  8 15:06:29 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2283/3520    64.86 %
+Cells:       2291/3520    65.09 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   104.47 MHz ( 9.57 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.30 MHz (42.92 ns) [PLLOUTGLOBALB]
+********************************************************************************
 
 

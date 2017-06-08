@@ -108,21 +108,17 @@ TARGET_DIRS=$(TARGET_DIR) $(TARGET_DIR)/$(IMPLE) $(TARGET_DIR)/$(SBT_OUT_D) \
 	$(TARGET_DIR)/$(BITMAP_D) $(FILTER_FIFO)
 
 DEPE=\
-	../../../AVR/AVR_iCE40/Work/avr_pkg.vhdl \
 	../../../AVR/AVR_iCE40/core/io_reg_file.v \
 	../../../AVR/AVR_iCE40/core/reg_file.v \
 	../../../AVR/AVR_iCE40/core/alu.v \
 	../../../AVR/AVR_iCE40/core/cpu.v \
 	../../../AVR/AVR_iCE40/core/core.v \
-	../../../AVR/AVR_iCE40/Work/dev_pkg.vhdl \
 	../../../AVR/AVR_iCE40/devices/portx.v \
 	../../../AVR/AVR_iCE40/devices/wb_ctrl.v \
 	../../../AVR/AVR_iCE40/devices/irq.v \
 	../../../AVR/AVR_iCE40/devices/spi.v \
-	../../../AVR/AVR_iCE40/Work/mem_pkg.vhdl \
 	../../../AVR/AVR_iCE40/memory/dm_s.v \
-	../../../AVR/AVR_iCE40/Work/micros_pkg.vhdl \
-	../../../AVR/AVR_iCE40/micros/attX5.vhdl \
+	../../../AVR/AVR_iCE40/micros/attX5.v \
 	../../../SPI/MCP300x/mcp300x.v \
 	../../../SPI/Work/spi_pkg.vhdl \
 	../../../SPI/spi_master.v \
@@ -143,10 +139,8 @@ DEPE=\
 	../../../lattuino/Work/lattuino_1_bl_4.v \
 	../../../lattuino/Work/lattuino_1_bl_2.v \
 	../../../lattuino/Work/lattuino_1_bl_2s.v \
-	wb_dev_intercon_package.vhdl \
 	wb_dev_intercon.v \
-	cpuconfig.vhdl \
-	lattuino_1.vhdl \
+	lattuino_1.v \
 	 lattuino_1.pcf lattuino_1.prj Makefile
 
 all: Makefile lattuino_1.pcf lattuino_1.prj $(TARGET_DIRS) $(TARGET_DIR)/lattuino_1.prj \
