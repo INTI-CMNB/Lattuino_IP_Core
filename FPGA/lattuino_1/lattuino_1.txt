@@ -1302,7 +1302,7 @@ Max. Clock:   24.17 MHz (41.37 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
 RegisterFile llevado a Verilog.
-ALU llevado a Verilog (sin cambios)
+ALU llevado a Verilog (sin cambios, es que ya no se usa ;-)
 
 Revision: 1.69 - lun jun  5 14:04:21 -03 2017
 Revision: 1.70 - lun jun  5 14:43:08 -03 2017
@@ -1319,5 +1319,98 @@ BRAMs:         20/20      100.00 %
 Max. Clock:   94.29 MHz (10.61 ns) [PLLOUTGLOBALA]
 Max. Clock:   25.34 MHz (39.46 ns) [PLLOUTGLOBALB]
 ********************************************************************************
+
+Eliminados valores por defecto en entradas de CPU
+Eliminados algunos alias que no se usaban
+
+Revision: 1.71 - mar jun  6 10:12:07 -03 2017
+Revision: 1.71 - mar jun  6 10:42:34 -03 2017
+Revision: 1.71 - mar jun  6 10:59:27 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2297/3520    65.26 %
+Cells:       2306/3520    65.51 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   97.42 MHz (10.26 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.72 MHz (40.45 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Eliminadas se�ales que no se usaban.
+Puestas a tierra salidas no usadas.
+
+Revision: 1.71 - mié jun  7 12:46:25 -03 2017
+Revision: 1.71 - mié jun  7 12:53:07 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2266/3520    64.38 %
+Cells:       2274/3520    64.60 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   94.29 MHz (10.61 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.34 MHz (39.46 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Primer intento por reemplazar cpu.v
+NO FUNCIONA
+
+Revision: 1.71 - mié jun  7 11:15:12 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2266/3520    64.38 %
+Cells:       2276/3520    64.66 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   99.02 MHz (10.10 ns) [PLLOUTGLOBALA]
+Max. Clock:   22.85 MHz (43.76 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Eliminada se�al que no se usaba
+NO FUNCIONA
+
+Revision: 1.71 - mié jun  7 13:00:10 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2202/3520    62.56 %
+Cells:       2211/3520    62.81 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   100.25 MHz ( 9.98 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.67 MHz (40.54 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Corregido error en sreg_out. ANDA!!!!
+
+Revision: 1.71 - mié jun  7 14:21:59 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.5.12
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2272/3520    64.55 %
+Cells:       2281/3520    64.80 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   123.39 MHz ( 8.10 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.33 MHz (41.10 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 
