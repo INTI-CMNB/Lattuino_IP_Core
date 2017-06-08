@@ -28,9 +28,7 @@
  Limitations:      None known
  Errors:           None known
  Library:          lattuino
- Dependencies:     IEEE.std_logic_1164
-                   IEEE.numeric_std
-                   SPI.Devices
+ Dependencies:     None
  Target FPGA:      iCE40HX4K-TQ144
  Language:         Verilog
  Wishbone:         None
@@ -52,9 +50,9 @@ localparam BAUD_RATE=115200;
 // Starting address for the bootloader (in words)
 localparam RESET_JUMP=3768; // tn25: 696, 45: 1720, 85: 3768
 // RAM address width
-localparam RAM_ADDR_W=9;   // tn25:  7 45:  8 85:  9 (128 to 512 b)
+localparam RAM_ADDR_W=9; // tn25:  7 45:  8 85:  9 (128 to 512 b)
 // ROM address width
-localparam ROM_ADDR_W=12;  // tn25: 10 45: 11 85: 12 (2/4/8 kib)
+localparam ROM_ADDR_W=12; // tn25: 10 45: 11 85: 12 (2/4/8 kib)
 // CapSense button 1 is used as RESET
 localparam ENABLE_B1_RESET=1;
 // PWMs support
@@ -73,4 +71,3 @@ localparam ENA_TIME_CNT=1;
 localparam ENA_TMR16=1;
 // A/D converter support
 localparam ENABLE_AD=1;
-
