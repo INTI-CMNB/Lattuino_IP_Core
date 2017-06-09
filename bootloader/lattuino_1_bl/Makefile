@@ -5,20 +5,24 @@ PRJ=lattuino_1_bl
 # 2 kib 0x800 b 0x400 w
 START_B_2=0x570
 START_W_2=0x2B8
+START_W_2V=696
 AVRCPU_2=attiny25
 #AVRCPU_2S=attiny22
 AVRCPU_2S=attiny26
 # 4 kib 0x1000 b 0x800 w
 START_B_4=0xD70
 START_W_4=0x6B8
+START_W_4V=1720
 AVRCPU_4=attiny45
 # 8 kib 0x2000 b 0x1000 w
 START_B_8=0x1D70
 START_W_8=0xEB8
+START_W_8V=3768
 AVRCPU_8=attiny85
 
 all: $(OBJDIR) $(OBJDIR)/$(PRJ)_8.vhdl $(OBJDIR)/$(PRJ)_4.vhdl $(OBJDIR)/$(PRJ)_2.vhdl \
-	$(OBJDIR)/$(PRJ)_2s.vhdl
+	$(OBJDIR)/$(PRJ)_2s.vhdl $(OBJDIR)/$(PRJ)_8.v $(OBJDIR)/$(PRJ)_4.v $(OBJDIR)/$(PRJ)_2.v \
+	$(OBJDIR)/$(PRJ)_2s.v
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
@@ -55,6 +59,18 @@ $(OBJDIR)/$(PRJ)_2.dat: $(OBJDIR)/$(PRJ)_2.bin
 $(OBJDIR)/$(PRJ)_2s.dat: $(OBJDIR)/$(PRJ)_2s.bin
 	bin2hex --vhdl -o $(START_W_2) -b 2 $< $@
 
+$(OBJDIR)/$(PRJ)_8_v.dat: $(OBJDIR)/$(PRJ)_8.bin
+	bin2hex --verilog-txt -b 2 $< $@
+
+$(OBJDIR)/$(PRJ)_4_v.dat: $(OBJDIR)/$(PRJ)_4.bin
+	bin2hex --verilog-txt -b 2 $< $@
+
+$(OBJDIR)/$(PRJ)_2_v.dat: $(OBJDIR)/$(PRJ)_2.bin
+	bin2hex --verilog-txt -b 2 $< $@
+
+$(OBJDIR)/$(PRJ)_2s_v.dat: $(OBJDIR)/$(PRJ)_2s.bin
+	bin2hex --verilog-txt -b 2 $< $@
+
 $(OBJDIR)/$(PRJ)_8.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_8.dat
 	printf $(PRJ)PM_8 > entity.txt
 	ln -s $(OBJDIR)/$(PRJ)_8.dat rom.dat
@@ -76,6 +92,34 @@ $(OBJDIR)/$(PRJ)_2.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_2.dat
 $(OBJDIR)/$(PRJ)_2s.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_2s.dat
 	printf $(PRJ)PM_2S > entity.txt
 	ln -s $(OBJDIR)/$(PRJ)_2s.dat rom.dat
+	vhdlspp.pl $< $@
+	rm entity.txt rom.dat
+
+$(OBJDIR)/$(PRJ)_8.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_8_v.dat
+	printf $(PRJ)PM_8 > entity.txt
+	#ln -s $(OBJDIR)/$(PRJ)_8_v.dat rom.dat
+	printf \$$readmemh\(\"../../Work/$(PRJ)_8_v.dat\",rom,$(START_W_8V)\)\; > rom.dat
+	vhdlspp.pl $< $@
+	rm entity.txt rom.dat
+
+$(OBJDIR)/$(PRJ)_4.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_4_v.dat
+	printf $(PRJ)PM_4 > entity.txt
+	#ln -s $(OBJDIR)/$(PRJ)_4_v.dat rom.dat
+	printf \$$readmemh\(\"../../Work/$(PRJ)_4_v.dat\",rom,$(START_W_4V)\)\; > rom.dat
+	vhdlspp.pl $< $@
+	rm entity.txt rom.dat
+
+$(OBJDIR)/$(PRJ)_2.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_2_v.dat
+	printf $(PRJ)PM_2 > entity.txt
+	#ln -s $(OBJDIR)/$(PRJ)_2_v.dat rom.dat
+	printf \$$readmemh\(\"../../Work/$(PRJ)_2_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
+	vhdlspp.pl $< $@
+	rm entity.txt rom.dat
+
+$(OBJDIR)/$(PRJ)_2s.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_2s_v.dat
+	printf $(PRJ)PM_2S > entity.txt
+	#ln -s $(OBJDIR)/$(PRJ)_2s_v.dat rom.dat
+	printf \$$readmemh\(\"../../Work/$(PRJ)_2s_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 
