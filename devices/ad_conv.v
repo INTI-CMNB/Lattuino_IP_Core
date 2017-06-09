@@ -158,7 +158,7 @@ MCP300x the_AD
    .clk_i(wb_clk_i), .rst_i(1'b0),
    // Master interface
    .start_i(start_r), .busy_o(busy_ad), .chn_i(chn_r), .single_i(1'b1),
-   .ena_i(spi_ena), .eoc_o(open), .data_o(cur_val),
+   .ena_i(spi_ena), .eoc_o(), .data_o(cur_val),
    // A/D interface
    .ad_ncs_o(ad_ncs), .ad_clk_o(ad_clk), .ad_din_o(ad_din),
    .ad_dout_i(ad_dout_i));
