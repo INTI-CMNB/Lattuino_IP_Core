@@ -1,0 +1,19 @@
+
+# Asegurarse que la INTERCON de WISHBONE esté actualizada
+.PHONY : updatewb
+# Generar el INTERCON de WISHBONE para los periféricos.
+../lattuino_1_v/wb_dev_intercon.v: updatewb
+
+updatewb:
+	$(MAKE) -C ../lattuino_1_v/ wb_dev_intercon.v
+
+wb_clean:
+	rm -rf wb_dev_intercon*
+
+# Asegurarse que la ROM esté actualizada.
+.PHONY : updaterom
+
+../../../lattuino/Work/lattuino_1_bl_8.v: updaterom
+
+updaterom:
+	$(MAKE) -C ../../bootloader/ needed

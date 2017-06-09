@@ -1,0 +1,16 @@
+Board=kefir_i_hx4k
+Project=lattuino_1
+Top=Lattuino_1
+Goal=Area_Strong
+Frequency=24
+ToolChain=IceStorm
+ExtraConstraints=../lattuino_1_v/lattuino_1.in.pcf
+Include=AVR/AVR_iCE40,attX5_v
+Include=SPI,mcp300x_v
+Include=SPI,spi_master_v
+Include=CapSense,capsense_v
+Include=miniuart,miniuart_v
+Include=lattuino,devices_v
+Source=../lattuino_1_v/wb_dev_intercon.v
+Source=../lattuino_1_v/lattuino_1.v
+
