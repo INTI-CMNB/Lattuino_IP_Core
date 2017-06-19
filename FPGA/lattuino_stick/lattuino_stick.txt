@@ -33,9 +33,12 @@ Max. Clock:   27.30 MHz (36.63 ns) [CLK]
 
 
 Revision: 1.48 - jue may 11 14:14:27 ART 2017
+Revision: 1.49 - vie may 12 09:35:20 ART 2017
+Revision: 1.49 - lun may 15 11:13:30 -03 2017
+Revision: 1.49 - lun may 15 11:16:24 -03 2017
 Entity: Lattuino_Stick | Part: iCE40HX1K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
-xil_project.pl version: 0.5.10
+xil_project.pl version: 0.5.11
 
 Flip Flops:   277/1280    21.64 %
 LUTs:        1216/1280    95.00 %
@@ -44,6 +47,21 @@ Cells:       1236/1280    96.56 %
 BRAMs:          9/16      56.25 %
 --------------------------------------------------------------------------------
 Max. Clock:   22.47 MHz (44.50 ns) [CLK]
+********************************************************************************
+
+
+Revision: 1.79 - vie jun 16 10:56:44 -03 2017
+Entity: Lattuino_Stick | Part: iCE40HX1K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   263/1280    20.55 %
+LUTs:        1237/1280    96.64 %
+Cells:       1243/1280    97.11 %
+--------------------------------------------------------------------------------
+BRAMs:          9/16      56.25 %
+--------------------------------------------------------------------------------
+Max. Clock:   26.67 MHz (37.50 ns) [CLK]
 ********************************************************************************
 
 

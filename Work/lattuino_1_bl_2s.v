@@ -61,7 +61,7 @@ reg [ADDR_W-1:0]    addr_r;
 reg [WORD_SIZE-1:0] rom[0:ROM_SIZE-1];
 
 initial begin
-$readmemh("../../Work/lattuino_1_bl_2s_v.dat",rom,696);
+$readmemh("../../../Work/lattuino_1_bl_2s_v.dat",rom,696);
 end
 
 generate

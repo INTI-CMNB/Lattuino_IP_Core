@@ -1474,5 +1474,40 @@ Max. Clock:   88.27 MHz (11.33 ns) [PLLOUTGLOBALA]
 Max. Clock:   24.08 MHz (41.53 ns) [PLLOUTGLOBALB]
 ********************************************************************************
 
+Esto fue al llevar los tri-state de los puertos al top-level.
+
+Revision: 1.78 - vie jun  9 14:16:04 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   712/3520    20.23 %
+LUTs:        2248/3520    63.86 %
+Cells:       2264/3520    64.32 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   108.70 MHz ( 9.20 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.08 MHz (41.53 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Si no dejo portc_oe_o flotante sintetiza esto.
+Anda, pero por alguna razón duplica registros.
+
+Revision: 1.80 - lun jun 19 10:32:45 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   722/3520    20.51 %
+LUTs:        2253/3520    64.01 %
+Cells:       2272/3520    64.55 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   96.84 MHz (10.33 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.11 MHz (39.82 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 

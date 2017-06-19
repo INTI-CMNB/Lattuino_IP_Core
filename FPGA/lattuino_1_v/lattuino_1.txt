@@ -6,6 +6,7 @@ Revision: 1.72 - jue jun  8 15:06:29 -03 2017
 Revision: 1.73 - jue jun  8 15:48:46 -03 2017
 Revision: 1.73 - jue jun  8 15:58:21 -03 2017
 Revision: 1.73 - jue jun  8 16:18:03 -03 2017
+Revision: 1.75 - vie jun  9 12:33:23 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
 xil_project.pl version: 0.5.12
@@ -19,5 +20,100 @@ BRAMs:         20/20      100.00 %
 Max. Clock:   104.47 MHz ( 9.57 ns) [PLLOUTGLOBALA]
 Max. Clock:   23.30 MHz (42.92 ns) [PLLOUTGLOBALB]
 ********************************************************************************
+
+Llevados los tri-states de los puertos al top-level.
+NO FUNCIONA
+
+Revision: 1.80 - vie jun 16 13:04:04 -03 2017
+Revision: 1.80 - vie jun 16 13:18:07 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   712/3520    20.23 %
+LUTs:        2288/3520    65.00 %
+Cells:       2296/3520    65.23 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   81.43 MHz (12.28 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.50 MHz (42.55 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Esto fue dejando portx.v nuevo y el resto tal como estaba.
+NO FUNCIONA
+
+Revision: 1.80 - lun jun 19 10:40:55 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   723/3520    20.54 %
+LUTs:        2235/3520    63.49 %
+Cells:       2243/3520    63.72 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   101.83 MHz ( 9.82 ns) [PLLOUTGLOBALA]
+Max. Clock:   24.35 MHz (41.07 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Revierto lo de los puertos ....
+NO FUNCIONA!!!!!
+Se rompió algo en el medio y no me di cuenta porque da el mismo circuito.
+Me parece que lo agarré, es que no le carga el firmware.
+
+Revision: 1.80 - lun jun 19 10:46:57 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.1
+
+Flip Flops:   718/3520    20.40 %
+LUTs:        2283/3520    64.86 %
+Cells:       2291/3520    65.09 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   104.47 MHz ( 9.57 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.30 MHz (42.92 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Repongo el código modificado.
+Esto es con EXPLICIT_TBUF=0 y verificado.
+
+Revision: 1.80 - lun jun 19 12:40:35 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.2
+
+Flip Flops:   712/3520    20.23 %
+LUTs:        2288/3520    65.00 %
+Cells:       2296/3520    65.23 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   81.43 MHz (12.28 ns) [PLLOUTGLOBALA]
+Max. Clock:   23.50 MHz (42.55 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
+Esto es con EXPLICIT_TBUF=1 y verificado.
+Notar que al colocar explícitamente los buffers se pierde la posibilidad de usar
+los FFs de los pines.
+
+Revision: 1.80 - lun jun 19 12:59:10 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
+Synthesis tool: Lattice 2017.01.27914
+xil_project.pl version: 0.6.2
+
+Flip Flops:   723/3520    20.54 %
+LUTs:        2273/3520    64.57 %
+Cells:       2280/3520    64.77 %
+--------------------------------------------------------------------------------
+BRAMs:         20/20      100.00 %
+--------------------------------------------------------------------------------
+Max. Clock:   100.98 MHz ( 9.90 ns) [PLLOUTGLOBALA]
+Max. Clock:   25.05 MHz (39.92 ns) [PLLOUTGLOBALB]
+********************************************************************************
+
 
 

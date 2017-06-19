@@ -129,8 +129,10 @@ architecture FPGA of Lattuino_1 is
    signal rst2         : std_logic:='0';
    signal portb_in     : std_logic_vector(6 downto 0);
    signal portb_out    : std_logic_vector(6 downto 0);
+   signal portb_oe     : std_logic_vector(6 downto 0);
    signal portd_in     : std_logic_vector(7 downto 0);
    signal portd_out    : std_logic_vector(7 downto 0);
+   signal portd_oe     : std_logic_vector(7 downto 0);
    signal btns         : std_logic_vector(3 downto 0); -- Capsense buttons
    signal discharge    : std_logic;
    signal rst_btn      : std_logic;
@@ -234,22 +236,30 @@ begin
    LED4 <= rst_btn;
 
    -- Arduino IOx pins:
-   ARDU00 <= portd_out(0);
-   ARDU01 <= portd_out(1);
-   ARDU02 <= portd_out(2);
-   ARDU03 <= portd_out(3) when  pwm_ena(0)='0' or not(ENA_PWM0) else pwm(0);
-   ARDU04 <= portd_out(4);
-   ARDU05 <= portd_out(5) when  pwm_ena(1)='0' or not(ENA_PWM1) else pwm(1);
-   ARDU06 <= portd_out(6) when  pwm_ena(2)='0' or not(ENA_PWM2) else pwm(2);
-   ARDU07 <= portd_out(7);
-   ARDU08 <= portb_out(0);
-   ARDU09 <= portb_out(1) when  pwm_ena(3)='0' or not(ENA_PWM3) else pwm(3);
-   ARDU10 <= portb_out(2) when  pwm_ena(4)='0' or not(ENA_PWM4) else pwm(4);
-   ARDU11 <= portb_out(3) when (pwm_ena(5)='0' or not(ENA_PWM5)) and spi_ena='0' else
+   ARDU00 <= portd_out(0) when portd_oe(0)='1' else 'Z';
+   ARDU01 <= portd_out(1) when portd_oe(1)='1' else 'Z';
+   ARDU02 <= portd_out(2) when portd_oe(2)='1' else 'Z';
+   ARDU03 <= 'Z'          when portd_oe(3)='0' else
+             portd_out(3) when  pwm_ena(0)='0' or not(ENA_PWM0) else pwm(0);
+   ARDU04 <= portd_out(4) when portd_oe(4)='1' else 'Z';
+   ARDU05 <= 'Z'          when portd_oe(5)='0' else
+             portd_out(5) when  pwm_ena(1)='0' or not(ENA_PWM1) else pwm(1);
+   ARDU06 <= 'Z'          when portd_oe(6)='0' else
+             portd_out(6) when  pwm_ena(2)='0' or not(ENA_PWM2) else pwm(2);
+   ARDU07 <= portd_out(7) when portd_oe(7)='1' else 'Z';
+   ARDU08 <= portb_out(0) when portb_oe(0)='1' else 'Z';
+   ARDU09 <= 'Z'          when portb_oe(1)='0' else
+             portb_out(1) when  pwm_ena(3)='0' or not(ENA_PWM3) else pwm(3);
+   ARDU10 <= 'Z'          when portb_oe(2)='0' else
+             portb_out(2) when  pwm_ena(4)='0' or not(ENA_PWM4) else pwm(4);
+   ARDU11 <= 'Z'          when portb_oe(3)='0' else
+             portb_out(3) when (pwm_ena(5)='0' or not(ENA_PWM5)) and spi_ena='0' else
              mosi         when spi_ena='1' else
              pwm(5);
-   ARDU12 <= portb_out(4) when spi_ena='0' else 'Z';
-   ARDU13 <= portb_out(5) when spi_ena='0' else spi_sck;
+   ARDU12 <= 'Z'          when portb_oe(4)='0' or spi_ena='1' else portb_out(4);
+   ARDU13 <= 'Z'          when portb_oe(5)='0' else
+             portb_out(5) when spi_ena='0' else
+             spi_sck;
 
    portd_in(0) <= ARDU00;
    portd_in(1) <= ARDU01;
@@ -320,6 +330,7 @@ begin
          portb_i => portb_in, pgm_we_o => we, inst_o => inst_w,
          portd_i => portd_in, pin_irq_i => pin_irq, dev_irq_i => dev_irq,
          dev_ack_o => dev_ack, portb_o => portb_out, portd_o => portd_out,
+         portb_oe_o => portb_oe, portd_oe_o => portd_oe,
          -- SPI
           -- Connected to the SPI memory just for test
          spi_ena_o => spi_ena, sclk_o => spi_sck, miso_i => miso, mosi_o => mosi,

@@ -45,7 +45,7 @@ use IEEE.std_logic_1164.all;
 
 package CPUConfig is
    -- SPI support
-   constant ENABLE_SPI : boolean:=false;
+   constant ENABLE_SPI : std_logic:='0';
    -- Use a PLL to achieve SCK<=F_CLK and not half
    constant ENA_2xSCK  : boolean:=false;
    -- Clock Frequency
@@ -72,9 +72,9 @@ package CPUConfig is
    constant ENA_INT0   : boolean:=false;
    constant ENA_INT1   : boolean:=false;
    -- Micro and miliseconds timer
-   constant ENA_TIME_CNT : boolean:=false;
+   constant ENA_TIME_CNT : std_logic:='0';
    -- 16 bits timer (for Tone generation)
-   constant ENA_TMR16    : boolean:=false;
+   constant ENA_TMR16    : std_logic:='0';
    -- A/D converter support
-   constant ENABLE_AD    : boolean:=false;
+   constant ENABLE_AD    : std_logic:='0';
 end package CPUConfig;

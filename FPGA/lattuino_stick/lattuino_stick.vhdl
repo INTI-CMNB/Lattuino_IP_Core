@@ -59,7 +59,6 @@ use lattice.components.all;
 library lattuino;
 use lattuino.PrgMems.all;
 library work;
-use work.WBDevInterconPkg.all;
 use work.CPUConfig.all;
 
 entity Lattuino_Stick is
@@ -106,8 +105,10 @@ architecture FPGA of Lattuino_Stick is
    signal rst2         : std_logic:='0';
    signal portb_in     : std_logic_vector(6 downto 0);
    signal portb_out    : std_logic_vector(6 downto 0);
+   signal portb_oe     : std_logic_vector(6 downto 0);
    signal portd_in     : std_logic_vector(7 downto 0);
    signal portd_out    : std_logic_vector(7 downto 0);
+   signal portd_oe     : std_logic_vector(7 downto 0);
    signal pin_irq      : std_logic_vector(1 downto 0); -- Pin interrupts INT0/1
    signal dev_irq      : std_logic_vector(2 downto 0); -- Device interrupts
    signal dev_ack      : std_logic_vector(2 downto 0); -- Device ACK
@@ -191,20 +192,20 @@ begin
    LED5 <= portd_out(3);
 
    -- Arduino IOx pins:
-   ARDU00 <= portd_out(0);
-   ARDU01 <= portd_out(1);
-   ARDU02 <= portd_out(2);
-   ARDU03 <= portd_out(3);
-   ARDU04 <= portd_out(4);
-   ARDU05 <= portd_out(5);
-   ARDU06 <= portd_out(6);
-   ARDU07 <= portd_out(7);
-   ARDU08 <= portb_out(0);
-   ARDU09 <= portb_out(1);
-   ARDU10 <= portb_out(2);
-   ARDU11 <= portb_out(3);
-   ARDU12 <= portb_out(4);
-   ARDU13 <= portb_out(5);
+   ARDU00 <= portd_out(0) when portd_oe(0)='1' else 'Z';
+   ARDU01 <= portd_out(1) when portd_oe(1)='1' else 'Z';
+   ARDU02 <= portd_out(2) when portd_oe(2)='1' else 'Z';
+   ARDU03 <= portd_out(3) when portd_oe(3)='1' else 'Z';
+   ARDU04 <= portd_out(4) when portd_oe(4)='1' else 'Z';
+   ARDU05 <= portd_out(5) when portd_oe(5)='1' else 'Z';
+   ARDU06 <= portd_out(6) when portd_oe(6)='1' else 'Z';
+   ARDU07 <= portd_out(7) when portd_oe(7)='1' else 'Z';
+   ARDU08 <= portb_out(0) when portb_oe(0)='1' else 'Z';
+   ARDU09 <= portb_out(1) when portb_oe(1)='1' else 'Z';
+   ARDU10 <= portb_out(2) when portb_oe(2)='1' else 'Z';
+   ARDU11 <= portb_out(3) when portb_oe(3)='1' else 'Z';
+   ARDU12 <= portb_out(4) when portb_oe(4)='1' else 'Z';
+   ARDU13 <= portb_out(5) when portb_oe(5)='1' else 'Z';
 
    portd_in(0) <= ARDU00;
    portd_in(1) <= ARDU01;
@@ -235,22 +236,26 @@ begin
 
    micro : entity avr.ATtX5
       generic map(
-         ENA_TC0 => false,   ENA_WB    => true,
-         ENA_SPM   => true,  ENA_PORTB => true,  ENA_PORTC => false,
-         ENA_PORTD => true,  PORTB_SIZE => 7,    PORTC_SIZE => 6,
-         PORTD_SIZE => 8,    RESET_JUMP => RESET_JUMP, ENA_IRQ_CTRL => true,
-         ENA_AVR25 => false, RAM_ADDR_W => RAM_ADDR_W, ENA_SPI => ENABLE_SPI)
+         ENA_WB    => '1',    ENA_SPM   => '1', ENA_PORTB => '1',
+         ENA_PORTC => '0',    ENA_PORTD => '1', PORTB_SIZE => 7,
+         PORTC_SIZE => 6,     PORTD_SIZE => 8,  RESET_JUMP => RESET_JUMP,
+         ENA_IRQ_CTRL => '1', ENA_AVR25 => '0', RAM_ADDR_W => RAM_ADDR_W,
+         ENA_SPI => ENABLE_SPI)
       port map(
          rst_i => rst, clk_i => clk_sys, clk2x_i => clk_spi,
-         pc_o => pc, inst_i => inst,
+         pc_o => pc, inst_i => inst, ena_i => '1', portc_i => open,
          portb_i => portb_in, pgm_we_o => we, inst_o => inst_w,
          portd_i => portd_in, pin_irq_i => pin_irq, dev_irq_i => dev_irq,
          dev_ack_o => dev_ack, portb_o => portb_out, portd_o => portd_out,
+         portb_oe_o => portb_oe, portd_oe_o => portd_oe,
          -- SPI
          spi_ena_o => spi_ena, sclk_o => spi_sck, miso_i => miso, mosi_o => mosi,
          -- WISHBONE
          wb_adr_o => cpu_adro, wb_dat_o => cpu_dato, wb_dat_i => cpu_dati,
-         wb_stb_o => cpu_stbo, wb_we_o  => cpu_weo,  wb_ack_i => cpu_acki);
+         wb_stb_o => cpu_stbo, wb_we_o  => cpu_weo,  wb_ack_i => cpu_acki,
+         -- Debug
+         dbg_stop_i => '0', dbg_rf_fake_i => '0', dbg_rr_data_i => (others => '0'),
+         dbg_rd_data_i => (others => '0'));
    cpu_cyco <= '0';
 
    pcsv <= std_logic_vector(pc(ROM_ADDR_W-1 downto 0));
@@ -291,8 +296,8 @@ begin
    the_uart : UART_C
      generic map(
         BRDIVISOR => BRDIVISOR,
-        WIP_ENABLE => true,
-        AUX_ENABLE => false)
+        WIP_ENABLE => '1',
+        AUX_ENABLE => '0')
      port map(
         -- Wishbone signals
         wb_clk_i => clk_sys,  wb_rst_i => rst,      wb_adr_i => cpu_adro(0 downto 0),

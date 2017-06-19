@@ -40,6 +40,8 @@ add_file -vhdl -lib work ../lattuino_stick.vhdl
 
 impl -add Target_Implmnt -type fpga
 
+set_option -top_module "Lattuino_Stick"
+
 # Implementation attributes
 set_option -vlog_std v2001
 set_option -project_relative_includes 1
@@ -54,7 +56,7 @@ set_option -part_companion ""
 # Compilation/mapping options
 
 # Mapper options
-set_option -frequency 12
+set_option -frequency 24
 set_option -write_verilog 0
 set_option -write_vhdl 0
 

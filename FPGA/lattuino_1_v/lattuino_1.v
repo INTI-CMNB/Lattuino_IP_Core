@@ -112,8 +112,10 @@ wire rst1;
 reg  rst2=0;
 wire [6:0] portb_in;
 wire [6:0] portb_out;
+wire [6:0] portb_oe;
 wire [7:0] portd_in;
 wire [7:0] portd_out;
+wire [7:0] portd_oe;
 wire [3:0] btns; // Capsense buttons
 wire discharge;
 wire rst_btn;
@@ -209,38 +211,81 @@ assign LED3=0; // btns[2];
 assign LED4=rst_btn;
 
 // Arduino IOx pins:
-assign ARDU00=portd_out[0];
-assign ARDU01=portd_out[1];
-assign ARDU02=portd_out[2];
-assign ARDU03=pwm_ena[0] && ENA_PWM0 ? pwm[0] : portd_out[3];
-assign ARDU04=portd_out[4];
-assign ARDU05=pwm_ena[1] && ENA_PWM1 ? pwm[1] : portd_out[5];
-assign ARDU06=pwm_ena[2] && ENA_PWM2 ? pwm[2] : portd_out[6];
-assign ARDU07=portd_out[7];
-assign ARDU08=portb_out[0];
-assign ARDU09=pwm_ena[3] && ENA_PWM3 ? pwm[3] : portb_out[1];
-assign ARDU10=pwm_ena[4] && ENA_PWM4 ? pwm[4] : portb_out[2];
-assign ARDU11=pwm_ena[5] && ENA_PWM5 && !spi_ena ? pwm[5] :
-             (spi_ena ? mosi    : portb_out[3]);
-assign ARDU12=spi_ena ? 1'bZ    : portb_out[4];
-assign ARDU13=spi_ena ? spi_sck : portb_out[5];
+wire [13:0] ardu;
+assign ardu[ 0]=portd_out[0];
+assign ardu[ 1]=portd_out[1];
+assign ardu[ 2]=portd_out[2];
+assign ardu[ 3]=pwm_ena[0] && ENA_PWM0 ? pwm[0] : portd_out[3];
+assign ardu[ 4]=portd_out[4];
+assign ardu[ 5]=pwm_ena[1] && ENA_PWM1 ? pwm[1] : portd_out[5];
+assign ardu[ 6]=pwm_ena[2] && ENA_PWM2 ? pwm[2] : portd_out[6];
+assign ardu[ 7]=portd_out[7];
+assign ardu[ 8]=portb_out[0];
+assign ardu[ 9]=pwm_ena[3] && ENA_PWM3 ? pwm[3] : portb_out[1];
+assign ardu[10]=pwm_ena[4] && ENA_PWM4 ? pwm[4] : portb_out[2];
+assign ardu[11]=pwm_ena[5] && ENA_PWM5 && !spi_ena ? pwm[5] :
+                (spi_ena ? mosi    : portb_out[3]);
+assign ardu[12]=portb_out[4];
+assign ardu[13]=spi_ena ? spi_sck : portb_out[5];
 
-assign portd_in[0]=ARDU00;
-assign portd_in[1]=ARDU01;
-assign portd_in[2]=ARDU02;
-assign portd_in[3]=ARDU03;
-assign portd_in[4]=ARDU04;
-assign portd_in[5]=ARDU05;
-assign portd_in[6]=ARDU06;
-assign portd_in[7]=ARDU07;
-assign portb_in[0]=ARDU08;
-assign portb_in[1]=ARDU09;
-assign portb_in[2]=ARDU10;
-assign portb_in[3]=ARDU11;
-assign portb_in[4]=ARDU12;
-assign portb_in[5]=ARDU13;
+wire [13:0] ardu_oe;
+// PB4 reverts to input when SPI is enabled
+wire miso_oe;
+assign miso_oe=portb_oe[4] & ~spi_ena;
+assign ardu_oe={portb_oe[5],miso_oe,portb_oe[3:0],portd_oe};
 
-assign miso       =ARDU12;
+wire [13:0] ardu_in;
+generate
+if (EXPLICIT_TBUF)
+   begin
+   SB_IO
+     #(.PIN_TYPE(6'b1010_01),
+       .PULLUP(1'b0))
+     io_pins [13:0]
+     (.PACKAGE_PIN({ARDU13,ARDU12,ARDU11,ARDU10,ARDU09,ARDU08,ARDU07,ARDU06,ARDU05,ARDU04,ARDU03,ARDU02,ARDU01,ARDU00}),
+      .OUTPUT_ENABLE(ardu_oe),
+      .D_OUT_0(ardu),
+      .D_IN_0(ardu_in));
+   assign {portb_in[5:0],portd_in}=ardu_in;
+   assign miso=ardu_in[12];
+   end
+else
+   begin
+   assign ARDU00=ardu_oe[ 0] ? ardu[ 0] : 1'bZ;
+   assign ARDU01=ardu_oe[ 1] ? ardu[ 1] : 1'bZ;
+   assign ARDU02=ardu_oe[ 2] ? ardu[ 2] : 1'bZ;
+   assign ARDU03=ardu_oe[ 3] ? ardu[ 3] : 1'bZ;
+   assign ARDU04=ardu_oe[ 4] ? ardu[ 4] : 1'bZ;
+   assign ARDU05=ardu_oe[ 5] ? ardu[ 5] : 1'bZ;
+   assign ARDU06=ardu_oe[ 6] ? ardu[ 6] : 1'bZ;
+   assign ARDU07=ardu_oe[ 7] ? ardu[ 7] : 1'bZ;
+   assign ARDU08=ardu_oe[ 8] ? ardu[ 8] : 1'bZ;
+   assign ARDU09=ardu_oe[ 9] ? ardu[ 9] : 1'bZ;
+   assign ARDU10=ardu_oe[10] ? ardu[10] : 1'bZ;
+   assign ARDU11=ardu_oe[11] ? ardu[11] : 1'bZ;
+   assign ARDU12=ardu_oe[12] ? ardu[12] : 1'bZ;
+   assign ARDU13=ardu_oe[13] ? ardu[13] : 1'bZ;
+   
+   assign portd_in[0]=ARDU00;
+   assign portd_in[1]=ARDU01;
+   assign portd_in[2]=ARDU02;
+   assign portd_in[3]=ARDU03;
+   assign portd_in[4]=ARDU04;
+   assign portd_in[5]=ARDU05;
+   assign portd_in[6]=ARDU06;
+   assign portd_in[7]=ARDU07;
+   assign portb_in[0]=ARDU08;
+   assign portb_in[1]=ARDU09;
+   assign portb_in[2]=ARDU10;
+   assign portb_in[3]=ARDU11;
+   assign portb_in[4]=ARDU12;
+   assign portb_in[5]=ARDU13;
+   
+   assign miso       =ARDU12;
+
+   assign ardu_in={ARDU13,ARDU12,ARDU11,ARDU10,ARDU09,ARDU08,ARDU07,ARDU06,ARDU05,ARDU04,ARDU03,ARDU02,ARDU01,ARDU00};
+   end
+endgenerate
 
 // This is not 100% Arduino, here we fix SPI regardless spi_ena
 //ISP_SCK =spi_sck;
@@ -257,8 +302,8 @@ if (DEBUG_INT)
 else
    begin : do_int_pins
    // INT0/1 pins (PD2 and PD3)
-   assign pin_irq[0]=ENA_INT0 ? ARDU02 : 0;
-   assign pin_irq[1]=ENA_INT1 ? ARDU03 : 0;
+   assign pin_irq[0]=ENA_INT0 ? ardu_in[2] : 0;
+   assign pin_irq[1]=ENA_INT1 ? ardu_in[3] : 0;
    end
 endgenerate
 
@@ -297,6 +342,7 @@ ATtX5
     .portb_i(portb_in), .pgm_we_o(we), .inst_o(inst_w),
     .portd_i(portd_in), .pin_irq_i(pin_irq), .dev_irq_i(dev_irq),
     .dev_ack_o(dev_ack), .portb_o(portb_out), .portd_o(portd_out),
+    .portb_oe_o(portb_oe), .portd_oe_o(portd_oe),
     // SPI
     .spi_ena_o(spi_ena), .sclk_o(spi_sck), .miso_i(miso), .mosi_o(mosi),
     // WISHBONE
