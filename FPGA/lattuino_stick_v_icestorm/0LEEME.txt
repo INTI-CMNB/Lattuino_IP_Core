@@ -1,0 +1,9 @@
+IMPORTANTE!!! NO FUNCIONA, no alcanza a rutearlo, falla el placer
+
+AVR básico (ATtiny26) en la iCEstick tratando de comportarse como un Arduino.
+También funciona en la IceZum Alhambra.
+Reloj: 12 MHz
+
+Es muy limitado por que la FPGA es 1k.
+Funcionan los I/Os y el Serial.
+

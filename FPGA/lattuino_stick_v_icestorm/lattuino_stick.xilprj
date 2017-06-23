@@ -1,0 +1,16 @@
+Board=icestick
+Project=lattuino_stick
+Top=Lattuino_Stick
+Goal=Area_Strong
+Frequency=12
+ToolChain=IceStorm
+ExtraConstraints=../lattuino_stick/lattuino_stick.in.pcf
+Include=AVR/AVR_iCE40,attX5_v
+Include=SPI,mcp300x_v
+Include=SPI,spi_master_v
+Include=CapSense,capsense_v
+Include=miniuart,miniuart_v
+Include=lattuino,devices_v
+Source=cpuconfig.v
+Source=lattuino_stick.v
+
