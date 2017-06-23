@@ -1,0 +1,41 @@
+Revision: 1.81 - jue jun 22 14:10:45 -03 2017
+Revision: 1.81 - jue jun 22 14:39:10 -03 2017
+Revision: 1.81 - jue jun 22 15:16:09 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
+Synthesis tool: IceStorm Yosys 0.6+332 (git sha1 aa72262, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
+                UC Berkeley, ABC 1.01
+                arachne-pnr 0.1+171+3 (git sha1 52e69ed, g++ 4.9.2-10 -O2 -fPIE -fstack-protector-strong)
+xil_project.pl version: 0.6.2
+
+Flip Flops:   639/7680     8.32 %
+LUTs:        2300/7680    29.95 % (1792/508 logic/route 77.91 %)
+Cells:        489/960     50.94 %
+--------------------------------------------------------------------------------
+BRAMs:         21/32      65.62 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.04 MHz (36.98 ns)
+********************************************************************************
+
+Con el PLL habilitado
+Tiempo de síntesis total:  50.14 s (Intel(R) Core(TM) i5-2310 CPU @ 2.90GHz)
+Tiempo de grabación total:  5.36 s
+
+Revision: 1.81 - jue jun 22 15:31:43 -03 2017
+Revision: 1.81 - vie jun 23 09:26:01 -03 2017
+Revision: 1.81 - vie jun 23 09:29:07 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
+Synthesis tool: IceStorm Yosys 0.6+332 (git sha1 aa72262, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
+                UC Berkeley, ABC 1.01
+                arachne-pnr 0.1+171+3 (git sha1 52e69ed, g++ 4.9.2-10 -O2 -fPIE -fstack-protector-strong)
+xil_project.pl version: 0.6.3
+
+Flip Flops:   639/7680     8.32 %
+LUTs:        2269/7680    29.54 % (1761/508 logic/route 77.61 %)
+Cells:        512/960     53.33 %
+--------------------------------------------------------------------------------
+BRAMs:         21/32      65.62 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.38 MHz (39.40 ns)
+********************************************************************************
+
+

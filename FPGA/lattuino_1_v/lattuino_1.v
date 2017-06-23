@@ -533,8 +533,8 @@ if (ENA_2xSCK)
         .DIVQ(3'b100), // 4
         .FILTER_RANGE(3'b010), // Not documented!
         // Output clock gates (for low power modes)
-        .ENABLE_ICEGATE_PORTA(0),
-        .ENABLE_ICEGATE_PORTB(0)
+        .ENABLE_ICEGATE_PORTA(1'b0),
+        .ENABLE_ICEGATE_PORTB(1'b0)
         // Test Mode Parameter
         // .TEST_MODE(0),
         // EXTERNAL_DIVIDE_FACTOR(1) -- Not Used by model, Added for PLL config GUI
@@ -548,8 +548,8 @@ if (ENA_2xSCK)
        .EXTFEEDBACK(),          // External feedback (not used here)
        .DYNAMICDELAY(),         // Dynamic delay (not used here)
        .LOCK(pll_lock),         // PLL is locked
-       .BYPASS(0),              // Bypass enable
-       .RESETB(1),              // /Reset
+       .BYPASS(1'b0),           // Bypass enable
+       .RESETB(1'b1),           // /Reset
        .LATCHINPUTVALUE(),      // Clock gate enable
        // Test Pins (not documented)
        .SDO(), .SDI(), .SCLK());

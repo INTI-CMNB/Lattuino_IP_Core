@@ -100,13 +100,18 @@ Esto es con EXPLICIT_TBUF=1 y verificado.
 Notar que al colocar explícitamente los buffers se pierde la posibilidad de usar
 los FFs de los pines.
 
+Tiempo de síntesis total:  4 m 10 s (Intel(R) Core(TM) i5-2310 CPU @ 2.90GHz)
+Tiempo de grabación total:  6.39 s
+
 Revision: 1.80 - lun jun 19 12:59:10 -03 2017
+Revision: 1.81 - lun jun 19 12:59:10 -03 2017
+Revision: 1.81 - vie jun 23 09:41:56 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
-xil_project.pl version: 0.6.2
+xil_project.pl version: 0.6.3
 
 Flip Flops:   723/3520    20.54 %
-LUTs:        2273/3520    64.57 %
+LUTs:        2273/3520    64.57 % (1879/394 logic/route 82.67 %)
 Cells:       2280/3520    64.77 %
 --------------------------------------------------------------------------------
 BRAMs:         20/20      100.00 %
@@ -114,6 +119,5 @@ BRAMs:         20/20      100.00 %
 Max. Clock:   100.98 MHz ( 9.90 ns) [PLLOUTGLOBALA]
 Max. Clock:   25.05 MHz (39.92 ns) [PLLOUTGLOBALB]
 ********************************************************************************
-
 
 

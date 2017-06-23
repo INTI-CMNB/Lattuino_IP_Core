@@ -17,3 +17,7 @@ wb_clean:
 
 updaterom:
 	$(MAKE) -C ../../bootloader/ needed
+
+# Enlazar la configuración
+gen/cpuconfig.v: cpuconfig.v
+	cd gen ; ln -sf ../../lattuino_1_v/$<
