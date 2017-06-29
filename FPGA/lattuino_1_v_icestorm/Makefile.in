@@ -19,5 +19,5 @@ updaterom:
 	$(MAKE) -C ../../bootloader/ needed
 
 # Enlazar la configuración
-gen/cpuconfig.v: cpuconfig.v
-	cd gen ; ln -sf ../../lattuino_1_v/$<
+gen/cpuconfig.v: ../lattuino_1_v/cpuconfig.v
+	cd gen ; ln -sf ../$<

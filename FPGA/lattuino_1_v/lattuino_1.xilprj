@@ -3,6 +3,7 @@ Project=lattuino_1
 Top=Lattuino_1
 Goal=Area_Strong
 Frequency=24
+ExtraConstraints=../lattuino_1/lattuino_1.in.pcf
 Include=AVR/AVR_iCE40,attX5_v
 Include=SPI,mcp300x_v
 Include=SPI,spi_master_v

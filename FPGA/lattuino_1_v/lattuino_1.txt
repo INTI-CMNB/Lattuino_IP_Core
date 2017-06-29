@@ -106,6 +106,7 @@ Tiempo de grabación total:  6.39 s
 Revision: 1.80 - lun jun 19 12:59:10 -03 2017
 Revision: 1.81 - lun jun 19 12:59:10 -03 2017
 Revision: 1.81 - vie jun 23 09:41:56 -03 2017
+Revision: 1.83 - jue jun 29 09:16:16 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: 
 Synthesis tool: Lattice 2017.01.27914
 xil_project.pl version: 0.6.3

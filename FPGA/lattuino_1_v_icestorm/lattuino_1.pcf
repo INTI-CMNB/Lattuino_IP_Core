@@ -1,4 +1,4 @@
-# From lattuino_1.in.pcf
+# From ../lattuino_1/lattuino_1.in.pcf
 ###################################
 # Kéfir I HX4K Pin-pout
 # Family & Device:    iCE40HX4K
@@ -71,7 +71,7 @@ set_io ARDU13 31
 
 # Arduino Power (P2)
 # Active low RESET
-set_io RESET_P2 73
+set_io RESET_P2 73 -pullup yes
 
 # Milk channel A
 set_io Milk_TXD 37

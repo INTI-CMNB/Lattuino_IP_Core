@@ -54,7 +54,7 @@ all: Makefile lattuino_1.pcf  $(GENDIR) \
 ###############################################
 # Regenerate the files if the project changed #
 ###############################################
-Makefile lattuino_1.pcf : lattuino_1.xilprj lattuino_1.in.pcf \
+Makefile lattuino_1.pcf : lattuino_1.xilprj ../lattuino_1/lattuino_1.in.pcf \
 	../../../AVR/AVR_iCE40/FPGA/attX5_v\
 	../../../SPI/FPGA/mcp300x_v\
 	../../../SPI/FPGA/spi_master_v\
@@ -62,7 +62,7 @@ Makefile lattuino_1.pcf : lattuino_1.xilprj lattuino_1.in.pcf \
 	../../../miniuart/FPGA/miniuart_v\
 	../../../lattuino/FPGA/devices_v
 	@echo ==** Starting xil_project.pl
-	/usr/bin/xil_project.pl 
+	/usr/bin/xil_project.pl  
 	@echo ==** Ending xil_project.pl
 
 #######################
@@ -142,5 +142,5 @@ updaterom:
 	$(MAKE) -C ../../bootloader/ needed
 
 # Enlazar la configuración
-gen/cpuconfig.v: cpuconfig.v
-	cd gen ; ln -sf ../../lattuino_1_v/$<
+gen/cpuconfig.v: ../lattuino_1_v/cpuconfig.v
+	cd gen ; ln -sf ../$<

@@ -23,10 +23,14 @@ Tiempo de grabaci�n total:  5.36 s
 Revision: 1.81 - jue jun 22 15:31:43 -03 2017
 Revision: 1.81 - vie jun 23 09:26:01 -03 2017
 Revision: 1.81 - vie jun 23 09:29:07 -03 2017
+Revision: 1.83 - mié jun 28 09:28:45 -03 2017
+Revision: 1.83 - mié jun 28 13:21:33 -03 2017
+Revision: 1.83 - mié jun 28 14:42:59 -03 2017
+Revision: 1.83 - jue jun 29 09:12:23 -03 2017
 Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
 Synthesis tool: IceStorm Yosys 0.6+332 (git sha1 aa72262, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
                 UC Berkeley, ABC 1.01
-                arachne-pnr 0.1+171+3 (git sha1 52e69ed, g++ 4.9.2-10 -O2 -fPIE -fstack-protector-strong)
+                arachne-pnr 0.1+203+4 (git sha1 7e135ed, g++ 4.9.2-10 -O2 -fPIE -fstack-protector-strong)
 xil_project.pl version: 0.6.3
 
 Flip Flops:   639/7680     8.32 %
