@@ -42,4 +42,60 @@ BRAMs:         21/32      65.62 %
 Max. Clock:   25.38 MHz (39.40 ns)
 ********************************************************************************
 
+Sin los SB_IO explícitos de ARDU*
+
+Revision: 1.84 - jue jun 29 14:14:34 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
+Synthesis tool: IceStorm Yosys 0.6+332 (git sha1 aa72262, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
+                UC Berkeley, ABC 1.01
+                arachne-pnr 0.1+203+8 (git sha1 7e135ed, g++ 4.9.2-10 -O2)
+xil_project.pl version: 0.6.4
+
+Flip Flops:   639/7680     8.32 %
+LUTs:        2271/7680    29.57 % (1765/506 logic/route 77.72 %)
+Cells:        495/960     51.56 %
+--------------------------------------------------------------------------------
+BRAMs:         21/32      65.62 %
+--------------------------------------------------------------------------------
+Max. Clock:   25.61 MHz (39.05 ns)
+********************************************************************************
+
+Sin los SB_IO explícitos de los CapSense*
+NO FUNCIONA!!! Yosys hace BTN1=BTN2=BTN3=BTN4 y obviamente que no funciona.
+
+Revision: 1.84 - jue jun 29 14:18:55 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
+Synthesis tool: IceStorm Yosys 0.6+332 (git sha1 aa72262, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
+                UC Berkeley, ABC 1.01
+                arachne-pnr 0.1+203+8 (git sha1 7e135ed, g++ 4.9.2-10 -O2)
+xil_project.pl version: 0.6.4
+
+Flip Flops:   639/7680     8.32 %
+LUTs:        2289/7680    29.80 % (1782/507 logic/route 77.85 %)
+Cells:        492/960     51.25 %
+--------------------------------------------------------------------------------
+BRAMs:         21/32      65.62 %
+--------------------------------------------------------------------------------
+Max. Clock:   27.41 MHz (36.48 ns)
+********************************************************************************
+
+Esto es con Yosys 0.7 + parche para excluir los $_TBUF_ de opt_merge
+
+Revision: 1.84 - lun jul  3 12:54:03 -03 2017
+Entity: Lattuino_1 | Part: iCE40HX4K-TQ144 | Optimized for: N/A | Constrained: lattuino_1.pcf
+Synthesis tool: IceStorm Yosys 0.7+207 (git sha1 ea805af, gcc 4.9.2-10 -O2 -fstack-protector-strong -fPIC -Os)
+                UC Berkeley, ABC 1.01
+                arachne-pnr 0.1+203+8 (git sha1 7e135ed, g++ 4.9.2-10 -O2)
+xil_project.pl version: 0.6.4
+
+Flip Flops:   639/7680     8.32 %
+LUTs:        2285/7680    29.75 % (1780/505 logic/route 77.90 %)
+Cells:        498/960     51.88 %
+--------------------------------------------------------------------------------
+BRAMs:         21/32      65.62 %
+--------------------------------------------------------------------------------
+Max. Clock:   28.58 MHz (34.99 ns)
+********************************************************************************
+
+
 

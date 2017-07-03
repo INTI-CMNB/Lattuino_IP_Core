@@ -98,7 +98,7 @@ module Lattuino_1
 
 localparam integer BRDIVISOR=F_CLK/BAUD_RATE/4.0+0.5;
 localparam integer CNT_PRESC=F_CLK/1e6; // Counter prescaler (1 µs)
-localparam EXPLICIT_TBUF=1; // Manually instantiate tri-state buffers
+localparam EXPLICIT_TBUF=0; // Manually instantiate tri-state buffers (old yosys+arachne)
 localparam DEBUG_SPI=0;
 localparam DEBUG_INT=0;
 
@@ -506,7 +506,10 @@ if (EXPLICIT_TBUF)
    end
 else
    begin
-   assign {BTN4,BTN3,BTN2,BTN1}=discharge ? 4'b0 : 4'bZ;
+   assign BTN1=discharge ? 1'b0 : 1'bZ;
+   assign BTN2=discharge ? 1'b0 : 1'bZ;
+   assign BTN3=discharge ? 1'b0 : 1'bZ;
+   assign BTN4=discharge ? 1'b0 : 1'bZ;
    assign capsense_in={BTN4,BTN3,BTN2,BTN1};
    end
 endgenerate
