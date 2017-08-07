@@ -98,28 +98,28 @@ $(OBJDIR)/$(PRJ)_2s.vhdl: ../pm_s_rw.in.vhdl $(OBJDIR)/$(PRJ)_2s.dat
 $(OBJDIR)/$(PRJ)_8.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_8_v.dat
 	printf $(PRJ)PM_8 > entity.txt
 	#ln -s $(OBJDIR)/$(PRJ)_8_v.dat rom.dat
-	printf \$$readmemh\(\"../../Work/$(PRJ)_8_v.dat\",rom,$(START_W_8V)\)\; > rom.dat
+	printf \$$readmemh\(\"../../../Work/$(PRJ)_8_v.dat\",rom,$(START_W_8V)\)\; > rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 
 $(OBJDIR)/$(PRJ)_4.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_4_v.dat
 	printf $(PRJ)PM_4 > entity.txt
 	#ln -s $(OBJDIR)/$(PRJ)_4_v.dat rom.dat
-	printf \$$readmemh\(\"../../Work/$(PRJ)_4_v.dat\",rom,$(START_W_4V)\)\; > rom.dat
+	printf \$$readmemh\(\"../../../Work/$(PRJ)_4_v.dat\",rom,$(START_W_4V)\)\; > rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 
 $(OBJDIR)/$(PRJ)_2.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_2_v.dat
 	printf $(PRJ)PM_2 > entity.txt
 	#ln -s $(OBJDIR)/$(PRJ)_2_v.dat rom.dat
-	printf \$$readmemh\(\"../../Work/$(PRJ)_2_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
+	printf \$$readmemh\(\"../../../Work/$(PRJ)_2_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 
 $(OBJDIR)/$(PRJ)_2s.v: ../pm_s_rw.in.v $(OBJDIR)/$(PRJ)_2s_v.dat
 	printf $(PRJ)PM_2S > entity.txt
 	#ln -s $(OBJDIR)/$(PRJ)_2s_v.dat rom.dat
-	printf \$$readmemh\(\"../../Work/$(PRJ)_2s_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
+	printf \$$readmemh\(\"../../../Work/$(PRJ)_2s_v.dat\",rom,$(START_W_2V)\)\; > rom.dat
 	vhdlspp.pl $< $@
 	rm entity.txt rom.dat
 
