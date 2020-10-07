@@ -1,9 +1,9 @@
 # Lattuino
-An Arduino UNO compatible implementation for the iCE40 FPGAs
+An Arduino UNO compatible implementation for the iCE40 FPGAs.
 
-Currently oriented to the Kefir I board (iCE40HX4K + Arduino/ChipKit connectors and MCP3008 A/D)
+Currently oriented to the Kefir I board (iCE40HX4K + Arduino/ChipKit connectors and MCP3008 A/D).
 
-A reduced version (only I/O pins and RS-232, with a small ammount of flash and RAM) is available
+A reduced version (only I/O pins and RS-232, with a small amount of flash and RAM) is available
 for the iCEStick and IceZum Alhambra is available (iCE40HX1K).
 
 ## What's needed to synthesize the IP core
@@ -44,10 +44,10 @@ than version 2017.01.
 
 ## How to add Lattuino support to the Arduino IDE
 
-You'll need a modern version of Arduino's IDE, I used 1.8.1 (works on 1.8.2 and also on 1.6.13, not in 1.6.9)
+You'll need a modern version of Arduino's IDE, I used 1.8.1 (works on 1.8.2 and also on 1.6.13, not in 1.6.9).
 
-1. Go to __File/Preferences__ menu
-2. Add the following URL http://fpgalibre.sf.net/Lattuino/package_lattuino_index.json as source of additional boards
+1. Go to __File/Preferences__ menu.
+2. Add the following URL http://fpgalibre.sf.net/Lattuino/package_lattuino_index.json as source of additional boards.
 3. Now enter to the __Tool/Board__ menu and choose the __Boards manager__ option.
 4. Scroll down to bottom and look for the __Lattuino 1 by FPGA Libre__ entry.
 5. Click on __More info__ and press the __Install__ button.
